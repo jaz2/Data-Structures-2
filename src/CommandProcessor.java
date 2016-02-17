@@ -151,7 +151,7 @@ public class CommandProcessor {
                     String id = in.next().toString();
                    // db.skip.removeByName(id);
                     System.out.println(
-                    		"Point not removed: (" + id + ")");
+                    		"Point not removed: " + id);
                 }
             } 
             else if (str.contains("regionsearch"))
@@ -180,7 +180,7 @@ public class CommandProcessor {
                 String id = in.next().toString();
                 //db.skip.search(id);
                 System.out.println(
-                		"Point not found: (" + id + ")");
+                		"Point not found: " + id);
                 
             } 
             else if (str.contains("dump")) {

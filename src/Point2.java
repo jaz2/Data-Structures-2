@@ -28,7 +28,8 @@ public class Point2
 		{
 			System.out.println("Hello, World");
 		}
-		else{
+		else
+		{
 			String input = args[0].trim();
 
 			File f = new File(input);
