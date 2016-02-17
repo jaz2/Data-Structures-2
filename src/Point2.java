@@ -24,10 +24,11 @@ public class Point2
      */
     public static void main(String[] args) throws FileNotFoundException
     {
-        System.out.println("Hello, World");
-        String input = args[0].trim();
+String input = args[0].trim();
         
         File f = new File(input);
         CommandProcessor cmd = new CommandProcessor(f);
+        System.out.println("Hello, World");
+        
     }
 }
