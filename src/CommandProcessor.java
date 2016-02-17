@@ -143,7 +143,7 @@ public class CommandProcessor {
                         //db.skipRemoveCoord(n1, n2, n3, n4);
                     	//FOR NOW!!
                     	System.out.println(
-                    			"Point rejected: (" + n1 + ", " + n2 + ")");
+                    			"Point not found: (" + n1 + ", " + n2 + ")");
                     }
                 } 
                 else // case where it's remove name

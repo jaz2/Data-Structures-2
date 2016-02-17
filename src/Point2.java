@@ -14,21 +14,26 @@ import java.io.FileNotFoundException;
 public class Point2
 {
 
-    /**
-     * The entry point of the application.
-     *
-     * @param args
-     *            The name of the command file passed in as a command line
-     *            argument.
-     * @throws FileNotFoundException 
-     */
-    public static void main(String[] args) throws FileNotFoundException
-    {
-String input = args[0].trim();
-        
-        File f = new File(input);
-        CommandProcessor cmd = new CommandProcessor(f);
-        //System.out.println("Hello, World");
-        
-    }
+	/**
+	 * The entry point of the application.
+	 *
+	 * @param args
+	 *            The name of the command file passed in as a command line
+	 *            argument.
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		if (args == null)
+		{
+			System.out.println("Hello, World");
+		}
+		else{
+			String input = args[0].trim();
+
+			File f = new File(input);
+			CommandProcessor cmd = new CommandProcessor(f);
+
+		}
+	}
 }
