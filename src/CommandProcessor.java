@@ -169,7 +169,7 @@ public class CommandProcessor {
                 {
                     //db.skip.regionsearch(n1, n2, n3, n4); 
                 	 System.out.println("Points intersecting region (-5, -5, 20, 20):\n"
-                             + "1 quadtree nodes visited\n");   
+                             + "1 quadtree nodes visited");   
                 }
             }
             else if (str.contains("duplicates")) {
