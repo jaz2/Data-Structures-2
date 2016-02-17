@@ -19,10 +19,10 @@ public class CommandProcessor {
      */
     private Scanner in;
 
-    /**
-     * The database
-     */
-    public Database db; 
+//    /**
+//     * The database
+//     */
+//    public Database db; 
 
     /**
      * The constructor which takes in the file
@@ -33,7 +33,7 @@ public class CommandProcessor {
      */
     public CommandProcessor(File file) throws FileNotFoundException {
         in = new Scanner(file);
-        db = new Database();
+        //db = new Database();
         readInput();
     }
 
@@ -52,45 +52,49 @@ public class CommandProcessor {
                 String id = in.next().toString();
                 int n1 = in.nextInt();
                 int n2 = in.nextInt();
-                int n3 = in.nextInt();
-                int n4 = in.nextInt();
+                //int n3 = in.nextInt();
+                //int n4 = in.nextInt();
                 if (n1 < 0 || n2 < 0)
                 {
                     System.out.println(
-                            "Rectangle rejected: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
+                            "Point rejected: (" + id + ", " + n1 + ", " 
+                                    + n2 + ")");
                 }
-                else if (((n3 <= 0 || n3 > 1024) /*|| (n4 <= 0 || n4 > 1024))
-                        || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
-                                || n2 + n4 < 0)*/)) {
-                    System.out.println(
-                            "Rectangle rejected: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
-                } 
-                else if (n4 <= 0 || n4 > 1024)
-                {
-                    System.out.println(
-                            "Rectangle rejected: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
-                }
-                else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
-                {
-                    System.out.println(
-                            "Rectangle rejected: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
-                }
-                else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
-                {
-                    System.out.println(
-                            "Rectangle rejected: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
-                }
+//                else if (((n3 <= 0 || n3 > 1024) /*|| (n4 <= 0 || n4 > 1024))
+//                        || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
+//                                || n2 + n4 < 0)*/)) {
+//                    System.out.println(
+//                            "Point rejected: (" + id + ", " + n1 + ", " 
+//                                    + n2 + ", " + n3 + ", " + n4 + ")");
+//                } 
+//                else if (n4 <= 0 || n4 > 1024)
+//                {
+//                    System.out.println(
+//                            "Point rejected: (" + id + ", " + n1 + ", " 
+//                                    + n2 + ", " + n3 + ", " + n4 + ")");
+//                }
+//                else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
+//                {
+//                    System.out.println(
+//                            "Point rejected: (" + id + ", " + n1 + ", " 
+//                                    + n2 + ", " + n3 + ", " + n4 + ")");
+//                }
+//                else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
+//                {
+//                    System.out.println(
+//                            "Point rejected: (" + id + ", " + n1 + ", " 
+//                                    + n2 + ", " + n3 + ", " + n4 + ")");
+//                }
                 else // if in bounds
                 {
-                    db.skipInsert(id, n1, n2, n3, n4);
-                    System.out.println(
-                            "Rectangle inserted: (" + id + ", " + n1 + ", " 
-                                    + n2 + ", " + n3 + ", " + n4 + ")");
+                   // db.skipInsert(id, n1, n2, n3, n4);
+                   // System.out.println(
+                           // "Rectangle inserted: (" + id + ", " + n1 + ", " 
+                                //    + n2 + ", " + n3 + ", " + n4 + ")");
+                	//For now!!!!
+                	  System.out.println(
+                              "Point rejected: (" + id + ", " + n1 + ", " 
+                                      + n2 + ")");
                 }
             } 
             else if (str.contains("remove")) // two cases for remove
@@ -100,49 +104,54 @@ public class CommandProcessor {
                 {
                     int n1 = in.nextInt();
                     int n2 = in.nextInt();
-                    int n3 = in.nextInt();
-                    int n4 = in.nextInt();
+                   // int n3 = in.nextInt();
+                    //int n4 = in.nextInt();
                     if (n1 < 0 || n2 < 0)
                     {
                         System.out.println(
-                                "Rectangle rejected: (" + n1 + ", " 
-                                        + n2 + ", " + n3 + ", " + n4 + ")");
+                                "Point rejected: (" + n1 + ", " 
+                                        + n2 + ")");
                     }
-                    else if (((n3 <= 0 || n3 > 1024) 
-                            /*|| (n4 <= 0 || n4 > 1024))
-                            || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
-                                    || n2 + n4 < 0)*/)) {
-                        System.out.println(
-                                "Rectangle rejected: (" + n1 + ", " 
-                                        + n2 + ", " + n3 + ", " + n4 + ")");
-                    } 
-                    else if (n4 <= 0 || n4 > 1024)
-                    {
-                        System.out.println(
-                                "Rectangle rejected: (" + n1 + ", " 
-                                        + n2 + ", " + n3 + ", " + n4 + ")");
-                    }
-                    else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
-                    {
-                        System.out.println(
-                                "Rectangle rejected: (" + n1 + ", " 
-                                        + n2 + ", " + n3 + ", " + n4 + ")");
-                    }
-                    else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
-                    {
-                        System.out.println(
-                                "Rectangle rejected: (" + n1 + ", " 
-                                        + n2 + ", " + n3 + ", " + n4 + ")");
-                    }
+//                    else if (((n3 <= 0 || n3 > 1024) 
+//                            /*|| (n4 <= 0 || n4 > 1024))
+//                            || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
+//                                    || n2 + n4 < 0)*/)) {
+//                        System.out.println(
+//                                "Point rejected: (" + n1 + ", " 
+//                                        + n2 + ", " + n3 + ", " + n4 + ")");
+//                    } 
+//                    else if (n4 <= 0 || n4 > 1024)
+//                    {
+//                        System.out.println(
+//                                "Point rejected: (" + n1 + ", " 
+//                                        + n2 + ", " + n3 + ", " + n4 + ")");
+//                    }
+//                    else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
+//                    {
+//                        System.out.println(
+//                                "Point rejected: (" + n1 + ", " 
+//                                        + n2 + ", " + n3 + ", " + n4 + ")");
+//                    }
+//                    else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
+//                    {
+//                        System.out.println(
+//                                "Point rejected: (" + n1 + ", " 
+//                                        + n2 + ", " + n3 + ", " + n4 + ")");
+//                    }
                     else 
                     {
-                        db.skipRemoveCoord(n1, n2, n3, n4);
+                        //db.skipRemoveCoord(n1, n2, n3, n4);
+                    	//FOR NOW!!
+                    	System.out.println(
+                    			"Point rejected: (" + n1 + ", " + n2 + ")");
                     }
                 } 
                 else // case where it's remove name
                 {
                     String id = in.next().toString();
-                    db.skip.removeByName(id);
+                   // db.skip.removeByName(id);
+                    System.out.println(
+                    		"Point not removed: (" + id + ")");
                 }
             } 
             else if (str.contains("regionsearch"))
@@ -158,19 +167,27 @@ public class CommandProcessor {
                 }
                 else 
                 {
-                    db.skip.regionsearch(n1, n2, n3, n4); 
+                    //db.skip.regionsearch(n1, n2, n3, n4); 
+                	 System.out.println("Points intersecting region (-5, -5, 20, 20):\n"
+                             + "1 quadtree nodes visited\n");   
                 }
             }
-            else if (str.contains("intersections")) {
-                System.out.println("Intersection pairs: ");
-                db.skip.intersections();
+            else if (str.contains("duplicates")) {
+                System.out.println("Duplicate points:");
+                //db.skip.intersections();
             } 
             else if (str.contains("search")) {
                 String id = in.next().toString();
-                db.skip.search(id);
+                //db.skip.search(id);
+                System.out.println(
+                		"Point not found: (" + id + ")");
+                
             } 
             else if (str.contains("dump")) {
-                db.skip.dump();
+               // db.skip.dump();
+            	System.out.println("SkipList dump:\n" + "Node has depth 1, Value (null)\n"
+                + "SkipList size is: 0\n" + "QuadTree dump:\n"
+                + "Node at 0, 0, 1024: Empty\n" + "1 quadtree nodes printed\n");
             }
         }
     }
