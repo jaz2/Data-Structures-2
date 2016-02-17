@@ -28,7 +28,7 @@ String input = args[0].trim();
         
         File f = new File(input);
         CommandProcessor cmd = new CommandProcessor(f);
-        System.out.println("Hello, World");
+        //System.out.println("Hello, World");
         
     }
 }
