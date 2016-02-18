@@ -1,6 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-
 /**
  * { your description of the project here }
  */
@@ -8,33 +5,26 @@ import java.io.FileNotFoundException;
 /**
  * The class containing the main method, the entry point of the application.
  *
- * @author Jazmine Zurita and Jessica McCready
+ * @author {your name here}
  * @version {put something here}
  */
 public class Point2
 {
 
-	/**
-	 * The entry point of the application.
-	 *
-	 * @param args
-	 *            The name of the command file passed in as a command line
-	 *            argument.
-	 * @throws FileNotFoundException 
-	 */
-	public static void main(String[] args) throws FileNotFoundException
-	{
-		if (args == null)
-		{
-			System.out.println("Hello, World");
-		}
-		else
-		{
-			String input = args[0].trim();
-
-			File f = new File(input);
-			CommandProcessor cmd = new CommandProcessor(f);
-
-		}
-	}
+    /**
+     * The entry point of the application.
+     *
+     * @param args
+     *            The name of the command file passed in as a command line
+     *            argument.
+     */
+    public static void main(String[] args)
+    {
+    	if (arg == null)
+    	{
+        System.out.println("Hello, World");
+    	}
+    	else 
+    	{}
+    }
 }

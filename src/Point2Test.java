@@ -1,5 +1,3 @@
-import java.io.FileNotFoundException;
-
 import student.TestCase;
 
 /**
@@ -22,9 +20,8 @@ public class Point2Test
     // ----------------------------------------------------------
     /**
      * This method is simply to get code coverage of the class declaration.
-     * @throws FileNotFoundException 
      */
-    public void testRInit() throws FileNotFoundException
+    public void testRInit()
     {
         Point2 dum = new Point2();
         assertNotNull(dum);
