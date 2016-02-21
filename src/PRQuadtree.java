@@ -1,6 +1,4 @@
-/**
- * 
- */
+import java.util.LinkedList;
 
 /**
  * Stores the points into leaves
@@ -9,11 +7,19 @@
  *
  */
 public class PRQuadtree {
+	/**
+	 * 
+	 * @author Jazz
+	 *
+	 */
 	public class PRQuadLeaf()
 	{
-		//
+		public PRQuadLeaf()
+		{
+			LinkedList<PRQuadtree> l = new LinkedList<PRQuadtree>();
+		}
 	}
-	
+
 	/**
 	 * The constructor for the PRQuadtree
 	 */
