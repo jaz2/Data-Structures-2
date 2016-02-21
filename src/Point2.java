@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+
 /**
  * { your description of the project here }
  */
@@ -11,20 +14,25 @@
 public class Point2
 {
 
-    /**
-     * The entry point of the application.
-     *
-     * @param args
-     *            The name of the command file passed in as a command line
-     *            argument.
-     */
-    public static void main(String[] args)
-    {
-    	if (arg == null)
-    	{
-        System.out.println("Hello, World");
-    	}
-    	else 
-    	{}
-    }
+	/**
+	 * The entry point of the application.
+	 *
+	 * @param args
+	 *            The name of the command file passed in as a command line
+	 *            argument.
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		if (args == null)
+		{
+			System.out.println("Hello, World");
+		}
+		else 
+		{
+			String input = args[0].trim();
+			File f = new File(input);
+			CommandProcessor com = new CommandProcessor(f);
+		}
+	}
 }
