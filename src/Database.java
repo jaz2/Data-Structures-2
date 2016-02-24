@@ -13,6 +13,8 @@ public class Database
      * The SkipList
      */
     public SkipList<String, Rect> skip; 
+    
+    public PRQuadtree pr;
 
     /**
      * The Database constructor which creates a SkipList
@@ -20,6 +22,7 @@ public class Database
     public Database()
     {
         skip = new SkipList<String, Rect>();
+        pr = new PRQuadtree();
     }
 
     /**
@@ -32,7 +35,7 @@ public class Database
      * @param h the height
      * @return
      */
-    public void skipInsert(String id, int x, int y, int w, int h)
+    public void skipInsert(String id, int x, int y)
     {
         Rect r = new Rect(id, x, y, w, h);
         KVPair<String, Rect> p = new KVPair<String, Rect>(id, r);
@@ -46,7 +49,7 @@ public class Database
      * @param w the width
      * @param h the height
      */
-    public void skipRemoveCoord(int x, int y, int w, int h)
+    public void skipRemoveCoord(int x, int y)
     {
         Rect r = new Rect(null, x, y, w, h);
         KVPair<String, Rect> p = new KVPair<String, Rect>(null, r);

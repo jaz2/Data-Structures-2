@@ -6,17 +6,17 @@ import java.util.LinkedList;
  * @version Feb 21 2016
  *
  */
-public class PRQuadtree {
+public class PRQuadtree{
 	/**
-	 * 
+	 * The leaf object
 	 * @author Jazz
 	 *
 	 */
-	public class PRQuadLeaf()
+	public class PRQuadNode
 	{
-		public PRQuadLeaf()
+		public PRQuadNode()
 		{
-			LinkedList<PRQuadtree> l = new LinkedList<PRQuadtree>();
+			LinkedList<PRQuadNode> l = new LinkedList<PRQuadNode>();
 		}
 	}
 
@@ -24,6 +24,8 @@ public class PRQuadtree {
 	 * The constructor for the PRQuadtree
 	 */
 	public PRQuadtree()
-	{}
+	{
+		//
+	}
 
 }
