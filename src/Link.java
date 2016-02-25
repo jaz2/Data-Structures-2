@@ -22,7 +22,7 @@ public class Link<Point> {
 	}
 	
 	/**
-	 * Constructor that only takes inthe position
+	 * Constructor that only takes in the position
 	 * @param n
 	 */
 	public Link(Link<Point> n)

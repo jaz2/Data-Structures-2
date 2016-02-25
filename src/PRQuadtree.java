@@ -1,4 +1,4 @@
-
+import java.util.LinkedList;
 
 /**
  * Stores the points into leaves
@@ -13,16 +13,49 @@ public class PRQuadtree{
 	 * @author Jazmine Zurita and Jessica McCready
 	 *
 	 */
-	abstract class PRQuadNode{}
+	public interface PRQuadNode extends PRQuadTree
+	{
+		//change to an interface
+		//separate insert to each class
+		public void insert(Point p, int xco, int yco, int length) 
+		{
+			PRQuadNode node = this;
+			
+			if (this == fly) //should point to a fly and when u create it should point to a leaf
+			{
+				PRQuadLeaf lef = new PRQuadLeaf(p);
+				return lef; 
+			}
+			if (node.getClass().equals(PRQuadLeaf.class))
+			{
+					
+				//here is when u make it internal
+
+			}
+			if (node.getClass().equals(PRQuadInternal.class))
+			{
+				PRQuadInternal in = (PRQuadInternal)node;
+				int nuLen = length/2;
+				if (p.getX() >= xco + nuLen && p.getY() <= yco + nuLen /*in.NE*/) //TODO!!!!!
+				{ 
+					in.NE = insert(p, nuLen + xco, yco, nuLen);
+				}
+				if (in == in.NW)
+				{}
+				return in;
+			}
+			return node;
+		}
+	}
 
 	/**
 	 * The leaf object
 	 * @author Jazmine Zurita and Jessica McCready
 	 *
 	 */
-	public class PRQuadLeaf extends PRQuadNode
+	public class PRQuadLeaf implements PRQuadNode
 	{
-		Link<Point> l;
+		LinkedList<Point> l;
 
 		/**
 		 * Handles the points
@@ -31,8 +64,49 @@ public class PRQuadtree{
 		 */
 		public PRQuadLeaf(Point p) //IS THIS CORRECT TODO
 		{
-			l = new Link<Point>();// need to make our own linked list class
-			l.setElement(p);
+			l = new LinkedList<Point>();// need to make our own linked list class
+			l.add(p);
+		}
+		
+		public void insert(Point p, int xco, int yco, int length)
+		{
+			PRQuadLeaf lef = (PRQuadLeaf)this; 
+			//insert
+			if (lef.l.size() >= 2)
+			{
+				//insert
+			}
+			else 
+			{ //check duplicates if they are the same you don't split
+				int count = 0; //if they are not then count to 4 and split
+				for (int i = 0; i < lef.l.size() - 2; i++)
+				{
+					if (lef.l.get(i).equals(lef.l.get(i + 1)))	
+					{
+						count++;
+					}
+				}
+				if (count == lef.l.size() - 1)
+				{
+					if (lef.l.getLast().equals(p)) //they are the same
+					{
+						lef = insert(p,xco, yxo, length)//(call insert method)
+					}
+					else //split
+					{
+						PRQuadInternal in = new PRQuadInternal();
+						//do something
+						return in;
+					}
+				}					
+				else //are not the same
+				{
+					//split
+					PRQuadInternal in = new PRQuadInternal();
+					//something
+					return in;
+				}	
+			}
 			
 		}
 	}
@@ -42,7 +116,7 @@ public class PRQuadtree{
 	 * @author Jazmine Zurita and Jessica McCready
 	 *
 	 */
-	public class PRQuadInternal extends PRQuadNode
+	public class PRQuadInternal implements PRQuadNode
 	{
 		/**
 		 * The NW quadrant
@@ -76,7 +150,7 @@ public class PRQuadtree{
 			SW = fly;
 		}
 	}
-	
+
 	/**
 	 * The root 
 	 */
@@ -86,18 +160,18 @@ public class PRQuadtree{
 	 * Instance of the node which is set to null
 	 * MAY BE USED FOR FLYWEIGHT
 	 */
-	public PRQuadNode fly;
-	
+	public PRQuadNode fly = new PRQuadNode();
+
 	/**
 	 * The x coord
 	 */
 	int x;
-	
+
 	/**
 	 * The y coord
 	 */
 	int y;
-	
+
 	/**
 	 * The length
 	 */
@@ -112,8 +186,7 @@ public class PRQuadtree{
 	 */
 	public PRQuadtree(int xcoord, int ycoord, int len)
 	{
-		root = null;
-		fly = null; //don't initialize vals in fly, initialize a new node obj and store it there
+		root = fly; //don't initialize vals in fly, initialize a new node obj and store it there
 		x = xcoord;
 		y = ycoord;
 		length = len;
@@ -132,30 +205,6 @@ public class PRQuadtree{
 	 */
 	public PRQuadNode insert(PRQuadNode node, Point p, int xco, int yco, int length)
 	{ //try and make it node-centric (within the node class to avoid copying it over)
-		if (node == null) //should point to a fly and when u create it should point to a leaf
-		{
-			node = fly;
-			PRQuadLeaf lef = new PRQuadLeaf(p);
-			node = lef;
-			return lef;
-		}
-		if (node.getClass().equals(PRQuadLeaf.class))
-		{
-			PRQuadLeaf lef = (PRQuadLeaf)node; //here is when u make it internal
-			
-		}
-		if (node.getClass().equals(PRQuadInternal.class))
-		{
-			PRQuadInternal in = (PRQuadInternal)node;
-			int nuLen = length/2;
-			if (p.getX() >= xco + nuLen && p.getY() <= yco + nuLen /*in.NE*/) //TODO!!!!!
-			{ 
-				in.NE = insert(in.NE, p, nuLen + xco, yco, nuLen);
-			}
-			if (in == in.NW)
-			{}
-			return in;
-		}
-		return node;
+
 	}
 }
