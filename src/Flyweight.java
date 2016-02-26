@@ -9,18 +9,21 @@
 public class Flyweight implements PRQuadNode{
 
 	//global static rep of itself to return that
-	global Flyweight fly = new Flyweight();
+	public static Flyweight fly;
 	
 	@Override
 	public boolean isLeaf() {
-		// TODO Auto-generated method stub
+		if (this.getClass().equals(PRQuadLeaf.class))
+			return true;
 		return false;
 	}
 
 	@Override
-	public PRQuadNode insert(Point p, int x, int y, int length) {
-		// TODO Auto-generated method stub
-		return null;
+	public PRQuadNode insert(Point p, int x, int y, int length)
+	{
+		PRQuadNode node = this;
+		PRQuadLeaf lef = new PRQuadLeaf(p);
+		return lef;
 	}
 
 }
