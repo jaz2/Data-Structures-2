@@ -12,7 +12,7 @@ public class Database
     /**
      * The SkipList
      */
-    public SkipList<String, Rect> skip; 
+    public SkipList<String, Point> skip; 
     
     public PRQuadtree pr;
 
@@ -21,8 +21,8 @@ public class Database
      */
     public Database()
     {
-        skip = new SkipList<String, Rect>();
-        pr = new PRQuadtree();
+        skip = new SkipList<String, Point>();
+        pr = new PRQuadtree(0, 0, 1024);
     }
 
     /**
@@ -37,24 +37,25 @@ public class Database
      */
     public void skipInsert(String id, int x, int y)
     {
-        Rect r = new Rect(id, x, y, w, h);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(id, r);
-        skip.insert(p); 
+        Point p = new Point(id, x, y);
+        KVPair<String, Point> k = new KVPair<String, Point>(id, p);
+        skip.insert(k); 
+        pr.insert(p, 0, 0, 1024);
     }
 
-    /**
-     * Calls the skiplist remove by coord
-     * @param x the x coord
-     * @param y the y coord
-     * @param w the width
-     * @param h the height
-     */
-    public void skipRemoveCoord(int x, int y)
-    {
-        Rect r = new Rect(null, x, y, w, h);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(null, r);
-        skip.removeByCoord(r);
-    }
+//    /**
+//     * Calls the skiplist remove by coord
+//     * @param x the x coord
+//     * @param y the y coord
+//     * @param w the width
+//     * @param h the height
+//     */
+//    public void skipRemoveCoord(int x, int y)
+//    {
+//        Rect r = new Rect(null, x, y, w, h);
+//        KVPair<String, Rect> p = new KVPair<String, Rect>(null, r);
+//        skip.removeByCoord(r);
+//    }
     
     //    /**
     //     * Searches for the rectangle through name

@@ -45,7 +45,7 @@ class LList<Point> {
 	// Append "it" to list
 	public boolean append(Object it) {
 		tail.setNext(new Link<Point>(null));
-		tail.setElement(it);
+		tail.setElement((Point)it);
 		tail = tail.next();
 		listSize++;
 		return true;

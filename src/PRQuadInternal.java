@@ -38,23 +38,23 @@ public class PRQuadInternal implements PRQuadNode {
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length) {
 		int nuLen = length/2;
-		if (p.getX() >= x + nuLen && p.getY() <= y + nuLen /*in.NE*/) //TODO!!!!!
+		if (p.getX() <= x + nuLen && p.getY() <= y + nuLen) //NW
+		{
+			NW = NW.insert(p, nuLen + x, y, nuLen);
+		}
+		if (p.getX() > x + nuLen && p.getY() <= y + nuLen) //NE
 		{ 
 			NE = NE.insert(p, nuLen + x, y, nuLen);
 		}
-		if (p.getX() >= x + nuLen && p.getY() <= y + nuLen /*in.NE*/)//CHANGE
-		{
-			NW = NW.insert(p, x, y, length);
+		if (p.getX() <= x + nuLen && p.getY() > y + nuLen) //SW
+		{ 
+			SW = SW.insert(p, nuLen + x, y, nuLen);
 		}
-		if (in SE)
-		{
-			SE = SE.insert();
+		if (p.getX() > x + nuLen && p.getY() > y + nuLen) //SE
+		{ 
+			SE = SE.insert(p, nuLen + x, y, nuLen);
 		}
-		if (in SW)
-		{
-			SW = SW.insert();
-		}
-		return in;
+		return this;
 	}
 
 }
