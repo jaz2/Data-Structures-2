@@ -16,8 +16,6 @@ public class Flyweight implements PRQuadNode{
 	 */
 	@Override
 	public boolean isLeaf() {
-		if (this.getClass().equals(PRQuadLeaf.class))
-			return true;
 		return false;
 	}
 
@@ -27,7 +25,6 @@ public class Flyweight implements PRQuadNode{
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length)
 	{
-		PRQuadNode node = this;
 		PRQuadLeaf lef = new PRQuadLeaf(p);
 		return lef;
 	}

@@ -36,11 +36,7 @@ public class PRQuadLeaf implements PRQuadNode {
 	 */
 	@Override
 	public boolean isLeaf() {
-		if (this.getClass().equals(PRQuadLeaf.class))
-		{
-			return true;
-		}
-		return false;
+		return true;
 	}
 
 	/**

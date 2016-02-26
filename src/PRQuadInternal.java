@@ -25,16 +25,21 @@ public class PRQuadInternal implements PRQuadNode {
 	 * Creates an internal node
 	 */
 	public PRQuadInternal()
-	{ //TODO ask about flyweight
+	{ 
+		NW = Flyweight.fly;
+		NE = Flyweight.fly;
+		SW = Flyweight.fly;
+		SE = Flyweight.fly;
 	}
 
 	@Override
 	public boolean isLeaf() {
-		if (this.getClass().equals(PRQuadLeaf.class))
-			return true;
 		return false;
 	}
-
+	
+	/**
+	 * Inserts in the regions based on where it is
+	 */
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length) {
 		int nuLen = length/2;

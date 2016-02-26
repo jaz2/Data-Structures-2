@@ -36,7 +36,7 @@ class LList<Point> {
 	// Insert "it" at current position
 	public boolean insert(Object it) {
 		curr.setNext(new Link<Point>(curr.element(), curr.next()));
-		curr.setElement(it);
+		curr.setElement((Point)it);
 		if (tail == curr) tail = curr.next();  // New tail
 		listSize++;
 		return true;
