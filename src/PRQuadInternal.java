@@ -4,9 +4,7 @@ public class PRQuadInternal implements PRQuadNode {
 	@Override
 	public boolean isLeaf() {
 		if (this.equals(PRQuadLeaf.class))
-		{
 			return true;
-			}
 		return false;
 	}
 
