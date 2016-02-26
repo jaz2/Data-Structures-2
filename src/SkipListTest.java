@@ -1,6 +1,6 @@
 import static org.junit.Assert.*;
 
-import java.awt.Rectangle;
+import java.awt.Pointangle;
 
 import student.TestCase;
 import student.TestableRandom;
@@ -31,9 +31,9 @@ public class SkipListTest extends TestCase
      */
     @Test
     public void testInsert() {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         assertTrue(s.insert(p));
         assertEquals(null, s.head.element());
     }
@@ -44,13 +44,13 @@ public class SkipListTest extends TestCase
     @Test
     public void testInsertMore()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
-        Rect uh = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> k = new KVPair<String, Rect>(uh.getName(), uh);
+        Point uh = new Point("b", 3, 4);
+        KVPair<String, Point> k = new KVPair<String, Point>(uh.getName(), uh);
         s.insert(k);
         assertEquals(null, s.head.element());
     }
@@ -61,23 +61,23 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordYes()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        Rect y = new Rect("a", 0, 1, 5, 4);
-        KVPair<String, Rect> l = new KVPair<String, Rect>(y.getName(), y);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        Point y = new Point("a", 0, 1);
+        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
         s.insert(l);
 
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, 
-                Rect>(re.getName(), re);        
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, 
+                Point>(re.getName(), re);        
         s.insert(p);
 
-        Rect f = new Rect("f", 5, 200, 3, 4);
-        KVPair<String, Rect> g = new KVPair<String, Rect>(f.getName(), f);
+        Point f = new Point("f", 5, 200);
+        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
         s.insert(g);
 
         s.removeByCoord(re);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (b, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("Point removed: (b, 1, 2)", output);
     }
 
     /**
@@ -86,58 +86,58 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordMult()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
 
-        Rect i = new Rect("q", 0, 0, 1, 1);
-        KVPair<String, Rect> w = new KVPair<String, Rect>(i.getName(), i);
+        Point i = new Point("q", 0, 0);
+        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
         s.insert(w);
 
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
 
         s.insert(p);
 
-        Rect nu = new Rect("a", 2, 4, 3, 4);
-        KVPair<String, Rect> m = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("a", 2, 4);
+        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(m);
 
-        Rect eh = new Rect("k", 6, 10, 7, 8);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(eh.getName(), eh);
+        Point eh = new Point("k", 6, 10);
+        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
         s.insert(n);
 
         s.removeByCoord(re);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (a, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("Point removed: (a, 1, 2)", output);
     }
 
     /**
-     * Tests when two rectangles have same dimensions 
+     * Tests when two Point have same dimensions 
      * but different names
      */
     public void testRemoveCoordDouble()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
 
-        Rect i = new Rect("a", 1, 1, 30, 30);
-        KVPair<String, Rect> w = new KVPair<String, Rect>(i.getName(), i);
+        Point i = new Point("a", 1, 1);
+        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
         s.insert(w);
 
-        Rect re = new Rect("b", 1, 1, 30, 30);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
+        Point re = new Point("b", 1, 1);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
 
         s.insert(p);
 
-        Rect nu = new Rect("c", 2, 4, 3, 4);
-        KVPair<String, Rect> m = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("c", 2, 4);
+        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(m);
 
-        Rect eh = new Rect("k", 6, 10, 7, 8);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(eh.getName(), eh);
+        Point eh = new Point("k", 6, 10);
+        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
         s.insert(n);
 
         s.removeByCoord(i);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (a, 1, 1, 30, 30)", output);
+        assertFuzzyEquals("Point removed: (a, 1, 1)", output);
     }
     
     /**
@@ -147,16 +147,16 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordNah()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         
-        Rect m = new Rect(null, 1, 2, 4, 4);
+        Point m = new Point(null, 1, 2);
 
         s.removeByCoord(m);
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 2, 4, 4,)", outt);
+        assertFuzzyEquals("Point not removed: (1, 2)", outt);
     }
     
     /**
@@ -167,16 +167,16 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordNahX()
     {
-        Rect re = new Rect("a", 1, 5, 3, 6);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 5);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         
-        Rect m = new Rect(null, 1, 2, 4, 4);
+        Point m = new Point(null, 1, 2);
 
         s.removeByCoord(m);
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 2, 4, 4,)", outt);
+        assertFuzzyEquals("Point not removed: (1, 2)", outt);
     }
     
     /**
@@ -187,16 +187,16 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordNahY()
     {
-        Rect re = new Rect("a", 1, 2, 3, 6);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         
-        Rect m = new Rect(null, 1, 2, 4, 4);
+        Point m = new Point(null, 1, 2);
 
         s.removeByCoord(m);
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 2, 4, 4,)", outt);
+        assertFuzzyEquals("Point not removed: (1, 2)", outt);
     }
     
     /**
@@ -207,16 +207,16 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordNahW()
     {
-        Rect re = new Rect("a", 1, 2, 4, 6);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         
-        Rect m = new Rect(null, 1, 2, 4, 4);
+        Point m = new Point(null, 1, 2);
 
         s.removeByCoord(m);
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 2, 4, 4,)", outt);
+        assertFuzzyEquals("Point not removed: (1, 2)", outt);
     }   
 
     /**
@@ -225,11 +225,11 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveCoordNull()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        Rect hm = new Rect(null, 1, 2, 3, 4);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        Point hm = new Point(null, 1, 2);
         s.removeByCoord(hm);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 2, 3, 4)", output);
+        assertFuzzyEquals("Point not removed: (1, 2)", output);
     }
 
     /**
@@ -238,23 +238,23 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameYasM()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        Rect y = new Rect("a", 0, 1, 5, 4);
-        KVPair<String, Rect> l = new KVPair<String, Rect>(y.getName(), y);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        Point y = new Point("a", 0, 1);
+        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
         s.insert(l);
 
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, 
-                Rect>(re.getName(), re);        
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, 
+                Point>(re.getName(), re);        
         s.insert(p);
 
-        Rect f = new Rect("f", 5, 200, 3, 4);
-        KVPair<String, Rect> g = new KVPair<String, Rect>(f.getName(), f);
+        Point f = new Point("f", 5, 200);
+        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
         s.insert(g);
 
         s.removeByName("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (a, 0, 1, 5, 4)", output);
+        assertFuzzyEquals("Point removed: (a, 0, 1)", output);
     }
     
     /**
@@ -264,23 +264,23 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameYasF()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        Rect y = new Rect("a", 0, 1, 5, 4);
-        KVPair<String, Rect> l = new KVPair<String, Rect>(y.getName(), y);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        Point y = new Point("a", 0, 1);
+        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
         s.insert(l);
 
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, 
-                Rect>(re.getName(), re);        
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, 
+                Point>(re.getName(), re);        
         s.insert(p);
 
-        Rect f = new Rect("f", 5, 200, 3, 4);
-        KVPair<String, Rect> g = new KVPair<String, Rect>(f.getName(), f);
+        Point f = new Point("f", 5, 200);
+        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
         s.insert(g);
 
         s.removeByName("b");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (b, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("Point removed: (b, 1, 2)", output);
     }
     
     /**
@@ -290,23 +290,23 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameYasL()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        Rect y = new Rect("a", 0, 1, 5, 4);
-        KVPair<String, Rect> l = new KVPair<String, Rect>(y.getName(), y);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        Point y = new Point("a", 0, 1);
+        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
         s.insert(l);
 
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, 
-                Rect>(re.getName(), re);        
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, 
+                Point>(re.getName(), re);        
         s.insert(p);
 
-        Rect f = new Rect("f", 5, 200, 3, 4);
-        KVPair<String, Rect> g = new KVPair<String, Rect>(f.getName(), f);
+        Point f = new Point("f", 5, 200);
+        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
         s.insert(g);
 
         s.removeByName("f");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (f, 5, 200, 3, 4)", output);
+        assertFuzzyEquals("Point removed: (f, 5, 200)", output);
     }
 
     /**
@@ -315,28 +315,28 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameMult()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
 
-        Rect i = new Rect("q", 0, 0, 1, 1);
-        KVPair<String, Rect> w = new KVPair<String, Rect>(i.getName(), i);
+        Point i = new Point("q", 0, 0);
+        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
         s.insert(w);
 
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
 
         s.insert(p);
 
-        Rect nu = new Rect("a", 2, 4, 3, 4);
-        KVPair<String, Rect> m = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("a", 2, 4);
+        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(m);
 
-        Rect eh = new Rect("k", 6, 10, 7, 8);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(eh.getName(), eh);
+        Point eh = new Point("k", 6, 10);
+        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
         s.insert(n);
 
         s.removeByName("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle removed: (a, 2, 4, 3, 4)", output);
+        assertFuzzyEquals("Point removed: (a, 2, 4)", output);
     }
 
     /**
@@ -346,14 +346,14 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameNah()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
         s.removeByName("b");
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: b", outt);
+        assertFuzzyEquals("Point not found: b", outt);
     }
     
     /**
@@ -363,13 +363,13 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameNah2()
     {
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         s.removeByName("a");
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: a", outt);
+        assertFuzzyEquals("Point not found: a", outt);
     }
 
     /**
@@ -378,10 +378,10 @@ public class SkipListTest extends TestCase
     @Test
     public void testRemoveNameNull()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.removeByName("roar");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: roar", output);
+        assertFuzzyEquals("Point not found: roar", output);
     }
     
     /**
@@ -389,21 +389,21 @@ public class SkipListTest extends TestCase
      */
     public void testSearch270()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
-        Rect nu = new Rect("c", 2, 2, 4, 4);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("c", 2, 2);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(n);
         
-        Rect or = new Rect("d", 2, 8, 4, 49);
-        KVPair<String, Rect> me = new KVPair<String, Rect>(or.getName(), or);
+        Point or = new Point("d", 2, 8);
+        KVPair<String, Point> me = new KVPair<String, Point>(or.getName(), or);
         s.insert(me);
         s.search("b");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: b", output);
+        assertFuzzyEquals("Point not found: b", output);
     }
 
     /**
@@ -411,28 +411,28 @@ public class SkipListTest extends TestCase
      */
     public void testSearchSame4()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
-        Rect nu = new Rect("a", 2, 2, 4, 4);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("a", 2, 2);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(n);
         
-        Rect or = new Rect("a", 2, 8, 4, 49);
-        KVPair<String, Rect> me = new KVPair<String, Rect>(or.getName(), or);
+        Point or = new Point("a", 2, 8);
+        KVPair<String, Point> me = new KVPair<String, Point>(or.getName(), or);
         s.insert(me);
         
-        Rect or1 = new Rect("b", 2, 8, 4, 49);
-        KVPair<String, Rect> me1 = new KVPair<String, Rect>(or1.getName(), or1);
+        Point or1 = new Point("b", 2, 8);
+        KVPair<String, Point> me1 = new KVPair<String, Point>(or1.getName(), or1);
         s.insert(me1);
         
         s.search("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("(a, 2, 8, 4, 49)\n"
-                + "(a, 2, 2, 4, 4)\n"
-                + "(a, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("(a, 2, 8)\n"
+                + "(a, 2, 2)\n"
+                + "(a, 1, 2)", output);
     }
     
     /**
@@ -441,13 +441,13 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchNot()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         s.search("b");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: b", output);
+        assertFuzzyEquals("Point not found: b", output);
     }
 
     /**
@@ -456,10 +456,10 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchNull()
     {
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.search("roar");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: roar", output);
+        assertFuzzyEquals("Point not found: roar", output);
     }
 
     /**
@@ -469,13 +469,13 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchYes()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
         s.search("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("(a, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("(a, 1, 2)", output);
     }
 
     /**
@@ -485,14 +485,14 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchNah()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
         s.search("b");
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: b", outt);
+        assertFuzzyEquals("Point not found: b", outt);
     }
 
 
@@ -502,18 +502,18 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchSame()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
-        Rect nu = new Rect("a", 2, 2, 4, 4);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("a", 2, 2);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(n);
         s.search("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("(a, 2, 2, 4, 4)\n"
-                + "(a, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("(a, 2, 2)\n"
+                + "(a, 1, 2)", output);
     }
 
     /**
@@ -522,24 +522,24 @@ public class SkipListTest extends TestCase
     @Test
     public void testSearchSame3()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.insert(p);
 
-        Rect nu = new Rect("a", 2, 2, 4, 4);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(nu.getName(), nu);
+        Point nu = new Point("a", 2, 2);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), nu);
         s.insert(n);
 
-        Rect or = new Rect("a", 2, 8, 4, 49);
-        KVPair<String, Rect> me = new KVPair<String, Rect>(or.getName(), or);
+        Point or = new Point("a", 2, 8);
+        KVPair<String, Point> me = new KVPair<String, Point>(or.getName(), or);
         s.insert(me);
 
         s.search("a");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("(a, 2, 8, 4, 49)\n"
-                + "(a, 2, 2, 4, 4)\n"
-                + "(a, 1, 2, 3, 4)", output);
+        assertFuzzyEquals("(a, 2, 8)\n"
+                + "(a, 2, 2)\n"
+                + "(a, 1, 2)", output);
     }
 
     /**
@@ -549,7 +549,7 @@ public class SkipListTest extends TestCase
     public void testDumpNoInserts()
     {
         TestableRandom.setNextInts(2, 2, 2);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.dump();
         String output = systemOut().getHistory();
         assertFuzzyEquals("SkipList dump: \n"
@@ -564,17 +564,17 @@ public class SkipListTest extends TestCase
     public void testDumpWith1Insert()
     {
         TestableRandom.setNextInts(3, 3, 3);
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
-        SkipList<String, Rect> s1 = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        SkipList<String, Point> s1 = new SkipList<String, Point>();
         s.insert(p);
         s1.controlledInsert(p, 1);
         s1.dump();
         String output = systemOut().getHistory();
         assertFuzzyEquals("SkipList dump: \n"
                 + "Node has depth 1, Value (null)\n"
-                + "Node has depth 1, Value (a, 1, 2, 3, 4)\n"
+                + "Node has depth 1, Value (a, 1, 2)\n"
                 + "SkipList size is: 1", output);
     }
 
@@ -585,19 +585,19 @@ public class SkipListTest extends TestCase
     public void testDumpWith2Inserts()
     {
         TestableRandom.setNextInts(2, 2, 2);
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.controlledInsert(p, 2);
-        Rect re1 = new Rect("hey", 1, 2, 12, 4);
-        KVPair<String, Rect> p1 = new KVPair<String, Rect>(re1.getName(), re1);
+        Point re1 = new Point("hey", 1, 2);
+        KVPair<String, Point> p1 = new KVPair<String, Point>(re1.getName(), re1);
         s.insert(p1);
         s.dump();
         String output = systemOut().getHistory();
         assertFuzzyEquals("SkipList dump: \n"
                 + "Node has depth 2, Value (null)\n"
-                + "Node has depth 2, Value (a, 1, 2, 3, 4)\n"
-                + "Node has depth 2, Value (hey, 1, 2, 12, 4)\n"
+                + "Node has depth 2, Value (a, 1, 2)\n"
+                + "Node has depth 2, Value (hey, 1, 2)\n"
                 + "SkipList size is: 2", output);
     }    
 
@@ -606,9 +606,9 @@ public class SkipListTest extends TestCase
      */
     @Test
     public void testInsertBool() {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         assertTrue(s.controlledInsert(p, 2));
         assertEquals(null, s.head.element());
     }
@@ -619,13 +619,13 @@ public class SkipListTest extends TestCase
     @Test
     public void testInsertBoolMore()
     {
-        Rect re = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.controlledInsert(p, 2);
 
-        Rect uh = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> k = new KVPair<String, Rect>(uh.getName(), uh);
+        Point uh = new Point("b", 1, 2);
+        KVPair<String, Point> k = new KVPair<String, Point>(uh.getName(), uh);
         s.controlledInsert(k, 2);
         assertEquals(null, s.head.element());
     }
@@ -636,17 +636,17 @@ public class SkipListTest extends TestCase
     @Test
     public void testRegionSearch()
     {
-        SkipList<String, Rect> skip = new SkipList<String, Rect>();
-        Rect r1 = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p1 = new KVPair<String, Rect>(r1.getName(), r1);
-        Rect r2 = new Rect("b", 1, 5, 3, 4);
-        KVPair<String, Rect> p2 = new KVPair<String, Rect>(r2.getName(), r2);
-        Rect r3 = new Rect("c", 4, 4, 2, 4);
-        KVPair<String, Rect> p3 = new KVPair<String, Rect>(r3.getName(), r3);
-        Rect r4 = new Rect("d", 6, 6, 2, 2);
-        KVPair<String, Rect> p4 = new KVPair<String, Rect>(r4.getName(), r4);
-        Rect r5 = new Rect("a", 11, 5, 7, 2);
-        KVPair<String, Rect> p5 = new KVPair<String, Rect>(r5.getName(), r5);
+        SkipList<String, Point> skip = new SkipList<String, Point>();
+        Point r1 = new Point("a", 1, 2);
+        KVPair<String, Point> p1 = new KVPair<String, Point>(r1.getName(), r1);
+        Point r2 = new Point("b", 1, 5);
+        KVPair<String, Point> p2 = new KVPair<String, Point>(r2.getName(), r2);
+        Point r3 = new Point("c", 4, 4);
+        KVPair<String, Point> p3 = new KVPair<String, Point>(r3.getName(), r3);
+        Point r4 = new Point("d", 6, 6);
+        KVPair<String, Point> p4 = new KVPair<String, Point>(r4.getName(), r4);
+        Point r5 = new Point("a", 11, 5);
+        KVPair<String, Point> p5 = new KVPair<String, Point>(r5.getName(), r5);
         skip.insert(p1);
         skip.insert(p5);
         skip.insert(p3);
@@ -654,8 +654,8 @@ public class SkipListTest extends TestCase
         skip.insert(p2);
         skip.regionsearch(1, 2, 3, 4);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangles intersecting region (1, 2, 3, 4):\n"
-                + "(a, 1, 2, 3, 4)\n" + "(b, 1, 5, 3, 4)\n", output);
+        assertFuzzyEquals("Point intersecting region (1, 2):\n"
+                + "(a, 1, 2)\n" + "(b, 1, 5)\n", output);
         skip.regionsearch(6, 6, 2, 2);
     }
 
@@ -665,17 +665,17 @@ public class SkipListTest extends TestCase
     @Test
     public void testIntersections()
     {
-        SkipList<String, Rect> skip = new SkipList<String, Rect>();
-        Rect r1 = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p1 = new KVPair<String, Rect>(r1.getName(), r1);
-        Rect r2 = new Rect("b", 1, 5, 3, 4);
-        KVPair<String, Rect> p2 = new KVPair<String, Rect>(r2.getName(), r2);
-        Rect r3 = new Rect("c", 4, 4, 2, 4);
-        KVPair<String, Rect> p3 = new KVPair<String, Rect>(r3.getName(), r3);
-        Rect r4 = new Rect("d", 6, 6, 2, 2);
-        KVPair<String, Rect> p4 = new KVPair<String, Rect>(r4.getName(), r4);
-        Rect r5 = new Rect("a", 11, 5, 7, 2);
-        KVPair<String, Rect> p5 = new KVPair<String, Rect>(r5.getName(), r5);
+        SkipList<String, Point> skip = new SkipList<String, Point>();
+        Point r1 = new Point("a", 1, 2);
+        KVPair<String, Point> p1 = new KVPair<String, Point>(r1.getName(), r1);
+        Point r2 = new Point("b", 1, 5);
+        KVPair<String, Point> p2 = new KVPair<String, Point>(r2.getName(), r2);
+        Point r3 = new Point("c", 4, 4);
+        KVPair<String, Point> p3 = new KVPair<String, Point>(r3.getName(), r3);
+        Point r4 = new Point("d", 6, 6);
+        KVPair<String, Point> p4 = new KVPair<String, Point>(r4.getName(), r4);
+        Point r5 = new Point("a", 11, 5);
+        KVPair<String, Point> p5 = new KVPair<String, Point>(r5.getName(), r5);
         skip.insert(p1);
         skip.insert(p5);
         skip.insert(p3);
@@ -683,21 +683,21 @@ public class SkipListTest extends TestCase
         skip.insert(p2);
         skip.intersections();
         String output = systemOut().getHistory();
-        assertFuzzyEquals("(a, 1, 2, 3, 4 | b, 1, 5, 3, 4)\n"
-                + "(b, 1, 5, 3, 4 | a, 1, 2, 3, 4)\n", output);
+        assertFuzzyEquals("(a, 1, 2 | b, 1, 5)\n"
+                + "(b, 1, 5 | a, 1, 2)\n", output);
     }
     
     /**
      * Tests the controlled insert method
      */
     public void testControlledInsert() {
-        Rect re = new Rect("b", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(re.getName(), re);
-        Rect re1 = new Rect("c", 2, 2, 3, 4);
-        KVPair<String, Rect> p1 = new KVPair<String, Rect>(re1.getName(), re1);
-        Rect re2 = new Rect("a", 2, 7, 3, 4);
-        KVPair<String, Rect> p2 = new KVPair<String, Rect>(re2.getName(), re2);
-        SkipList<String, Rect> s = new SkipList<String, Rect>();
+        Point re = new Point("b", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        Point re1 = new Point("c", 2, 2);
+        KVPair<String, Point> p1 = new KVPair<String, Point>(re1.getName(), re1);
+        Point re2 = new Point("a", 2, 7);
+        KVPair<String, Point> p2 = new KVPair<String, Point>(re2.getName(), re2);
+        SkipList<String, Point> s = new SkipList<String, Point>();
         s.controlledInsert(p, 4);
         s.controlledInsert(p1, 12);
         assertTrue(s.controlledInsert(p2, 6));

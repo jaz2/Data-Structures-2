@@ -372,22 +372,22 @@ public class SkipList<K extends Comparable<K>, E> {
         System.out.println("Rectangles intersecting region (" + x
                 + ", " + y + ", " + w + ", " + h + "):");
         SkipNode node = head;
-        Rect r;
-        Rect rect = new Rect("rs", x, y, w, h);
-        for (int i = 1; i <= size + 0; i++)
-        {
-            r = (Rect) node.forward[0].element.value();
-            if (r.intersects(rect))
-            {
-                if (rect.intersects(r))
-                {
-                    System.out.println("(" 
-                            + node.forward[0].element.key() + ", "
-                            + node.forward[0].element.value().toString() + ")");
-                }
-            }
-            node = node.forward[0];
-        } 
+//        Rect r;
+//        Rect rect = new Rect("rs", x, y, w, h);
+//        for (int i = 1; i <= size + 0; i++)
+//        {
+//            r = (Rect) node.forward[0].element.value();
+//            if (r.intersects(rect))
+//            {
+//                if (rect.intersects(r))
+//                {
+//                    System.out.println("(" 
+//                            + node.forward[0].element.key() + ", "
+//                            + node.forward[0].element.value().toString() + ")");
+//                }
+//            }
+//            node = node.forward[0];
+//        } 
     }
 
     
@@ -399,34 +399,34 @@ public class SkipList<K extends Comparable<K>, E> {
     {
         SkipNode node1 = head;
         SkipNode node2;
-        Rect r1;
-        Rect r2;
-        for (int i = 1; i <= size; i++)
-        {
-            r1 = (Rect) node1.forward[0].element.value();
-            node2 = head;
-            for (int j = 1; j <= size; j++)
-            {
-                r2 = (Rect) node2.forward[0].element.value();
-                if (node1.forward[0] != node2.forward[0])
-                {
-                    if (r1.intersects(r2) && r2.intersects(r1))
-                    {
-                        System.out.println("(" + node1.forward[0].
-                                element.key() + ", " + 
-                                    node1.forward[0].element.value()
-                                        .toString() + " | " + node2.
-                                            forward[0].element.key() + 
-                                                ", " + node2.forward[0].element.
-                                                    value().toString() + ")");
-                    }
-                }
-
-                node2 = node2.forward[0];
-            }
-
-            node1 = node1.forward[0];
-        } 
+//        Rect r1;
+//        Rect r2;
+//        for (int i = 1; i <= size; i++)
+//        {
+//            r1 = (Rect) node1.forward[0].element.value();
+//            node2 = head;
+//            for (int j = 1; j <= size; j++)
+//            {
+//                r2 = (Rect) node2.forward[0].element.value();
+//                if (node1.forward[0] != node2.forward[0])
+//                {
+//                    if (r1.intersects(r2) && r2.intersects(r1))
+//                    {
+//                        System.out.println("(" + node1.forward[0].
+//                                element.key() + ", " + 
+//                                    node1.forward[0].element.value()
+//                                        .toString() + " | " + node2.
+//                                            forward[0].element.key() + 
+//                                                ", " + node2.forward[0].element.
+//                                                    value().toString() + ")");
+//                    }
+//                }
+//
+//                node2 = node2.forward[0];
+//            }
+//
+//            node1 = node1.forward[0];
+//        } 
     }
     
 }
