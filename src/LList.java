@@ -8,7 +8,7 @@
  *
  */
 // Linked list implementation
-class LList implements List<Point> {
+class LList {
 	private Link<Point> head;         // Pointer to list header
 	private Link<Point> tail;         // Pointer to last element
 	private Link<Point> curr;         // Access to current element
