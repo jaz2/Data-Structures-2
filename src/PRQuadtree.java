@@ -13,14 +13,14 @@ public class PRQuadtree{
 	 * @author Jazmine Zurita and Jessica McCready
 	 *
 	 */
-	public interface PRQuadNode extends PRQuadTree
+	public interface PRQuadNode
 	{
 		//change to an interface
 		//separate insert to each class
 		public void insert(Point p, int xco, int yco, int length) 
 		{
 			PRQuadNode node = this;
-			
+
 			if (this == fly) //should point to a fly and when u create it should point to a leaf
 			{
 				PRQuadLeaf lef = new PRQuadLeaf(p);
@@ -28,21 +28,13 @@ public class PRQuadtree{
 			}
 			if (node.getClass().equals(PRQuadLeaf.class))
 			{
-					
+
 				//here is when u make it internal
 
 			}
 			if (node.getClass().equals(PRQuadInternal.class))
 			{
-				PRQuadInternal in = (PRQuadInternal)node;
-				int nuLen = length/2;
-				if (p.getX() >= xco + nuLen && p.getY() <= yco + nuLen /*in.NE*/) //TODO!!!!!
-				{ 
-					in.NE = insert(p, nuLen + xco, yco, nuLen);
-				}
-				if (in == in.NW)
-				{}
-				return in;
+				
 			}
 			return node;
 		}
@@ -67,7 +59,7 @@ public class PRQuadtree{
 			l = new LinkedList<Point>();// need to make our own linked list class
 			l.add(p);
 		}
-		
+
 		public void insert(Point p, int xco, int yco, int length)
 		{
 			PRQuadLeaf lef = (PRQuadLeaf)this; 
@@ -90,7 +82,7 @@ public class PRQuadtree{
 				{
 					if (lef.l.getLast().equals(p)) //they are the same
 					{
-						lef = insert(p,xco, yxo, length)//(call insert method)
+						lef = insert(p, xco, yco, length);//(call insert method)
 					}
 					else //split
 					{
@@ -107,7 +99,7 @@ public class PRQuadtree{
 					return in;
 				}	
 			}
-			
+
 		}
 	}
 
@@ -148,6 +140,30 @@ public class PRQuadtree{
 			NW = fly;
 			SE = fly;
 			SW = fly;
+		}
+		//can have an isleaf function to check for it in the interface
+
+		public PRQuadNode insert(Point p, int xco, int yco, int length)
+		{
+			PRQuadInternal in = (PRQuadInternal)this;
+			int nuLen = length/2;
+			if (p.getX() >= xco + nuLen && p.getY() <= yco + nuLen /*in.NE*/) //TODO!!!!!
+			{ 
+				in.NE = insert(p, nuLen + xco, yco, nuLen);
+			}
+			if (p.getX() >= xco + nuLen && p.getY() <= yco + nuLen /*in.NE*/)//CHANGE
+			{
+				in.NW = insert();
+			}
+			if (in SE)
+			{
+				in.SE = insert();
+			}
+			if (in SW)
+			{
+				in.SW = insert();
+			}
+			return in;
 		}
 	}
 
