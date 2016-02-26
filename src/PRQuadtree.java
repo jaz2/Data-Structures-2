@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+
 
 /**
  * Stores the points into leaves
@@ -7,43 +7,12 @@ import java.util.LinkedList;
  *
  */
 public class PRQuadtree{
-
-	/**
-	 * Used to look at leaf and internal
-	 * @author Jazmine Zurita and Jessica McCready
-	 *
-	 */
-	public interface PRQuadNode
-	{
-		//change to an interface
-		//separate insert to each class
-		public void insert(Point p, int xco, int yco, int length) 
-		{
-			PRQuadNode node = this;
-
-			if (this == fly) //should point to a fly and when u create it should point to a leaf
-			{
-				PRQuadLeaf lef = new PRQuadLeaf(p);
-				return lef; 
-			}
-			if (node.getClass().equals(PRQuadLeaf.class))
-			{
-
-				//here is when u make it internal
-
-			}
-			if (node.getClass().equals(PRQuadInternal.class))
-			{
-				
-			}
-			return node;
-		}
-	}
-
+	
 	/**
 	 * The root 
 	 */
 	public PRQuadNode root;
+	
 
 	/**
 	 * The x coord
@@ -69,7 +38,7 @@ public class PRQuadtree{
 	 */
 	public PRQuadtree(int xcoord, int ycoord, int len)
 	{
-		root = fly; //don't initialize vals in fly, initialize a new node obj and store it there
+		root = Flyweight.fly; //don't initialize vals in fly, initialize a new node obj and store it there
 		x = xcoord;
 		y = ycoord;
 		length = len;
