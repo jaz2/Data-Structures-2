@@ -37,6 +37,12 @@ public class PRQuadInternal implements PRQuadNode {
 		return false;
 	}
 	
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 	/**
 	 * Inserts in the regions based on where it is
 	 */
@@ -61,5 +67,4 @@ public class PRQuadInternal implements PRQuadNode {
 		}
 		return this;
 	}
-
 }
