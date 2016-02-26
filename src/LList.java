@@ -8,7 +8,7 @@
  *
  */
 // Linked list implementation
-class LList {
+class LList<Point> {
 	private Link<Point> head;         // Pointer to list header
 	private Link<Point> tail;         // Pointer to last element
 	private Link<Point> curr;         // Access to current element
@@ -93,11 +93,17 @@ class LList {
 	}
 
 	// Move down list to "pos" position
-	public boolean moveToPos(int pos) {
-		if ((pos < 0) || (pos > listSize)) return false;
+	public Object moveToPos(int pos) {
+		if ((pos < 0) || (pos > listSize)) 
+		{
+			return false;
+		}
 		curr = head.next();
-		for(int i=0; i<pos; i++) curr = curr.next();
-		return true;
+		for(int i = 0; i < pos; i++) 
+		{
+			curr = curr.next();
+		}
+		return curr.element();
 	}
 
 	// Return true if current position is at end of the list

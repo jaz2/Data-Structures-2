@@ -1,7 +1,4 @@
-import java.util.LinkedList;
 
-import PRQuadtree.PRQuadInternal;
-import PRQuadtree.PRQuadLeaf;
 
 /**
  * 
@@ -12,8 +9,8 @@ import PRQuadtree.PRQuadLeaf;
  *
  */
 public class PRQuadLeaf implements PRQuadNode {
-	
-	LinkedList<Point> l;
+
+	LList<Point> l;
 
 	/**
 	 * Handles the points
@@ -22,10 +19,21 @@ public class PRQuadLeaf implements PRQuadNode {
 	 */
 	public PRQuadLeaf(Point p) //IS THIS CORRECT TODO
 	{
-		l = new LinkedList<Point>();// need to make our own linked list class
-		l.add(p);
+		l = new LList<Point>();// need to make our own linked list class
+		l.insert(p);
 	}
 
+
+	@Override
+	public boolean isEmpty() {
+		if (l.length() == 0)
+			return true;
+		return false;
+	}
+
+	/**
+	 * Checks if it is a leaf
+	 */
 	@Override
 	public boolean isLeaf() {
 		if (this.getClass().equals(PRQuadLeaf.class))
@@ -35,48 +43,50 @@ public class PRQuadLeaf implements PRQuadNode {
 		return false;
 	}
 
+	/**
+	 * Inserts into a leaf and splits based on number of points
+	 */
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length) {
-		// TODO Auto-generated method stub
-		PRQuadLeaf lef = (PRQuadLeaf)this; 
-		//insert
-		if (lef.l.size() >= 2)
+		if (l.length() >= 2)
 		{
-			//insert
+			l.insert(p);
+			return this;
 		}
 		else 
 		{ //check duplicates if they are the same you don't split
 			int count = 0; //if they are not then count to 4 and split
-			for (int i = 0; i < lef.l.size() - 2; i++)
+			for (int i = 0; i < l.length() - 2; i++)
 			{
-				if (lef.l.get(i).equals(lef.l.get(i + 1)))	
+				if (l.moveToPos(i).equals(l.moveToPos(i + 1)))	
 				{
 					count++;
 				}
 			}
-			if (count == lef.l.size() - 1)
+			if (count == l.length() - 1)
 			{
-				if (lef.l.getLast().equals(p)) //they are the same
+				if (l.getValue().equals(p)) //they are the same
 				{
-					lef = insert(p, xco, yco, length);//(call insert method)
+					l.insert(p);
+					return this;
+
 				}
 				else //split
 				{
 					PRQuadInternal in = new PRQuadInternal();
-					//do something
+					insert((Point)l.moveToPos(0), x, y, length);
 					return in;
 				}
 			}					
 			else //are not the same
-			{
-				//split
+			{ //split
 				PRQuadInternal in = new PRQuadInternal();
-				//something
+				insert((Point)l.moveToPos(0), x, y, length);
 				return in;
 			}	
 		}
 
 	}
-	}
-
 }
+
+
