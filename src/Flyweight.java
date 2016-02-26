@@ -32,4 +32,10 @@ public class Flyweight implements PRQuadNode{
 		return lef;
 	}
 
+	@Override
+	public boolean isEmpty() 
+	{
+		return true;
+	}
+
 }
