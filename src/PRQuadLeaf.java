@@ -56,6 +56,7 @@ public class PRQuadLeaf implements PRQuadNode {
 		if (l.length() <= 2)
 		{
 			l.insert(p);
+			u = this;
 			return this;
 		}
 		else 
@@ -73,6 +74,7 @@ public class PRQuadLeaf implements PRQuadNode {
 				if (l.getValue().equals(p)) //they are the same
 				{
 					l.insert(p);
+					u = this;
 					return this;
 
 				}
@@ -80,6 +82,7 @@ public class PRQuadLeaf implements PRQuadNode {
 				{
 					PRQuadInternal in = new PRQuadInternal();
 					insert((Point)l.moveToPos(0), x, y, length);
+					u = in;
 					return in;
 				}
 			}					
@@ -87,6 +90,7 @@ public class PRQuadLeaf implements PRQuadNode {
 			{ //split
 				PRQuadInternal in = new PRQuadInternal();
 				insert((Point)l.moveToPos(0), x, y, length);
+				u = in;
 				return in;
 			}	
 		}
