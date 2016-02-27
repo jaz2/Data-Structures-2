@@ -23,7 +23,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void setUp()
     {
-        //Rectangle1 r = new Rectangle1();
+        //Point1 r = new Point1();
     }
 
     /**
@@ -33,7 +33,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertInBounds() throws IOException
     {
-        String s = "insert a 1 1 2 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -41,7 +41,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point inserted: (a, 1, 1)", output);
     }
 
     /**
@@ -51,7 +51,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutXGreat() throws IOException
     {
-        String s = "insert a 1025 1 2 4";
+        String s = "insert a 1025 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -59,7 +59,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1025, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1025, 1)", output);
     }
 
     /**
@@ -69,7 +69,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsXLess() throws IOException
     {
-        String s = "insert a -1 1 2 4";
+        String s = "insert a -1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -77,7 +77,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, -1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, -1, 1)", output);
     }
 
     /**
@@ -86,7 +86,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testInsertBothLessThan() throws IOException
     {
-        String s = "insert a -1 -1 2 4";
+        String s = "insert a -1 -1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -94,7 +94,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, -1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, -1, -1)", output);
     }
 
     /**
@@ -104,7 +104,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsYLess() throws IOException
     {
-        String s = "insert a 1 -1 2 4";
+        String s = "insert a 1 -1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -112,7 +112,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, -1)", output);
     }
 
     /**
@@ -122,7 +122,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testStillInsBounds() throws IOException
     {
-        String s = "insert a 0 0 1024 1024";
+        String s = "insert a 0 0";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -130,7 +130,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 0, 0, 1024, 1024)", output);
+        assertFuzzyEquals("Point inserted: (a, 0, 0)", output);
     }
 
    
@@ -142,7 +142,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testOutInsX() throws IOException
     {
-        String s = "insert a 1024 0 4 7";
+        String s = "insert a 1024 0";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -150,7 +150,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1024, 0, 4, 7)", output);
+        assertFuzzyEquals("Point rejected: (a, 1024, 0)", output);
     }
 
     /**
@@ -160,7 +160,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testOutInsY() throws IOException
     {
-        String s = "insert a 2 1024 4 7";
+        String s = "insert a 2 1024";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -168,7 +168,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 2, 1024, 4, 7)", output);
+        assertFuzzyEquals("Point rejected: (a, 2, 1024)", output);
     }
 
     /**
@@ -178,7 +178,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsBoundsY() throws IOException
     {
-        String s = "insert a 100 0 5 5";
+        String s = "insert a 100 0";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -186,7 +186,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 100, 0, 5, 5)", output);
+        assertFuzzyEquals("Point inserted: (a, 100, 0)", output);
     }
 
     /**
@@ -196,7 +196,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutYGreat() throws IOException
     {
-        String s = "insert a 1 1025 2 4";
+        String s = "insert a 1 1025";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -204,7 +204,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1025, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1025)", output);
     }
 
     /**
@@ -214,7 +214,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsWLess() throws IOException
     {
-        String s = "insert a 1 1 -1 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -222,7 +222,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, -1, 1, -1, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, -1, 1)", output);
     }
 
     /**
@@ -232,7 +232,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutWGreat() throws IOException
     {
-        String s = "insert a 1 1 2000 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -240,7 +240,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1, 2000, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -250,7 +250,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutWZero() throws IOException
     {
-        String s = "insert a 1 1 0 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -258,7 +258,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1, 0, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -268,7 +268,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutWOK() throws IOException
     {
-        String s = "insert a 1 1 2 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -276,7 +276,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point inserted: (a, 1, 1)", output);
     }
 
     /**
@@ -286,7 +286,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsHLess() throws IOException
     {
-        String s = "insert a 1 1 2 -4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -294,7 +294,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1, 2, -4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -304,7 +304,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsOutHGreat() throws IOException
     {
-        String s = "insert a 1 1 2 4000";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -312,7 +312,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1, 2, 4000)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -322,7 +322,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsHOK() throws IOException
     {
-        String s = "insert a 1 1 2 4";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -330,7 +330,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point inserted: (a, 1, 1)", output);
     }
 
 
@@ -341,7 +341,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsHZero() throws IOException
     {
-        String s = "insert a 1 1 2 0";
+        String s = "insert a 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -349,7 +349,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1, 2, 0)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -358,7 +358,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testInsTotalWidthNotinBoundsG() throws IOException
     {
-        String s = "insert a 1000 10 2000 4";
+        String s = "insert a 1000 10";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -366,7 +366,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1000, 10, 2000, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, 1000, 10)", output);
     }
 
     /**
@@ -375,7 +375,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testInsTotalWidthNotinBoundsL() throws IOException
     {
-        String s = "insert a 1000 10 -2000 4";
+        String s = "insert a 1000 10";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -383,8 +383,8 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, "
-                + "1000, 10, -2000, 4)", output);
+        assertFuzzyEquals("Point rejected: (a, "
+                + "1000, 10)", output);
     }
 
     /**
@@ -393,7 +393,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testInsTotalinBounds() throws IOException
     {
-        String s = "insert a 1000 10 10 4";
+        String s = "insert a 1000 10";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -401,7 +401,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 1000, 10, 10, 4)", output);
+        assertFuzzyEquals("Point inserted: (a, 1000, 10)", output);
     }
 
     /**
@@ -411,7 +411,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsTotalHeightNotinBounds() throws IOException
     {
-        String s = "insert a 1 1000 2 450";
+        String s = "insert a 1 1000";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -419,7 +419,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (a, 1, 1000, 2, 450)", output);
+        assertFuzzyEquals("Point rejected: (a, 1, 1000)", output);
     }
 
     /**
@@ -429,7 +429,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testOutRemX() throws IOException
     {
-        String s = "remove 1024 0 4 7";
+        String s = "remove 1024 0";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -437,7 +437,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1024, 0, 4, 7)", output);
+        assertFuzzyEquals("Point rejected: (1024, 0)", output);
     }
 
     /**
@@ -447,7 +447,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testOutRemY() throws IOException
     {
-        String s = "remove 2 1024 4 7";
+        String s = "remove 2 1024";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -455,7 +455,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 1024, 4, 7)", output);
+        assertFuzzyEquals("Point rejected: (2, 1024)", output);
     }
 
     /**
@@ -465,8 +465,8 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemBoundsY() throws IOException
     {
-        String s = "insert a 100 0 5 5\n"
-                + "remove 100 0 5 5";
+        String s = "insert a 100 0\n"
+                + "remove 100 0";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -474,8 +474,8 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle inserted: (a, 100, 0, 5, 5)\n"
-                + "Rectangle removed: (a, 100, 0, 5, 5)", output);
+        assertFuzzyEquals("Point inserted: (a, 100, 0)\n"
+                + "Point removed: (a, 100, 0)", output);
     }
 
     /**
@@ -485,7 +485,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutYGreat() throws IOException
     {
-        String s = "remove 1 1025 2 4";
+        String s = "remove 1 1025";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -493,7 +493,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1025, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (1, 1025)", output);
     }
 
     /**
@@ -503,7 +503,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemoveOfBoundsWLess() throws IOException
     {
-        String s = "remove 1 1 -1 4";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -511,7 +511,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (-1, 1, -1, 4)", output);
+        assertFuzzyEquals("Point rejected: (-1, 1)", output);
     }
 
     /**
@@ -521,7 +521,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutWGreat() throws IOException
     {
-        String s = "remove 1 1 2000 4";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -529,7 +529,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1, 2000, 4)", output);
+        assertFuzzyEquals("Point rejected: (1, 1)", output);
     }
 
     /**
@@ -539,7 +539,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutWZero() throws IOException
     {
-        String s = "remove 1 1 0 4";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -547,7 +547,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1, 0, 4)", output);
+        assertFuzzyEquals("Point rejected: (1, 1)", output);
     }
 
 //    /**
@@ -565,7 +565,7 @@ public class CommandProcessorTest extends TestCase
 //        w.close();
 //        new CommandProcessor(f);
 //        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Rectangle inserted: (a, 1, 1, 2, 4)", output);
+//        assertFuzzyEquals("Point inserted: (a, 1, 1, 2, 4)", output);
 //    }
 
     /**
@@ -575,7 +575,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutOfBoundsHLess() throws IOException
     {
-        String s = "remove 1 1 2 -4";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -583,7 +583,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1, 2, -4)", output);
+        assertFuzzyEquals("Point rejected: (1, 1)", output);
     }
 
     /**
@@ -593,7 +593,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutHGreat() throws IOException
     {
-        String s = "remove 1 1 2 4000";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -601,7 +601,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1, 2, 4000)", output);
+        assertFuzzyEquals("Point rejected: (1, 1)", output);
     }
 
 //    /**
@@ -619,7 +619,7 @@ public class CommandProcessorTest extends TestCase
 //        w.close();
 //        new CommandProcessor(f);
 //        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Rectangle removed: (1, 1, 2, 4)", output);
+//        assertFuzzyEquals("Point removed: (1, 1, 2, 4)", output);
 //    }
 
 
@@ -630,7 +630,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemoveOutOfBoundsHZero() throws IOException
     {
-        String s = "remove 1 1 2 0";
+        String s = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -638,7 +638,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1, 2, 0)", output);
+        assertFuzzyEquals("Point rejected: (1, 1)", output);
     }
 
     /**
@@ -655,7 +655,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1000, 10, 2000, 4)", output);
+        assertFuzzyEquals("Point rejected: (1000, 10, 2000, 4)", output);
     }
 
     /**
@@ -672,7 +672,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: ("
+        assertFuzzyEquals("Point rejected: ("
                 + "1000, 10, -2000, 4)", output);
     }
 
@@ -690,7 +690,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1000, 10, 10, 4)", output);
+        assertFuzzyEquals("Point not removed: (1000, 10, 10, 4)", output);
     }
 
     /**
@@ -708,7 +708,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, 1000, 2, 450)", output);
+        assertFuzzyEquals("Point rejected: (1, 1000, 2, 450)", output);
     }
 
     /**
@@ -726,7 +726,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not removed: (1, 1, 2, 6)", output);
+        assertFuzzyEquals("Point not removed: (1, 1, 2, 6)", output);
     }
     
     /**
@@ -744,7 +744,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1025, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (1025, 1, 2, 4)", output);
     }
 
     /**
@@ -762,7 +762,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (-1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (-1, 1, 2, 4)", output);
     }
 
     /**
@@ -779,7 +779,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (-1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (-1, -1, 2, 4)", output);
     }
 
     /**
@@ -797,7 +797,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (1, -1, 2, 4)", output);
     }
 
 //    /**
@@ -815,7 +815,7 @@ public class CommandProcessorTest extends TestCase
 //        w.close();
 //        new CommandProcessor(f);
 //        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Rectangle removed: (a, 0, 0, 1024, 1024)", output);
+//        assertFuzzyEquals("Point removed: (a, 0, 0, 1024, 1024)", output);
 //    }
     
     /**
@@ -832,7 +832,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: name", output);
+        assertFuzzyEquals("Point not found: name", output);
     }
     
     /**
@@ -867,7 +867,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle not found: me", output);
+        assertFuzzyEquals("Point not found: me", output);
     }
 
     /**
@@ -885,7 +885,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, 0, 0)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, 0, 0)", output);
     }
 
     /**
@@ -902,7 +902,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, 1, 0)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, 1, 0)", output);
     }
 
     /**
@@ -919,7 +919,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, 0, 1)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, 0, 1)", output);
     }
 
     /**
@@ -936,7 +936,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, 1, -1)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, 1, -1)", output);
     }
 
     /**
@@ -953,7 +953,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, -1, 1)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, -1, 1)", output);
     }
 
     /**
@@ -970,7 +970,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, -1, -1)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, -1, -1)", output);
     }
 
     /**
@@ -987,7 +987,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangles intersecting "
+        assertFuzzyEquals("Points intersecting "
                 + "region (2, 2, 1, 1):", output);
     }
 
@@ -1006,7 +1006,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, 0, -1)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, 0, -1)", output);
     }
 
     /**
@@ -1023,7 +1023,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Rectangle rejected: (2, 2, -1, 0)", output);
+        assertFuzzyEquals("Point rejected: (2, 2, -1, 0)", output);
     }
 
 

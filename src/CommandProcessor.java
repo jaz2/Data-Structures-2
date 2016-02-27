@@ -19,10 +19,10 @@ public class CommandProcessor {
      */
     private Scanner in;
 
-//    /**
-//     * The database
-//     */
-//    public Database db; 
+    /**
+     * The database
+     */
+    public Database db; 
 
     /**
      * The constructor which takes in the file
@@ -33,7 +33,7 @@ public class CommandProcessor {
      */
     public CommandProcessor(File file) throws FileNotFoundException {
         in = new Scanner(file);
-        //db = new Database();
+        db = new Database();
         readInput();
     }
 
@@ -87,14 +87,9 @@ public class CommandProcessor {
 //                }
                 else // if in bounds
                 {
-                   // db.skipInsert(id, n1, n2, n3, n4);
-                   // System.out.println(
-                           // "Rectangle inserted: (" + id + ", " + n1 + ", " 
-                                //    + n2 + ", " + n3 + ", " + n4 + ")");
-                	//For now!!!!
-                	  System.out.println(
-                              "Point rejected: (" + id + ", " + n1 + ", " 
-                                      + n2 + ")");
+                   db.insert(id, n1, n2);
+                    System.out.println(
+                            "Point inserted: (" + id + ", " + n1 + ")");
                 }
             } 
             else if (str.contains("remove")) // two cases for remove
