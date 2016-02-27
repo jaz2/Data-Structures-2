@@ -52,8 +52,6 @@ public class CommandProcessor {
                 String id = in.next().toString();
                 int n1 = in.nextInt();
                 int n2 = in.nextInt();
-                //int n3 = in.nextInt();
-                //int n4 = in.nextInt();
                 if (n1 < 0 || n2 < 0)
                 {
                     System.out.println(
@@ -66,31 +64,6 @@ public class CommandProcessor {
                             "Point rejected: (" + id + ", " + n1 + ", " 
                                     + n2 + ")");
                 }
-//                else if (((n3 <= 0 || n3 > 1024) /*|| (n4 <= 0 || n4 > 1024))
-//                        || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
-//                                || n2 + n4 < 0)*/)) {
-//                    System.out.println(
-//                            "Point rejected: (" + id + ", " + n1 + ", " 
-//                                    + n2 + ", " + n3 + ", " + n4 + ")");
-//                } 
-//                else if (n4 <= 0 || n4 > 1024)
-//                {
-//                    System.out.println(
-//                            "Point rejected: (" + id + ", " + n1 + ", " 
-//                                    + n2 + ", " + n3 + ", " + n4 + ")");
-//                }
-//                else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
-//                {
-//                    System.out.println(
-//                            "Point rejected: (" + id + ", " + n1 + ", " 
-//                                    + n2 + ", " + n3 + ", " + n4 + ")");
-//                }
-//                else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
-//                {
-//                    System.out.println(
-//                            "Point rejected: (" + id + ", " + n1 + ", " 
-//                                    + n2 + ", " + n3 + ", " + n4 + ")");
-//                }
                 else // if in bounds
                 {
                    db.insert(id, n1, n2);
@@ -105,8 +78,6 @@ public class CommandProcessor {
                 {
                     int n1 = in.nextInt();
                     int n2 = in.nextInt();
-                   // int n3 = in.nextInt();
-                    //int n4 = in.nextInt();
                     if (n1 < 0 || n2 < 0)
                     {
                         System.out.println(

@@ -214,7 +214,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testInsertOutOfBoundsWLess() throws IOException
     {
-        String s = "insert a 1 1";
+        String s = "insert a -1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -223,42 +223,6 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Point rejected: (a, -1, 1)", output);
-    }
-
-    /**
-     * Tests when the width is out of bounds
-     * @throws IOException
-     */
-    @Test
-    public void testInsOutWGreat() throws IOException
-    {
-        String s = "insert a 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
-    }
-
-    /**
-     * Tests when the width is zero
-     * @throws IOException
-     */
-    @Test
-    public void testInsOutWZero() throws IOException
-    {
-        String s = "insert a 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
@@ -277,24 +241,6 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Point inserted: (a, 1, 1)", output);
-    }
-
-    /**
-     * Tests when the insert height is out of bounds
-     * @throws IOException 
-     */
-    @Test
-    public void testInsertOutOfBoundsHLess() throws IOException
-    {
-        String s = "insert a 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
     }
 
     /**
