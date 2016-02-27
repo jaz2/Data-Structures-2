@@ -63,7 +63,7 @@ public class PRQuadInternalTest extends TestCase {
      */
     @Test
     public void testSE() {
-        Point p = new Point(null, 800, 500);
+        Point p = new Point(null, 800, 900);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.SE().getClass());
