@@ -87,6 +87,10 @@ public class PRQuadLeaf implements PRQuadNode {
 
     /**
      * Inserts into a leaf and splits based on number of points
+     * @param p the point
+     * @param x the x
+     * @param y the y
+     * @param length the length
      * @return the nodes
      */
     @Override
