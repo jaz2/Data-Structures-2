@@ -60,4 +60,53 @@ public class PRQuadtree{
 		root = root.insert(p, x, y, length);
 		return root;
 	}
+	
+	public void dump()
+	{
+		System.out.println("QuadTree dump:");
+		int d = dump(root, 0, 0, 0, 1024);
+		System.out.println(d + " quadtree nodes printed");
+		//print size
+		//if cant keep treesize variable, then maybe have dump return int and
+		// keep track of size in there 
+	}
+
+	//when this is called it will be on root, 0 , 0,1024
+	public int dump(PRQuadNode node, int s, int xcoord, int ycoord, int len)
+	{	
+		printSpaces(s);
+		if(node.getClass().equals(Flyweight.class)) //empty
+		{	
+			System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
+				+ len + ": Empty");
+			return 1;
+		}
+		if (node.getClass().equals(PRQuadInternal.class))
+		{
+			System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
+					+ len + ": Internal");
+			return 1 + dump(((PRQuadInternal) node).NW(), s+1, xcoord, ycoord, len/2)
+			+ dump(( (PRQuadInternal) node).NE(), s+1, xcoord + (len/2), ycoord, len/2)
+			+ dump(((PRQuadInternal) node).SW(), s+1, xcoord, ycoord + (len/2), len/2)
+			+ dump(((PRQuadInternal) node).SE(), s+1, xcoord + (len/2), ycoord + (len/2), len/2);
+		}
+		else //node leaf
+		{
+			System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
+					+ len + ": ");
+			((PRQuadLeaf) node).printPoints(s);
+			return 1;
+		}
+
+	}
+
+	public void printSpaces(int n)
+	{
+
+		//print n*2 spaces
+		for (int i = 0; i < n; i++)
+		{
+			System.out.print("  ");
+		}
+	}
 }
