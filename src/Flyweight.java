@@ -27,7 +27,7 @@ public class Flyweight implements PRQuadNode{
 	public PRQuadNode insert(Point p, int x, int y, int length)
 	{
 		PRQuadLeaf lef = new PRQuadLeaf(p);
-		l = lef;
+		l = new PRQuadLeaf(p);
 		return lef;
 	}
 	
