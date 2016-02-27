@@ -60,19 +60,20 @@ public class PRQuadtree {
 
     /**
      * the dump method
+     * print size
+     * If can't keep tree size variable, then
+     * maybe have dump return int and 
+     * keep track of size in there
      */
     public void dump()
     {
         System.out.println("QuadTree dump:");
         int d = dump(root, 0, 0, 0, 1024);
         System.out.println(d + " quadtree nodes printed");
-        //print size
-        //if cant keep treesize variable, then maybe have dump return int and
-        // keep track of size in there 
     }
 
     /**
-     * Whe this is called it dumps the quad nodes
+     * When this is called it dumps the quad nodes
      * @param node the node 
      * @param s the space
      * @param xcoord the x coord
