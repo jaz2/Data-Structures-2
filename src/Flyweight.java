@@ -29,6 +29,9 @@ public class Flyweight implements PRQuadNode{
 		return lef;
 	}
 
+	/**
+	 * Checks if node is empty
+	 */
 	@Override
 	public boolean isEmpty() 
 	{
