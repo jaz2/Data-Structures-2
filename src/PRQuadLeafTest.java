@@ -31,7 +31,7 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 2, 3);
-		le.insert(k, 2, 3, 9);
+		le.insert(k, 0, 0, 1024);
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
 	
@@ -45,10 +45,10 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 2, 3);
-		le.insert(k, 2, 3, 9);
+		le.insert(k, 0, 0, 1024);
 		
 		Point m = new Point(null, 1, 2);
-		le.insert(m, 1, 2, 4);
+		le.insert(m, 0, 0, 1024);
 		
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
@@ -63,13 +63,13 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 2, 3);
-		le.insert(k, 2, 3, 9);
+		le.insert(k, 0, 0, 1024);
 		
 		Point m = new Point(null, 1, 2);
-		le.insert(m, 1, 2, 4);
+		le.insert(m, 0, 0, 1024);
 		
 		Point u = new Point(null, 1, 4);
-		le.insert(u, 1, 4, 5);		
+		le.insert(u, 0, 0, 1024);		
 		
 		assertEquals(PRQuadInternal.class, le.getInstance().getClass());
 	}
@@ -84,13 +84,13 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 3, 4);
-		le.insert(k, 3, 4, 9);
+		le.insert(k, 0, 0, 1024);
 		
 		Point m = new Point(null, 3, 4);
-		le.insert(m, 3, 4, 4);
+		le.insert(m, 0, 0, 1024);
 		
 		Point u = new Point(null, 1, 4);
-		le.insert(u, 3, 4, 5);		
+		le.insert(u, 0, 0, 1024);		
 		
 		assertEquals(PRQuadInternal.class, le.getInstance().getClass());
 	}
@@ -105,13 +105,13 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 3, 4);
-		le.insert(k, 3, 4, 9);
+		le.insert(k, 0, 0, 1024);
 		
 		Point m = new Point(null, 3, 4);
-		le.insert(m, 3, 4, 4);
+		le.insert(m, 0, 0, 1024);
 		
 		Point u = new Point(null, 3, 4);
-		le.insert(u, 3, 4, 5);		
+		le.insert(u, 0, 0, 1024);		
 		
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
@@ -126,16 +126,16 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 3, 4);
-		le.insert(k, 3, 4, 9);
+		le.insert(k, 0, 0, 1024);
 		
 		Point m = new Point(null, 3, 4);
-		le.insert(m, 3, 4, 4);
+		le.insert(m, 0, 0, 1024);
 		
 		Point u = new Point(null, 3, 4);
-		le.insert(u, 3, 4, 5);	
+		le.insert(u, 0, 0, 1024);	
 		
 		Point j = new Point(null, 3, 4);
-		le.insert(j, 3, 4, 5);	
+		le.insert(j, 0, 0, 1024);	
 		
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}	
