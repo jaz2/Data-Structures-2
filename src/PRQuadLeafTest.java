@@ -117,7 +117,7 @@ public class PRQuadLeafTest extends TestCase{
 	}
 
 	/**
-	 * Leaf should already have three identical points,
+	 * Leaf should already have four identical points,
 	 * calls leaf to have another point added that is same
 	 */
 	@Test
