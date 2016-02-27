@@ -89,7 +89,7 @@ public class CommandProcessor {
                 {
                    db.insert(id, n1, n2);
                     System.out.println(
-                            "Point inserted: (" + id + ", " + n1 +  n2 + ")");
+                            "Point inserted: (" + id + ", " + n1 + ", " + n2 + ")");
                 }
             } 
             else if (str.contains("remove")) // two cases for remove
