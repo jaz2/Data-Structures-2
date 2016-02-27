@@ -26,7 +26,7 @@ public class FlyweightTest extends TestCase{
 		Flyweight fl = new Flyweight();
 		Point p = new Point(null, 3, 3);
 		fl.insert(p, 3, 3, 4);
-		assertTrue(fl.getClass().equals(PRQuadLeaf.class));
+		assertEquals(PRQuadLeaf.class, fl.getClass());
 	}
 
 }
