@@ -88,21 +88,25 @@ public class PRQuadInternal implements PRQuadNode {
 		{
 			NW = NW.insert(p, x, y, nuLen);
 			u = NW;
+			return NW;
 		}
 		if (p.getX() > x + nuLen && p.getY() <= y + nuLen) //NE
 		{ 
 			NE = NE.insert(p, x + nuLen, y, nuLen);
 			u = NE;
+			return NE;
 		}
 		if (p.getX() <= x + nuLen && p.getY() > y + nuLen) //SW
 		{ 
 			SW = SW.insert(p, x, y + nuLen, nuLen);
 			u = SW;
+			return SW;
 		}
 		if (p.getX() > x + nuLen && p.getY() > y + nuLen) //SE
 		{ 
 			SE = SE.insert(p, x + nuLen, y + nuLen, nuLen);
 			u = SE;
+			return SE;
 		}
 		return this;
 	}
