@@ -630,7 +630,7 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Points intersecting "
-                + "region (5, 5, 20, 20):/n"
+                + "region (5, 5, 20, 20):\n"
                 + "1 quadtree nodes visited", output);
     }
 
