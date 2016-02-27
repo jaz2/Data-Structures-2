@@ -68,8 +68,7 @@ public class PRQuadLeafTest {
 		le.insert(m, 1, 2, 4);
 		
 		Point u = new Point(null, 1, 4);
-		le.insert(u, 1, 4, 5);
-		
+		le.insert(u, 1, 4, 5);		
 		
 		assertEquals(PRQuadInternal.class, le.getInstance().getClass());
 	}
@@ -90,10 +89,30 @@ public class PRQuadLeafTest {
 		le.insert(m, 1, 2, 4);
 		
 		Point u = new Point(null, 1, 4);
-		le.insert(u, 1, 4, 5);
-		
+		le.insert(u, 1, 4, 5);		
 		
 		assertEquals(PRQuadInternal.class, le.getInstance().getClass());
+	}
+	
+	/**
+	 * Leaf should already have three identical points,
+	 * calls leaf to have another point added that is same
+	 */
+	@Test
+	public void testInsertFourthYes() {
+		Point p = new Point(null, 3, 4);
+		PRQuadLeaf le = new PRQuadLeaf(p);
+		
+		Point k = new Point(null, 3, 4);
+		le.insert(p, 2, 3, 9);
+		
+		Point m = new Point(null, 3, 4);
+		le.insert(m, 1, 2, 4);
+		
+		Point u = new Point(null, 3, 4);
+		le.insert(u, 1, 4, 5);		
+		
+		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
 
 }

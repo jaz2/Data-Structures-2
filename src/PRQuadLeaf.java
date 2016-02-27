@@ -71,7 +71,7 @@ public class PRQuadLeaf implements PRQuadNode {
 			}
 			if (count == l.length() - 1)
 			{
-				if (l.getValue().equals(p)) //they are the same
+				if (l.moveToPos(l.length() - 1).equals(p)) //they are the same
 				{
 					l.insert(p);
 					u = this;
