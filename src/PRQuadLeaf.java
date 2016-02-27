@@ -26,8 +26,6 @@ public class PRQuadLeaf implements PRQuadNode {
 
 	@Override
 	public boolean isEmpty() {
-		if (l.length() == 0)
-			return true;
 		return false;
 	}
 
