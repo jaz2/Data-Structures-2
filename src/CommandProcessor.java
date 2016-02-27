@@ -52,6 +52,7 @@ public class CommandProcessor {
                 String id = in.next().toString();
                 int n1 = in.nextInt();
                 int n2 = in.nextInt();
+                System.out.println(n1); //test
                 if (n1 < 0 || n2 < 0)
                 {
                     System.out.println(
@@ -68,7 +69,7 @@ public class CommandProcessor {
                 {
                    db.insert(id, n1, n2);
                     System.out.println(
-                            "Point inserted: (n" + id + ", " + n1 + ", " + n2 + ")");
+                            "Point inserted: (" + id + ", " + n1 + ", " + n2 + ")");
                 }
             } 
             else if (str.contains("remove")) // two cases for remove
