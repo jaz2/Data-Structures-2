@@ -700,7 +700,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemoveOutOfBoundsXLess() throws IOException
     {
-        String s = "remove -1 1 2 4";
+        String s = "remove -1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -708,7 +708,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (-1, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (-1, 1)", output);
     }
 
     /**
@@ -717,7 +717,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testRemoveBothLessThan() throws IOException
     {
-        String s = "remove -1 -1 2 4";
+        String s = "remove -1 -1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -725,7 +725,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (-1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (-1, -1)", output);
     }
 
     /**
@@ -735,7 +735,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemoveOutOfBoundsYLess() throws IOException
     {
-        String s = "remove 1 -1 2 4";
+        String s = "remove 1 -1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -743,7 +743,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, -1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (1, -1)", output);
     }
 
 //    /**
