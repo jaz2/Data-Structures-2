@@ -11,6 +11,8 @@
 public class PRQuadLeaf implements PRQuadNode {
 
 	LList<Point> l;
+	
+	PRQuadNode u;
 
 	/**
 	 * Handles the points
@@ -35,6 +37,15 @@ public class PRQuadLeaf implements PRQuadNode {
 	@Override
 	public boolean isLeaf() {
 		return true;
+	}
+	
+	/**
+	 * For testing purposes
+	 * @return the node
+	 */
+	public PRQuadNode getInstance()
+	{
+		return u;
 	}
 
 	/**
