@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import student.TestCase;
 
 /**
  * 
@@ -11,7 +12,7 @@ import org.junit.Test;
  * @author Jazmine Zurita and Jessica McCready
  *
  */
-public class PRQuadInternalTest {
+public class PRQuadInternalTest extends TestCase {
 
 	/**
 	 * @throws java.lang.Exception
@@ -21,8 +22,11 @@ public class PRQuadInternalTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testNW() {
+		Point p = new Point(null, 4, 5);
+		PRQuadInternal i = new PRQuadInternal();
+		i.insert(p, 4, 5, 1024);
+		assertEquals(i.NE, i.getInstance());
 	}
 
 }
