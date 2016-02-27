@@ -21,7 +21,7 @@ public class PRQuadLeaf implements PRQuadNode {
      */
     public PRQuadLeaf(Point p) //IS THIS CORRECT TODO
     {
-        l = new LList<Point>();// need to make our own linked list class
+        l = new LList<Point>(0);// need to make our own linked list class
         l.insert(p);
     }
 
