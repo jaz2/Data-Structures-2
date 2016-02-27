@@ -115,4 +115,27 @@ public class PRQuadLeafTest {
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
 
+	/**
+	 * Leaf should already have three identical points,
+	 * calls leaf to have another point added that is same
+	 */
+	@Test
+	public void testInsertFifthYes() {
+		Point p = new Point(null, 3, 4);
+		PRQuadLeaf le = new PRQuadLeaf(p);
+		
+		Point k = new Point(null, 3, 4);
+		le.insert(p, 3, 4, 9);
+		
+		Point m = new Point(null, 3, 4);
+		le.insert(m, 3, 4, 4);
+		
+		Point u = new Point(null, 3, 4);
+		le.insert(u, 3, 4, 5);	
+		
+		Point j = new Point(null, 3, 4);
+		le.insert(j, 3, 4, 5);	
+		
+		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
+	}	
 }
