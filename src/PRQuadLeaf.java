@@ -89,7 +89,7 @@ public class PRQuadLeaf implements PRQuadNode {
 			else //are not the same
 			{ //split
 				PRQuadInternal in = new PRQuadInternal();
-				insert((Point)l.moveToPos(0), x, y, length);
+				in = (PRQuadInternal) in.insert((Point)l.moveToPos(0), x, y, length);
 				u = in;
 				return in;
 			}	
