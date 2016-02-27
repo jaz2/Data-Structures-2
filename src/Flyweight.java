@@ -10,7 +10,7 @@ public class Flyweight implements PRQuadNode{
 
 	//global static rep of itself to return that
 	public static Flyweight fly = new Flyweight();
-	public PRQuadLeaf l;
+	public PRQuadNode l;
 	
 	/**
 	 * Checks if it is a leaf of not
