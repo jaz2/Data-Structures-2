@@ -28,7 +28,7 @@ public class PRQuadInternalTest extends TestCase {
     public void testNW() {
         Point p = new Point(null, 4, 5);
         PRQuadInternal i = new PRQuadInternal();
-        i.insert(p, 4, 5, 1024);
+        i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.NW().getClass());
         assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
     }
@@ -52,7 +52,7 @@ public class PRQuadInternalTest extends TestCase {
     public void testSW() {
         Point p = new Point(null, 4, 900);
         PRQuadInternal i = new PRQuadInternal();
-        i.insert(p, 4, 900, 40);
+        i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.SW().getClass());
         //assertEquals(PRQuadLeaf.class, i.NW().getClass());
         assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
@@ -65,7 +65,7 @@ public class PRQuadInternalTest extends TestCase {
     public void testSE() {
         Point p = new Point(null, 800, 500);
         PRQuadInternal i = new PRQuadInternal();
-        i.insert(p, 800, 500, 100);
+        i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.SE().getClass());
         assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
     }
