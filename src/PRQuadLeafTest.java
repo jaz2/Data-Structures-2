@@ -105,7 +105,7 @@ public class PRQuadLeafTest extends TestCase{
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 3, 4);
-		le.insert(p, 3, 4, 9);
+		le.insert(k, 3, 4, 9);
 		
 		Point m = new Point(null, 3, 4);
 		le.insert(m, 3, 4, 4);
