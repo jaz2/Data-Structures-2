@@ -21,6 +21,9 @@ public class PRQuadInternalTest extends TestCase {
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Tests that it returns a leaf in this region
+	 */
 	@Test
 	public void testNW() {
 		Point p = new Point(null, 4, 5);
@@ -29,4 +32,36 @@ public class PRQuadInternalTest extends TestCase {
 		assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
 	}
 
+	/**
+	 * Tests that it returns a leaf in this region
+	 */
+	@Test
+	public void testNE() {
+		Point p = new Point(null, 1000, 4);
+		PRQuadInternal i = new PRQuadInternal();
+		i.insert(p, 1000, 4, 20);
+		assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+	}
+	
+	/**
+	 * Tests that it returns a leaf in this region
+	 */
+	@Test
+	public void testSW() {
+		Point p = new Point(null, 4, 900);
+		PRQuadInternal i = new PRQuadInternal();
+		i.insert(p, 4, 900, 40);
+		assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+	}
+	
+	/**
+	 * Tests that it returns a leaf in this region
+	 */
+	@Test
+	public void testSE() {
+		Point p = new Point(null, 800, 500);
+		PRQuadInternal i = new PRQuadInternal();
+		i.insert(p, 800, 500, 100);
+		assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+	}
 }
