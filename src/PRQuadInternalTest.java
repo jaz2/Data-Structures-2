@@ -29,7 +29,7 @@ public class PRQuadInternalTest extends TestCase {
         Point p = new Point(null, 4, 5);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 4, 5, 1024);
-        assertEquals(i.NE, i.NE());
+        assertEquals(i.NW, i.NW());
         assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
     }
 
@@ -41,6 +41,7 @@ public class PRQuadInternalTest extends TestCase {
         Point p = new Point(null, 1000, 4);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 1000, 4, 20);
+        assertEquals(i.NE, i.NE());
         assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
     }
     
