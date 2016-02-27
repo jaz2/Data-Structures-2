@@ -10,6 +10,7 @@ public class Flyweight implements PRQuadNode{
 
 	//global static rep of itself to return that
 	public static Flyweight fly = new Flyweight();
+	public PRQuadLeaf lef;
 	
 	/**
 	 * Checks if it is a leaf of not
@@ -25,7 +26,12 @@ public class Flyweight implements PRQuadNode{
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length)
 	{
-		PRQuadLeaf lef = new PRQuadLeaf(p);
+		lef = new PRQuadLeaf(p);
+		return lef;
+	}
+	
+	public PRQuadLeaf getInstance()
+	{
 		return lef;
 	}
 
