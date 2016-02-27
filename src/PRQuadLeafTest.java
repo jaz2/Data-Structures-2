@@ -104,13 +104,13 @@ public class PRQuadLeafTest {
 		PRQuadLeaf le = new PRQuadLeaf(p);
 		
 		Point k = new Point(null, 3, 4);
-		le.insert(p, 2, 3, 9);
+		le.insert(p, 3, 4, 9);
 		
 		Point m = new Point(null, 3, 4);
-		le.insert(m, 1, 2, 4);
+		le.insert(m, 3, 4, 4);
 		
 		Point u = new Point(null, 3, 4);
-		le.insert(u, 1, 4, 5);		
+		le.insert(u, 3, 4, 5);		
 		
 		assertEquals(PRQuadLeaf.class, le.getInstance().getClass());
 	}
