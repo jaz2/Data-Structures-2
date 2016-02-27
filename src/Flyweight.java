@@ -7,7 +7,7 @@
  * @version Feb 20 2016
  *
  */
-public class Flyweight implements PRQuadNode{
+public class Flyweight implements PRQuadNode {
 
     /**
      * Global static rep of itself
@@ -30,7 +30,11 @@ public class Flyweight implements PRQuadNode{
 
     /**
      * When the node is empty, convert to a leaf
-     * @return lef
+     * @param p the point 
+     * @param x the x coord
+     * @param y the y coord
+     * @param length the length
+     * @return leaf
      */
     @Override
     public PRQuadNode insert(Point p, int x, int y, int length)
