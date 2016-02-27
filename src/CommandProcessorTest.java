@@ -648,7 +648,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (2, 2, 0, -1)", output);
+        assertFuzzyEquals("Rectangle rejected: (2, 2, 0, -1)", output);
     }
 
     /**
@@ -665,7 +665,7 @@ public class CommandProcessorTest extends TestCase
 
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (2, 2, -1, 0)", output);
+        assertFuzzyEquals("Rectangle rejected: (2, 2, -1, 0)", output);
     }
 
 
