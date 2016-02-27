@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 
 /**
- * @author Jazz
+ * @author Jazmine Zurita and Jessica McCready
  *
  */
 public class PRQuadInternalTest {

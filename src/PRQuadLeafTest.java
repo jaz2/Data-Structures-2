@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import student.TestCase;
 
 /**
  * 
@@ -11,7 +12,7 @@ import org.junit.Test;
  * @author Jazz
  *
  */
-public class PRQuadLeafTest {
+public class PRQuadLeafTest extends TestCase{
 
 	/**
 	 * @throws java.lang.Exception
