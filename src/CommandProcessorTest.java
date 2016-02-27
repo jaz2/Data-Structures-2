@@ -481,7 +481,7 @@ public class CommandProcessorTest extends TestCase
      * Tests intersections
      */
     @Test
-    public void testIntersections() throws IOException
+    public void testDuplicates() throws IOException
     {
         String d = "duplicates";
         File f = new File("test.txt");
@@ -491,7 +491,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Intersection pairs: ", output);
+        assertFuzzyEquals("Duplicate points: ", output);
     }
 
 
