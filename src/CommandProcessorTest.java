@@ -682,7 +682,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemOutXGreat() throws IOException
     {
-        String s = "remove 1025 1 2 4";
+        String s = "remove 1025 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -690,7 +690,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1025, 1, 2, 4)", output);
+        assertFuzzyEquals("Point rejected: (1025, 1)", output);
     }
 
     /**
