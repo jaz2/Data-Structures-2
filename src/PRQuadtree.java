@@ -45,15 +45,12 @@ public class PRQuadtree {
     }
 
     /**
-     * The insert method 
-     * 
-     * @param node  checks node
-     * @param p  the point to be added
-     * @param loX  the lower x bound to check
-     * @param hiX  the higher x bound to check
-     * @param loY  the lower y bound to check
-     * @param hiY  the higher y bound to check
-     * @return the node
+     * The insert method
+     * @param p the point to be inserted
+     * @param x the xcoord
+     * @param y the ycoord
+     * @param length the length
+     * @return the root
      */
     public PRQuadNode insert(Point p, int x, int y, int length)
     { //try and make it node-centric (within the node class to avoid copying it over)
@@ -61,6 +58,9 @@ public class PRQuadtree {
         return root;
     }
 
+    /**
+     * the dump method
+     */
     public void dump()
     {
         System.out.println("QuadTree dump:");
@@ -83,7 +83,7 @@ public class PRQuadtree {
     public int dump(PRQuadNode node, int s, int xcoord, int ycoord, int len)
     {    
         printSpaces(s);
-        if(node.getClass().equals(Flyweight.class)) //empty
+        if (node.getClass().equals(Flyweight.class)) //empty
         {    
             System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
                     + len + ": Empty");
