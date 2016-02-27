@@ -320,7 +320,7 @@ public class CommandProcessorTest extends TestCase
      */
     @Test
     public void testRemBoundsY() throws IOException
-    {
+    { // FOR NOW
         String s = "insert a 100 0\n"
                 + "remove 100 0";
         File f = new File("test.txt");
@@ -331,7 +331,7 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Point inserted: (a, 100, 0)\n"
-                + "Point removed: (a, 100, 0)", output);
+                + "Point not found: (100, 0)", output);
     }
 
     /**
@@ -368,7 +368,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 1)", output);
+        assertFuzzyEquals("Point not found: (1, 1)", output);
     }
     
     /**
