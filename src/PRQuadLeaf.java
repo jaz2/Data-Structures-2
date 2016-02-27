@@ -62,7 +62,7 @@ public class PRQuadLeaf implements PRQuadNode {
 		else 
 		{ //check duplicates if they are the same you don't split
 			int count = 0; //if they are not then count to 4 and split
-			for (int i = 0; i < l.length() - 2; i++)
+			for (int i = 0; i <= l.length() - 2; i++)
 			{
 				if (l.moveToPos(i).equals(l.moveToPos(i + 1)))	
 				{
