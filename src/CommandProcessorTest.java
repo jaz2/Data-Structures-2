@@ -483,7 +483,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testIntersections() throws IOException
     {
-        String d = "intersections";
+        String d = "duplicates";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
