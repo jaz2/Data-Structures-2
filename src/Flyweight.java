@@ -3,7 +3,8 @@
  */
 
 /**
- * @author Jazz
+ * @author Jazmine Zurita and Jessica McCready
+ * @version Feb 20 2016
  *
  */
 public class Flyweight implements PRQuadNode{
