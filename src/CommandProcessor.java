@@ -59,7 +59,7 @@ public class CommandProcessor {
                             "Point rejected: (" + id + ", " + n1 + ", " 
                                     + n2 + ")");
                 }
-                if (n1 >= 1024 || n2 >= 1024)
+                else if (n1 >= 1024 || n2 >= 1024)
                 {
                 	System.out.println(
                             "Point rejected: (" + id + ", " + n1 + ", " 
