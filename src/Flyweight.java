@@ -21,6 +21,7 @@ public class Flyweight implements PRQuadNode{
 
     /**
      * Checks if it is a leaf of not
+     * @return false
      */
     @Override
     public boolean isLeaf() {
@@ -29,6 +30,7 @@ public class Flyweight implements PRQuadNode{
 
     /**
      * When the node is empty, convert to a leaf
+     * @return lef
      */
     @Override
     public PRQuadNode insert(Point p, int x, int y, int length)
@@ -40,7 +42,7 @@ public class Flyweight implements PRQuadNode{
 
     /**
      * For testing purposes
-     * @return
+     * @return the l 
      */
     public PRQuadNode getInstance()
     {
@@ -48,7 +50,8 @@ public class Flyweight implements PRQuadNode{
     }
 
     /**
-     * Checks if node is empty
+     * Returns if empty or no
+     * @return empty
      */
     @Override
     public boolean isEmpty() 
