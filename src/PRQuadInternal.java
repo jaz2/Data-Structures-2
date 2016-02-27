@@ -37,6 +37,26 @@ public class PRQuadInternal implements PRQuadNode {
 		SW = Flyweight.fly;
 		SE = Flyweight.fly;
 	}
+	
+	public PRQuadNode SW()
+	{
+		return SW;
+	}
+	
+	public PRQuadNode SE()
+	{
+		return SE;
+	}
+	
+	public PRQuadNode NW()
+	{
+		return NW;
+	}
+	
+	public PRQuadNode NE()
+	{
+		return NE;
+	}
 
 	@Override
 	public boolean isLeaf() {
