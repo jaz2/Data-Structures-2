@@ -31,6 +31,10 @@ public class Flyweight implements PRQuadNode{
 		return lef;
 	}
 	
+	/**
+	 * For testing purposes
+	 * @return
+	 */
 	public PRQuadNode getInstance()
 	{
 		return l;
