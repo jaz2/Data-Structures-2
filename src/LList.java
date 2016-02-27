@@ -34,6 +34,7 @@ class LList<Point> {
 	}
 
 	// Insert "it" at current position
+	@SuppressWarnings("unchecked")
 	public boolean insert(Object it) {
 		curr.setNext(new Link<Point>(curr.element(), curr.next()));
 		curr.setElement((Point)it);
@@ -43,6 +44,7 @@ class LList<Point> {
 	}
 
 	// Append "it" to list
+	@SuppressWarnings("unchecked")
 	public boolean append(Object it) {
 		tail.setNext(new Link<Point>(null));
 		tail.setElement((Point)it);

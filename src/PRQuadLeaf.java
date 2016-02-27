@@ -99,7 +99,7 @@ public class PRQuadLeaf implements PRQuadNode {
                 else //split
                 {
                     PRQuadInternal in = new PRQuadInternal();
-                    in.insert((Point)l.moveToPos(0), x, y, length);
+                    in.insert(p, x, y, length);
                     for (int i = 0; i <= l.length() - 1; i++)
                     {
                     	Point m = (Point)l.moveToPos(i);
@@ -112,7 +112,7 @@ public class PRQuadLeaf implements PRQuadNode {
             else //are not the same
             { //split
                 PRQuadInternal in = new PRQuadInternal();
-                in.insert((Point)l.moveToPos(0), x, y, length);
+                in.insert(p, x, y, length);
                 for (int i = 0; i <= l.length() - 1; i++)
                 {
                 	Point m = (Point)l.moveToPos(i);
