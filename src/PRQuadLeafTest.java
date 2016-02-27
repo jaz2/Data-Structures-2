@@ -31,7 +31,7 @@ public class PRQuadLeafTest {
 		
 		Point k = new Point(null, 2, 3);
 		le.insert(p, 2, 3, 9);
-		assertEquals(PRQuadLeaf.class, this.getClass());
+		assertEquals(PRQuadLeaf.class, le.getClass());
 	}
 
 }
