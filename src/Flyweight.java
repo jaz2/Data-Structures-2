@@ -30,7 +30,7 @@ public class Flyweight implements PRQuadNode{
 		return lef;
 	}
 	
-	public PRQuadLeaf getInstance()
+	public PRQuadNode getInstance()
 	{
 		return lef;
 	}
