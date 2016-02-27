@@ -35,7 +35,7 @@ public class Database
      * @param h the height
      * @return
      */
-    public void skipInsert(String id, int x, int y)
+    public void insert(String id, int x, int y)
     {
         Point p = new Point(id, x, y);
         KVPair<String, Point> k = new KVPair<String, Point>(id, p);
