@@ -5,13 +5,20 @@
  */
 
 /**
- * @author Jazz
+ * @author Jazmine Zurita and Jessica McCready
+ * @version Feb 22 2016
  *
  */
 public class PRQuadLeaf implements PRQuadNode {
 
+	/**
+	 * the linked list
+	 */
     LList<Point> l;
     
+    /**
+     * For testing purposes
+     */
     PRQuadNode u;
 
     /**
@@ -19,13 +26,16 @@ public class PRQuadLeaf implements PRQuadNode {
      * @param p the point we're adding 
      * 
      */
-    public PRQuadLeaf(Point p) //IS THIS CORRECT TODO
+    public PRQuadLeaf(Point p)
     {
-        l = new LList<Point>(0);// need to make our own linked list class
+        l = new LList<Point>(0); 
         l.insert(p);
     }
 
-
+    /**
+     * is empty method
+     * @return false
+     */
     @Override
     public boolean isEmpty() {
         return false;
@@ -33,6 +43,7 @@ public class PRQuadLeaf implements PRQuadNode {
 
     /**
      * Checks if it is a leaf
+     * @return true
      */
     @Override
     public boolean isLeaf() {
@@ -48,6 +59,10 @@ public class PRQuadLeaf implements PRQuadNode {
         return u;
     }
     
+    /**
+     * Prints out
+     * @param s the spaces
+     */
     public void printPoints(int s)
 	{
 		for(int i = 0; i <= l.length()-1; i++)
@@ -57,6 +72,10 @@ public class PRQuadLeaf implements PRQuadNode {
 		}
 	}
 
+    /**
+     * Prints spaces
+     * @param n the number of spaces
+     */
 	public void printSpaces(int n)
 	{
 		//print n*2 spaces
@@ -68,6 +87,7 @@ public class PRQuadLeaf implements PRQuadNode {
 
     /**
      * Inserts into a leaf and splits based on number of points
+     * @return the nodes
      */
     @Override
     public PRQuadNode insert(Point p, int x, int y, int length) {
