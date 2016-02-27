@@ -1,7 +1,5 @@
 import static org.junit.Assert.*;
 
-import java.awt.Pointangle;
-
 import student.TestCase;
 import student.TestableRandom;
 

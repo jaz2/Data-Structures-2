@@ -200,7 +200,7 @@ public class SkipList<K extends Comparable<K>, E> {
             store[i] = x;
         } //and not at the end
         while (x.forward[0] != null && 
-                ((Rect) x.forward[0].element.value()).equals(val) == false)
+                ((Point) x.forward[0].element.value()).equals(val) == false)
         {
             for (int i = x.forward.length - 1; i >= 0; i--)
             { /*each level in the current node*/
@@ -211,7 +211,7 @@ public class SkipList<K extends Comparable<K>, E> {
         }
         SkipNode nodeToRemove = x.forward[0];
         if (x.forward[0] != null && 
-                ((Rect) x.forward[0].element.value()).equals(val) == true)
+                ((Point) x.forward[0].element.value()).equals(val) == true)
         {
             found = true;
         }

@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import student.TestCase;
 
 /**
  * 
@@ -11,7 +12,7 @@ import org.junit.Test;
  * @author Jazz
  *
  */
-public class FlyweightTest {
+public class FlyweightTest extends TestCase{
 
 	/**
 	 * @throws java.lang.Exception
@@ -22,7 +23,10 @@ public class FlyweightTest {
 
 	@Test
 	public void testInsert() {
-		fail("Not yet implemented");
+		Flyweight fl = new Flyweight();
+		Point p = new Point(null, 3, 3);
+		fl.insert(p, 3, 3, 4);
+		assertTrue(fl.equals(PRQuadLeaf.class));
 	}
 
 }
