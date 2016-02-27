@@ -474,7 +474,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not found: name", output);
+        assertFuzzyEquals("Point not removed: name", output);
     }
     
     /**
