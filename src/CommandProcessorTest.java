@@ -620,7 +620,7 @@ public class CommandProcessorTest extends TestCase
      */
     public void testRegionSearc16() throws IOException
     {
-        String d = "regionsearch   2 2 1 1";
+        String d = "regionsearch   5 5 20 20";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -630,7 +630,8 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Points intersecting "
-                + "region (2, 2, 1, 1):", output);
+                + "region (5, 5, 20, 20):/n"
+                + "1 quadtree nodes visited", output);
     }
 
 
