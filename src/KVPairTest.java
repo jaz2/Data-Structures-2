@@ -22,11 +22,12 @@ public class KVPairTest extends TestCase {
      */
     @Test
     public void testKV() {
-        PRQuadtree rec = new PRQuadtree("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(rec.getName(), rec);
+    	Point p = new Point(null, 1, 2);
+        PRQuadtree rec = new PRQuadtree(1, 2, 3);
+        KVPair<String, Point> k = new KVPair<String, Point>(null, p);
         
-        assertEquals("a", p.key());
-        assertEquals(rec, p.value());
+        assertEquals(null, k.key());
+        assertEquals(p, k.value());
         assertEquals("a, 1, 2, 3, 4", p.toString());
     }
     
@@ -37,12 +38,12 @@ public class KVPairTest extends TestCase {
     @Test
     public void testCompareToPairs()
     {
-        Rect rec = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(rec.getName(), rec);
+        Point rec = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
         
-        Rect other = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> b = new KVPair<
-                String, Rect>(other.getName(), other);
+        Point other = new Point("a", 1, 2);
+        KVPair<String, Point> b = new KVPair<
+                String, Point>(other.getName(), other);
         
         assertEquals(0, p.compareTo(b));
     }
@@ -53,11 +54,11 @@ public class KVPairTest extends TestCase {
     @Test
     public void testCompareToNotPairs()
     {
-        Rect rec = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(rec.getName(), rec);
+        Point rec = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
         
-        Rect nu = new Rect("k", 1, 2, 3, 5);
-        KVPair<String, Rect> n = new KVPair<String, Rect>(nu.getName(), rec);
+        Point nu = new Point("k", 1, 3);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), rec);
         
         assertEquals(-10, p.compareTo(n));
     }
@@ -69,10 +70,10 @@ public class KVPairTest extends TestCase {
     @Test
     public void testCompareToName()
     {
-        Rect rec = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(rec.getName(), rec);
+        Point rec = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
         
-        Rect idk = new Rect("a", 1, 1, 2, 4);
+        Point idk = new Point("a", 1, 1);
         
         assertEquals(0, p.compareTo(idk.getName()));
     }
@@ -83,10 +84,10 @@ public class KVPairTest extends TestCase {
     @Test
     public void testCompareToNoName()
     {
-        Rect rec = new Rect("a", 1, 2, 3, 4);
-        KVPair<String, Rect> p = new KVPair<String, Rect>(rec.getName(), rec);
+        Point rec = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
         
-        Rect no = new Rect("b", 1, 2, 3, 4);
+        Point no = new Point("b", 1, 2);
         
         assertEquals(-1, p.compareTo(no.getName()));
     }
