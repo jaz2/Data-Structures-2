@@ -42,7 +42,7 @@ public class PRQuadLeaf implements PRQuadNode {
 	 */
 	@Override
 	public PRQuadNode insert(Point p, int x, int y, int length) {
-		if (l.length() >= 2)
+		if (l.length() <= 2)
 		{
 			l.insert(p);
 			return this;
