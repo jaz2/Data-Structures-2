@@ -244,24 +244,6 @@ public class CommandProcessorTest extends TestCase
     }
 
     /**
-     * Tests when the height is out of bounds
-     * @throws IOException
-     */
-    @Test
-    public void testInsOutHGreat() throws IOException
-    {
-        String s = "insert a 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
-    }
-
-    /**
      * Tests when the insert height is acceptable
      * @throws IOException 
      */
@@ -279,60 +261,6 @@ public class CommandProcessorTest extends TestCase
         assertFuzzyEquals("Point inserted: (a, 1, 1)", output);
     }
 
-
-    /**
-     * Tests when the insert height is zero
-     * @throws IOException 
-     */
-    @Test
-    public void testInsertOutOfBoundsHZero() throws IOException
-    {
-        String s = "insert a 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1)", output);
-    }
-
-    /**
-     * Tests when the x + w not in bounds
-     * @throws IOException
-     */
-    public void testInsTotalWidthNotinBoundsG() throws IOException
-    {
-        String s = "insert a 1000 10";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1000, 10)", output);
-    }
-
-    /**
-     * Tests when the x + w not in bounds less than 0
-     * @throws IOException
-     */
-    public void testInsTotalWidthNotinBoundsL() throws IOException
-    {
-        String s = "insert a 1000 10";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, "
-                + "1000, 10)", output);
-    }
-
     /**
      * Tests when the x + w in bounds
      * @throws IOException
@@ -348,24 +276,6 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Point inserted: (a, 1000, 10)", output);
-    }
-
-    /**
-     * Tests when the y + height are not in bounds
-     * @throws IOException
-     */
-    @Test
-    public void testInsTotalHeightNotinBounds() throws IOException
-    {
-        String s = "insert a 1 1000";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (a, 1, 1000)", output);
     }
 
     /**
@@ -442,220 +352,6 @@ public class CommandProcessorTest extends TestCase
         assertFuzzyEquals("Point rejected: (1, 1025)", output);
     }
 
-    /**
-     * Tests when the width is out of bounds
-     * @throws IOException 
-     */
-    @Test
-    public void testRemoveOfBoundsWLess() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (-1, 1)", output);
-    }
-
-    /**
-     * Tests when the width is out of bounds
-     * @throws IOException
-     */
-    @Test
-    public void testRemOutWGreat() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1)", output);
-    }
-
-    /**
-     * Tests when the width is zero
-     * @throws IOException
-     */
-    @Test
-    public void testRemOutWZero() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1)", output);
-    }
-
-//    /**
-//     * Tests when the width is acceptable
-//     * @throws IOException
-//     */
-//    @Test
-//    public void testRemOutWOK() throws IOException
-//    {
-//        String s = "remove 1 1 2 4";
-//        File f = new File("test.txt");
-//        FileWriter fi = new FileWriter(f);
-//        BufferedWriter w = new BufferedWriter(fi);
-//        w.write(s);
-//        w.close();
-//        new CommandProcessor(f);
-//        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Point inserted: (a, 1, 1, 2, 4)", output);
-//    }
-
-    /**
-     * Tests when the remove height is out of bounds
-     * @throws IOException 
-     */
-    @Test
-    public void testRemOutOfBoundsHLess() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1)", output);
-    }
-
-    /**
-     * Tests when the height is out of bounds
-     * @throws IOException
-     */
-    @Test
-    public void testRemOutHGreat() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1)", output);
-    }
-
-//    /**
-//     * Tests when the insert height is acceptable
-//     * @throws IOException 
-//     */
-//    @Test
-//    public void testRemoveOutOfBoundsHOK() throws IOException
-//    {
-//        String s = "remove 1 1 2 4";
-//        File f = new File("test.txt");
-//        FileWriter fi = new FileWriter(f);
-//        BufferedWriter w = new BufferedWriter(fi);
-//        w.write(s);
-//        w.close();
-//        new CommandProcessor(f);
-//        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Point removed: (1, 1, 2, 4)", output);
-//    }
-
-
-    /**
-     * Tests when the remove height is zero
-     * @throws IOException 
-     */
-    @Test
-    public void testRemoveOutOfBoundsHZero() throws IOException
-    {
-        String s = "remove 1 1";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1)", output);
-    }
-
-    /**
-     * Tests when the x + w not in bounds
-     * @throws IOException
-     */
-    public void testRemTotalWidthNotinBoundsG() throws IOException
-    {
-        String s = "remove 1000 10 2000 4";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1000, 10, 2000, 4)", output);
-    }
-
-    /**
-     * Tests when the x + w not in bounds less than 0
-     * @throws IOException
-     */
-    public void testRemTotalWidthNotinBoundsL() throws IOException
-    {
-        String s = "remove 1000 10 -2000 4";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: ("
-                + "1000, 10, -2000, 4)", output);
-    }
-
-    /**
-     * Tests when the x + w in bounds
-     * @throws IOException
-     */
-    public void testRemTotalinBounds() throws IOException
-    {
-        String s = "remove 1000 10 10 4";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1000, 10, 10, 4)", output);
-    }
-
-    /**
-     * Tests when the y + height are not in bounds
-     * @throws IOException
-     */
-    @Test
-    public void testRemTotalHeightNotinBounds() throws IOException
-    {
-        String s = "remove 1 1000 2 450";
-        File f = new File("test.txt");
-        FileWriter fi = new FileWriter(f);
-        BufferedWriter w = new BufferedWriter(fi);
-        w.write(s);
-        w.close();
-        new CommandProcessor(f);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point rejected: (1, 1000, 2, 450)", output);
-    }
 
     /**
      * Tests when remove is called by coordinates
@@ -664,7 +360,7 @@ public class CommandProcessorTest extends TestCase
     @Test
     public void testRemoveCoord() throws IOException
     { //TODO check if this works
-        String d = "remove 1 1 2 6";
+        String d = "remove 1 1";
         File f = new File("test.txt");
         FileWriter fi = new FileWriter(f);
         BufferedWriter w = new BufferedWriter(fi);
@@ -672,7 +368,7 @@ public class CommandProcessorTest extends TestCase
         w.close();
         new CommandProcessor(f);
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 1, 2, 6)", output);
+        assertFuzzyEquals("Point not removed: (1, 1)", output);
     }
     
     /**

@@ -84,32 +84,12 @@ public class CommandProcessor {
                                 "Point rejected: (" + n1 + ", " 
                                         + n2 + ")");
                     }
-//                    else if (((n3 <= 0 || n3 > 1024) 
-//                            /*|| (n4 <= 0 || n4 > 1024))
-//                            || (n1 + n3 > 1024 || n1 + n3 < 0 || n2 + n4 > 1024 
-//                                    || n2 + n4 < 0)*/)) {
-//                        System.out.println(
-//                                "Point rejected: (" + n1 + ", " 
-//                                        + n2 + ", " + n3 + ", " + n4 + ")");
-//                    } 
-//                    else if (n4 <= 0 || n4 > 1024)
-//                    {
-//                        System.out.println(
-//                                "Point rejected: (" + n1 + ", " 
-//                                        + n2 + ", " + n3 + ", " + n4 + ")");
-//                    }
-//                    else if (n1 + n3 > 1024 /*|| n1 + n3 < 0 */)
-//                    {
-//                        System.out.println(
-//                                "Point rejected: (" + n1 + ", " 
-//                                        + n2 + ", " + n3 + ", " + n4 + ")");
-//                    }
-//                    else if (n2 + n4 > 1024 /*|| n2 + n4 < 0*/)
-//                    {
-//                        System.out.println(
-//                                "Point rejected: (" + n1 + ", " 
-//                                        + n2 + ", " + n3 + ", " + n4 + ")");
-//                    }
+                    if (n1 >= 1024 || n2 >= 1024)
+                    {
+                    	System.out.println(
+                                "Point rejected: (" + n1 + ", " 
+                                        + n2 + ")");
+                    }
                     else 
                     {
                         //db.skipRemoveCoord(n1, n2, n3, n4);
