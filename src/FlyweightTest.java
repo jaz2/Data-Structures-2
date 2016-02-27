@@ -21,6 +21,9 @@ public class FlyweightTest extends TestCase{
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Tests when something is inserted
+	 */
 	@Test
 	public void testInsert() {
 		Flyweight fl = new Flyweight();
