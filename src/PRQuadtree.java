@@ -6,7 +6,7 @@
  * @version Feb 21 2016
  *
  */
-public class PRQuadtree{
+public class PRQuadtree {
 
     /**
      * The root 
@@ -38,7 +38,7 @@ public class PRQuadtree{
      */
     public PRQuadtree(int xcoord, int ycoord, int len)
     {
-        root = Flyweight.fly; //don't initialize vals in fly, initialize a new node obj and store it there
+        root = Flyweight.fly; 
         x = xcoord;
         y = ycoord;
         length = len;
