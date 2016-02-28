@@ -150,7 +150,7 @@ public class PRQuadtree {
 		{
 			if (node.getClass().equals(Flyweight.class))
 			{
-				return 1;
+				return 0;
 			}
 			if (node.isLeaf())
 			{
