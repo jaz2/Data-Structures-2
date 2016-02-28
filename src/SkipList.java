@@ -360,18 +360,18 @@ public class SkipList<K extends Comparable<K>, E> {
         return true;
     }
     
-    /**
-     * The RegionSearch method
-     * @param x x coordinate
-     * @param y y coordinate 
-     * @param h height
-     * @param w width 
-     */
-    public void regionsearch(int x, int y, int w, int h)
-    {
-        System.out.println("Rectangles intersecting region (" + x
-                + ", " + y + ", " + w + ", " + h + "):");
-        SkipNode node = head;
+//    /**
+//     * The RegionSearch method
+//     * @param x x coordinate
+//     * @param y y coordinate 
+//     * @param h height
+//     * @param w width 
+//     */
+//    public void regionsearch(int x, int y, int w, int h)
+//    {
+//        System.out.println("Rectangles intersecting region (" + x
+//                + ", " + y + ", " + w + ", " + h + "):");
+//        SkipNode node = head;
 //        Rect r;
 //        Rect rect = new Rect("rs", x, y, w, h);
 //        for (int i = 1; i <= size + 0; i++)
@@ -388,17 +388,17 @@ public class SkipList<K extends Comparable<K>, E> {
 //            }
 //            node = node.forward[0];
 //        } 
-    }
-
-    
-    /**
-     * Intersections method
-     *  
-     */
-    public void intersections()
-    {
-        SkipNode node1 = head;
-        SkipNode node2;
+//    }
+//
+//    
+//    /**
+//     * Intersections method
+//     *  
+//     */
+//    public void intersections()
+//    {
+//        SkipNode node1 = head;
+//        SkipNode node2;
 //        Rect r1;
 //        Rect r2;
 //        for (int i = 1; i <= size; i++)
@@ -427,6 +427,5 @@ public class SkipList<K extends Comparable<K>, E> {
 //
 //            node1 = node1.forward[0];
 //        } 
-    }
-    
+//    } 
 }

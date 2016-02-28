@@ -23,7 +23,6 @@ public class KVPairTest extends TestCase {
     @Test
     public void testKV() {
     	Point p = new Point(null, 1, 2);
-        PRQuadtree rec = new PRQuadtree(1, 2, 3);
         KVPair<String, Point> k = new KVPair<String, Point>(null, p);
         
         assertEquals(null, k.key());

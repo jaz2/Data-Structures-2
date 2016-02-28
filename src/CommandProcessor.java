@@ -130,7 +130,7 @@ public class CommandProcessor {
             } 
             else if (str.contains("search")) {
                 String id = in.next().toString();
-                //db.skip.search(id);
+                db.search(id);
                 System.out.println(
                 		"Point not found: " + id);
                 
