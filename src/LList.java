@@ -12,22 +12,22 @@
  * @param <Point> the point class
  */
 class LList<Point> {
-	
+
 	/**
 	 * Pointer to the header node of the list
 	 */
 	private Link<Point> head;
-	
+
 	/**
 	 * Pointer to the last element in the list
 	 */
 	private Link<Point> tail;
-	
+
 	/**
 	 * Access to current element
 	 */
 	private Link<Point> curr;
-	
+
 	/**
 	 * Size of the list
 	 */
@@ -68,7 +68,8 @@ class LList<Point> {
 	public boolean insert(Object it) {
 		curr.setNext(new Link<Point>(curr.element(), curr.next()));
 		curr.setElement((Point)it);
-		if (tail == curr) tail = curr.next();  // New tail
+		if (tail == curr) 
+			tail = curr.next();  // New tail
 		listSize++;
 		return true;
 	}
@@ -108,7 +109,7 @@ class LList<Point> {
 	{ 
 		curr = head.next(); 
 	}
-	
+
 	/**
 	 * Sets the current to the end
 	 */
