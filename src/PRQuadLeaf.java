@@ -65,7 +65,7 @@ public class PRQuadLeaf implements PRQuadNode {
      */
     public void printPoints(int s)
     {
-        for(int i = 0; i <= l.length()-1; i++)
+        for (int i = 0; i <= l.length() - 1; i++)
         {
             printSpaces(s);
             System.out.println(l.moveToPos(i).toString());
@@ -88,8 +88,8 @@ public class PRQuadLeaf implements PRQuadNode {
     /**
      * Inserts into a leaf and splits based on number of points
      * @param p the point
-     * @param x the x
-     * @param y the y
+     * @param xco the x
+     * @param yco the y
      * @param length the length
      * @return the nodes
      */
@@ -105,7 +105,7 @@ public class PRQuadLeaf implements PRQuadNode {
             //if my size is already > 3 they must all be duplicates so only check the first element
             if (l.length() > 3)
             {
-                if(p.equals(l.moveToPos(0))) //p same so add
+                if (p.equals(l.moveToPos(0))) //p same so add
                 {
                     l.insert(p);
                     u = this;
@@ -114,11 +114,11 @@ public class PRQuadLeaf implements PRQuadNode {
                 else  //p diff so split
                 {
                     PRQuadInternal in = new PRQuadInternal();
-                    in.insert(p,xco, yco, length);
+                    in.insert(p, xco, yco, length);
                     for (int i = 0; i < l.length(); i++)
                     {
                         Point p1 = (Point) l.moveToPos(i);
-                        in.insert(p1,xco, yco, length);
+                        in.insert(p1, xco, yco, length);
                     }
                     u = in;
                     return in;
@@ -129,7 +129,7 @@ public class PRQuadLeaf implements PRQuadNode {
                 // check every elem with this one if different split
                 for (int i = 0; i < l.length(); i++)
                 {
-                    if(!p.equals(l.moveToPos(i))) //p diff 
+                    if (!p.equals(l.moveToPos(i))) //p diff 
                     {
                         //split
                         PRQuadInternal in = new PRQuadInternal();
