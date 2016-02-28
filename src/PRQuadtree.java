@@ -159,7 +159,7 @@ public class PRQuadtree {
 			}
 			else //is internal
 			{
-				return 1 + regionSearch(((PRQuadInternal) node).nw(), 
+				return 0 + regionSearch(((PRQuadInternal) node).nw(), 
 						x, y, l /2, l / 2, nx, ny, nl / 2)
 				+ regionSearch(((PRQuadInternal) node).ne(), 
 						x + (l / 2), y, l / 2, l / 2, 
