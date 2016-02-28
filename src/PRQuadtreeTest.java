@@ -14,6 +14,8 @@ import student.TestCase;
  *
  */
 public class PRQuadtreeTest extends TestCase {
+	PRQuadtree tree;
+	Point p;
 
 	/**
 	 * @throws java.lang.Exception
@@ -21,8 +23,8 @@ public class PRQuadtreeTest extends TestCase {
 	@Before
 	public void setUp() 
 	{
-		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
-		Point p = new Point ("ayy", 0 ,12);
+		tree = new PRQuadtree(0, 0, 1024);
+		p = new Point ("ayy", 0 ,12);
 		
 	}
 

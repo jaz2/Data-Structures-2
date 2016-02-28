@@ -52,7 +52,7 @@ public class PRQuadtree {
      * @param len the length
      * @return the root
      */
-    public PRQuadNode insert(Point p, int xcoord, int ycoord, int len)
+    public PRQuadNode insert(Point p)
     {
         root = root.insert(p, xcoord, ycoord, len);
         return root;
