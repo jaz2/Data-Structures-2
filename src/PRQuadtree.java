@@ -127,4 +127,20 @@ public class PRQuadtree {
             System.out.print("  ");
         }
     }
+    
+    /**
+     * Searches within the region
+     * @param x the x coord
+     * @param y the y coord
+     * @param w the width
+     * @param l the length
+     */
+    public void regionSearch(int x, int y, int w, int l)
+    {}
+    
+    /**
+     * Searches for duplicates 
+     */
+    public void duplicates()
+    {}
 }
