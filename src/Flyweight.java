@@ -27,6 +27,12 @@ public class Flyweight implements PRQuadNode {
     public boolean isLeaf() {
         return false;
     }
+    
+    /**
+     * Does nothing in this class
+     */
+    public void duplicates()
+    {}
 
     /**
      * When the node is empty, convert to a leaf
