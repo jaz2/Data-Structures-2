@@ -42,6 +42,12 @@ public class Database
         skip.insert(k); 
         pr.insert(p, 0, 0, 1024);
     }
+    
+    public void dump()
+    {
+    	skip.dump();
+    	pr.dump();
+    }
 
 //    /**
 //     * Calls the skiplist remove by coord
