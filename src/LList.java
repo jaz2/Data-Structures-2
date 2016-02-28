@@ -131,20 +131,27 @@ class LList<Point> {
 
 	// Move curr one step right; no change if now at end
 	/**
-	 * 
+	 * The next element
 	 */
 	public void next() 
 	{ 
-		if (curr != tail) curr = curr.next(); 
+		if (curr != tail) 
+			curr = curr.next(); 
 	}
 
+	/**
+	 * The length
+	 * @return the number 
+	 */
 	public int length() 
 	{ 
 		return listSize; 
-	} // Return list length
+	}
 
-
-	// Return the position of the current element
+	/**
+	 * Return the position of curr element
+	 * @return the element
+	 */
 	public int currPos() {
 		Link<Point> temp = head.next();
 		int i;
@@ -153,7 +160,11 @@ class LList<Point> {
 		return i;
 	}
 
-	// Move down list to "pos" position
+	/**
+	 * moves to the ith posiion
+	 * @param pos the position
+	 * @return the element at the pos
+	 */
 	public Object moveToPos(int pos) {
 		if ((pos < 0) || (pos > listSize)) 
 		{
@@ -167,13 +178,20 @@ class LList<Point> {
 		return curr.element();
 	}
 
-	// Return true if current position is at end of the list
+	/**
+	 * True if it is at end
+	 * @return true or false
+	 */
 	public boolean isAtEnd() 
 	{ 
 		return curr == tail; 
 	}
 
-	// Return current element value. Note that null gets returned if curr is at the tail
+	/**
+	 * Returns the current elements value
+	 * If it's at the tail it is null
+	 * @return the element
+	 */
 	public Object getValue() 
 	{
 		return curr.element();
