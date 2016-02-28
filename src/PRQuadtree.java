@@ -47,14 +47,14 @@ public class PRQuadtree {
     /**
      * The insert method
      * @param p the point to be inserted
-     * @param x the xcoord
-     * @param y the ycoord
-     * @param length the length
+     * @param xcoord the xcoord
+     * @param ycoord the ycoord
+     * @param len the length
      * @return the root
      */
-    public PRQuadNode insert(Point p, int x, int y, int length)
-    { //try and make it node-centric (within the node class to avoid copying it over)
-        root = root.insert(p, x, y, length);
+    public PRQuadNode insert(Point p, int xcoord, int ycoord, int len)
+    {
+        root = root.insert(p, xcoord, ycoord, len);
         return root;
     }
 

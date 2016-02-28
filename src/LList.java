@@ -3,12 +3,16 @@
  * 
  */
 
-/**
- * @author Jazz
- *
- */
 // Linked list implementation
+/**
+ * 
+ * @author Jazmine Zurita and Jessica McCready
+ * @version Feb 22 2016
+ *
+ * @param <Point> the point class
+ */
 class LList<Point> {
+	
 	private Link<Point> head;         // Pointer to list header
 	private Link<Point> tail;         // Pointer to last element
 	private Link<Point> curr;         // Access to current element
