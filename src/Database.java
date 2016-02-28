@@ -48,29 +48,4 @@ public class Database
     	skip.dump();
     	pr.dump();
     }
-
-//    /**
-//     * Calls the skiplist remove by coord
-//     * @param x the x coord
-//     * @param y the y coord
-//     * @param w the width
-//     * @param h the height
-//     */
-//    public void skipRemoveCoord(int x, int y)
-//    {
-//        Rect r = new Rect(null, x, y, w, h);
-//        KVPair<String, Rect> p = new KVPair<String, Rect>(null, r);
-//        skip.removeByCoord(r);
-//    }
-    
-    //    /**
-    //     * Searches for the rectangle through name
-    //     * 
-    //     * @param id
-    //     */
-    //    public void skipSearch(String id)
-    //    {
-    //        KVPair p = new KVPair()
-    //        skip.search(id);
-    //    }
 }
