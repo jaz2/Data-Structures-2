@@ -131,8 +131,8 @@ public class CommandProcessor {
             else if (str.contains("search")) {
                 String id = in.next().toString();
                 db.search(id);
-                System.out.println(
-                		"Point not found: " + id);
+//                System.out.println(
+//                		"Point not found: " + id);
                 
             } 
             else if (str.contains("dump")) {
