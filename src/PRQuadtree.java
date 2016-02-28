@@ -81,7 +81,7 @@ public class PRQuadtree {
      * @param len the length
      * @return the number
      */
-    public int dump(PRQuadNode node, int s, int xcoord, int ycoord, int len)
+    private int dump(PRQuadNode node, int s, int xcoord, int ycoord, int len)
     {    
         printSpaces(s);
         if (node.getClass().equals(Flyweight.class)) //empty
@@ -96,12 +96,12 @@ public class PRQuadtree {
                     + len + ": Internal");
             return 1 + dump(((PRQuadInternal) node).nw(), 
                     s + 1, xcoord, ycoord, len / 2)
-                    + dump(( (PRQuadInternal) node).ne(), s + 1, 
-                            xcoord + (len / 2), ycoord, len / 2)
-                    + dump(((PRQuadInternal) node).sw(), s + 1, 
-                            xcoord, ycoord + (len / 2), len / 2)
-                    + dump(((PRQuadInternal) node).se(), s + 1, 
-                            xcoord + (len / 2), ycoord + (len / 2), len / 2);
+            + dump(( (PRQuadInternal) node).ne(), s + 1, 
+                    xcoord + (len / 2), ycoord, len / 2)
+            + dump(((PRQuadInternal) node).sw(), s + 1, 
+                    xcoord, ycoord + (len / 2), len / 2)
+            + dump(((PRQuadInternal) node).se(), s + 1, 
+                    xcoord + (len / 2), ycoord + (len / 2), len / 2);
         }
         else //node leaf
         {
@@ -120,7 +120,6 @@ public class PRQuadtree {
      */
     public void printSpaces(int n)
     {
-
         //print n*2 spaces
         for (int i = 0; i < n; i++)
         {
@@ -128,16 +127,56 @@ public class PRQuadtree {
         }
     }
     
+    public void regionSearch(int xc, int yc, int w, int l)
+    {
+    	System.out.println("Points intersecting region (" + xc + ", " 
+                + yc + ", " + w + ", " + l + "):");
+    	int r = regionSearch(root, xc, yc, w, l, 0, 0, 1024);
+    	System.out.println(r + " quadtree nodes visited");
+    }
+
     /**
      * Searches within the region
+     * @param node the node in the tree
      * @param x the x coord
      * @param y the y coord
      * @param w the width
      * @param l the length
+     * @return number of nodes visited
      */
-    public void regionSearch(int x, int y, int w, int l)
-    {}
-    
+    private int regionSearch(PRQuadNode node, int x, int y, int w, int l, int nx, int ny, int nl)
+    {
+    	PRQuadtree s;
+    	PRQuadtree t = new PRQuadtree(x, y, l);
+        if (nx <= x && ny <= y && nl <= l)
+        {
+        	if (node.getClass().equals(Flyweight.class))
+        	{
+        		return 1;
+        	}
+        	if (node.isLeaf())
+        	{
+        		((PRQuadLeaf)node).printVisited();
+        		return 1;
+        	}
+        	else //is internal
+        	{
+        		return 1 + regionSearch(((PRQuadInternal) node).nw(), 
+                        x, y, l /2, l / 2, nx, ny, nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).ne(), 
+        	                    x + (l / 2), y, l / 2, l / 2, 
+        	                    nx + (1 / 2), ny, nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).sw(), 
+        	                    x, y + (l / 2), l / 2, l / 2, nx, 
+        	                    ny + (1 / 2), nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).se(), 
+        	                    x + (l / 2), y + (l / 2), l / 2, l / 2, 
+        	                    nx + (l / 2), ny + (1 / 2), nl / 2);
+        	}
+        }
+		return 0;
+    }
+
     /**
      * Searches for duplicates 
      */
