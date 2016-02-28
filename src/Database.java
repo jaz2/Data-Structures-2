@@ -40,7 +40,7 @@ public class Database
         Point p = new Point(id, x, y);
         KVPair<String, Point> k = new KVPair<String, Point>(id, p);
         skip.insert(k); 
-        pr.insert(p, 0, 0, 1024);
+        pr.insert(p);
     }
     
     public void dump()
