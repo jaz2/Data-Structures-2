@@ -64,7 +64,7 @@ public class PRQuadInternal implements PRQuadNode {
     }
 
     @Override
-    public boolean isempty() {
+    public boolean isEmpty() {
         return false;
     }
 
