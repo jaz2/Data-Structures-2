@@ -42,7 +42,7 @@ public class PRQuadInternalTest extends TestCase {
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.NE().getClass());
-        assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+        assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
     
     /**
@@ -54,8 +54,7 @@ public class PRQuadInternalTest extends TestCase {
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.SW().getClass());
-        //assertEquals(PRQuadLeaf.class, i.NW().getClass());
-        assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+        assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
     
     /**
@@ -67,6 +66,6 @@ public class PRQuadInternalTest extends TestCase {
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.SE().getClass());
-        assertEquals(PRQuadLeaf.class, i.getInstance().getClass());
+        assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 }
