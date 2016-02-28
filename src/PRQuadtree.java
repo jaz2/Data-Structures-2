@@ -201,8 +201,13 @@ public class PRQuadtree {
 	}
 
 	/**
-	 * Searches for duplicates 
+	 * The duplicates method
+	 * Finds any points that are
+	 * the same
 	 */
 	public void duplicates()
-	{}
+	{
+		System.out.println("Duplicate points:");
+		root.duplicates();
+	}
 }
