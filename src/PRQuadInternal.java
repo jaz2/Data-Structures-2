@@ -38,31 +38,55 @@ public class PRQuadInternal implements PRQuadNode {
         se = Flyweight.fly;
     }
 
+    /**
+     * Returns the sw 
+     * @return sw
+     */
     public PRQuadNode sw()
     {
         return sw;
     }
 
+    /**
+     * Returns the se
+     * @return se
+     */
     public PRQuadNode se()
     {
         return se;
     }
 
+    /**
+     * Returns the nw
+     * @return nw
+     */
     public PRQuadNode nw()
     {
         return nw;
     }
 
+    /**
+     * Returns the ne
+     * @return ne
+     */
     public PRQuadNode ne()
     {
         return ne;
     }
 
+    /**
+     * Returns if it is a leaf or no
+     * @return false
+     */
     @Override
     public boolean isLeaf() {
         return false;
     }
-
+    
+    /**
+     * Return if it is empty
+     * @return false
+     */
     @Override
     public boolean isEmpty() {
         return false;
@@ -83,6 +107,7 @@ public class PRQuadInternal implements PRQuadNode {
      * @paran x the xcoord
      * @param y the ycoord
      * @param length the length
+     * @return this 
      */
     @Override
     public PRQuadNode insert(Point p, int x, int y, int length) {

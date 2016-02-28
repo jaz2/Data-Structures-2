@@ -94,13 +94,13 @@ public class PRQuadtree {
         {
             System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
                     + len + ": Internal");
-            return 1 + dump(((PRQuadInternal) node).NW(), 
+            return 1 + dump(((PRQuadInternal) node).nw(), 
                     s + 1, xcoord, ycoord, len / 2)
-                    + dump(( (PRQuadInternal) node).NE(), s + 1, 
+                    + dump(( (PRQuadInternal) node).ne(), s + 1, 
                             xcoord + (len / 2), ycoord, len / 2)
-                    + dump(((PRQuadInternal) node).SW(), s + 1, 
+                    + dump(((PRQuadInternal) node).sw(), s + 1, 
                             xcoord, ycoord + (len / 2), len / 2)
-                    + dump(((PRQuadInternal) node).SE(), s + 1, 
+                    + dump(((PRQuadInternal) node).se(), s + 1, 
                             xcoord + (len / 2), ycoord + (len / 2), len / 2);
         }
         else //node leaf

@@ -25,11 +25,11 @@ public class PRQuadInternalTest extends TestCase {
      * Tests that it returns a leaf in this region
      */
     @Test
-    public void testNW() {
+    public void testNw() {
         Point p = new Point(null, 4, 5);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.NW().getClass());
+        assertEquals(PRQuadLeaf.class, i.nw().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 
@@ -37,11 +37,11 @@ public class PRQuadInternalTest extends TestCase {
      * Tests that it returns a leaf in this region
      */
     @Test
-    public void testNE() {
+    public void testNe() {
         Point p = new Point(null, 1000, 4);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.NE().getClass());
+        assertEquals(PRQuadLeaf.class, i.ne().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
     
@@ -49,11 +49,11 @@ public class PRQuadInternalTest extends TestCase {
      * Tests that it returns a leaf in this region
      */
     @Test
-    public void testSW() {
+    public void testSw() {
         Point p = new Point(null, 4, 900);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.SW().getClass());
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
     
@@ -61,11 +61,11 @@ public class PRQuadInternalTest extends TestCase {
      * Tests that it returns a leaf in this region
      */
     @Test
-    public void testSE() {
+    public void testSe() {
         Point p = new Point(null, 800, 900);
         PRQuadInternal i = new PRQuadInternal();
         i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.SE().getClass());
+        assertEquals(PRQuadLeaf.class, i.se().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 }
