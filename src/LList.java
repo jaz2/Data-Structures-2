@@ -13,31 +13,57 @@
  */
 class LList<Point> {
 	
-	private Link<Point> head;         // Pointer to list header
-	private Link<Point> tail;         // Pointer to last element
-	private Link<Point> curr;         // Access to current element
-	private int listSize;      // Size of list
+	/**
+	 * Pointer to the header node of the list
+	 */
+	private Link<Point> head;
+	
+	/**
+	 * Pointer to the last element in the list
+	 */
+	private Link<Point> tail;
+	
+	/**
+	 * Access to current element
+	 */
+	private Link<Point> curr;
+	
+	/**
+	 * Size of the list
+	 */
+	private int listSize;
 
-	// Constructors
+	/**
+	 * Constructor for the list
+	 * @param size the size of the list
+	 */
 	LList(int size) 
 	{ 
 		this(); 
 	}     
 
-	// Constructor -- Ignore size
+	/**
+	 * Resets the size and list
+	 */
 	LList() 
 	{ 
 		clear(); 
 	}
 
-	// Remove all elements
+	/**
+	 * Resets all items in the list
+	 */
 	public void clear() {
 		curr = tail = new Link<Point>(null); // Create trailer
 		head = new Link<Point>(tail);        // Create header
 		listSize = 0;
 	}
 
-	// Insert "it" at current position
+	/**
+	 * Inserts element at current position
+	 * @param it the element to be inserted
+	 * @return true or false
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean insert(Object it) {
 		curr.setNext(new Link<Point>(curr.element(), curr.next()));
@@ -47,7 +73,11 @@ class LList<Point> {
 		return true;
 	}
 
-	// Append "it" to list
+	/**
+	 * Inserts into the tail
+	 * @param it item to be inserted
+	 * @return true or false
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean append(Object it) {
 		tail.setNext(new Link<Point>(null));
@@ -57,7 +87,10 @@ class LList<Point> {
 		return true;
 	}
 
-	// Remove and return current element
+	/**
+	 * Removes and returns the current element
+	 * @return
+	 */
 	public Object remove () {
 		if (curr == tail) return null;          // Nothing to remove
 		Object it = curr.element();             // Remember value
@@ -68,20 +101,42 @@ class LList<Point> {
 		return it;                              // Return value
 	}
 
-	public void moveToStart() { curr = head.next(); } // Set curr at list start
-	public void moveToEnd() { curr = tail; }          // Set curr at list end
+	/**
+	 * Moves the position to the beginning
+	 */
+	public void moveToStart() 
+	{ 
+		curr = head.next(); 
+	}
+	
+	/**
+	 * Sets the current to the end
+	 */
+	public void moveToEnd() 
+	{ 
+		curr = tail; 
+	}
 
-	// Move curr one step left; no change if now at front
+	/**
+	 * Move current back by one
+	 */
 	public void prev() {
 		if (head.next() == curr) return; // No previous element
 		Link<Point> temp = head;
 		// March down list until we find the previous element
-		while (temp.next() != curr) temp = temp.next();
+		while (temp.next() != curr) 
+			temp = temp.next();
 		curr = temp;
 	}
 
 	// Move curr one step right; no change if now at end
-	public void next() { if (curr != tail) curr = curr.next(); }
+	/**
+	 * 
+	 */
+	public void next() 
+	{ 
+		if (curr != tail) curr = curr.next(); 
+	}
 
 	public int length() 
 	{ 
