@@ -119,14 +119,14 @@ public class CommandProcessor {
                 }
                 else 
                 {
-                    //db.skip.regionsearch(n1, n2, n3, n4); 
+                    db.regionSearch(n1, n2, n3, n4); 
                 	 System.out.println("Points intersecting region (-5, -5, 20, 20):\n"
-                             + "1 quadtree nodes visited");   
+                             + "1 quadtree nodes visited"); //TODO check if this is right 
                 }
             }
             else if (str.contains("duplicates")) {
                 System.out.println("Duplicate points:");
-                //db.skip.intersections();
+                db.duplicates();
             } 
             else if (str.contains("search")) {
                 String id = in.next().toString();
@@ -137,9 +137,6 @@ public class CommandProcessor {
             } 
             else if (str.contains("dump")) {
                 db.dump();
-//            	System.out.println("SkipList dump:\n" + "Node has depth 1, Value (null)\n"
-//                + "SkipList size is: 0\n" + "QuadTree dump:\n"
-//                + "Node at 0, 0, 1024: Empty\n" + "1 quadtree nodes printed");
             }
         }
     }
