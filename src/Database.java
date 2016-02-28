@@ -43,9 +43,42 @@ public class Database
         pr.insert(p);
     }
     
+    /**
+     * Dumps using the skip list 
+     * and quad tree
+     */
     public void dump()
     {
     	skip.dump();
     	pr.dump();
+    }
+    
+    /**
+     * Call the pr quad tree region search
+     * @param xc the xcoord
+     * @param yc the ycoord
+     * @param w the width
+     * @param l the lenfth
+     */
+    public void regionSearch(int xc, int yc, int w, int l)
+    {
+    	pr.regionSearch(xc, yc, w, l);
+    }
+    
+    /**
+     * Calls the pr quad trees duplicates
+     */
+    public void duplicates()
+    {
+    	pr.duplicates();
+    }
+    
+    /**
+     * Searches for the key
+     * @param k the key
+     */
+    public void search(String k)
+    {
+    	skip.search(k);
     }
 }
