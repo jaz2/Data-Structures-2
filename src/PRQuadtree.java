@@ -175,18 +175,29 @@ public class PRQuadtree {
         else 
         {
         	
-		    return 0 + regionSearch(((PRQuadInternal) node).nw(), 
-                    x, y, l /2, l / 2, nx, ny, nl / 2)
-    	            + regionSearch(((PRQuadInternal) node).ne(), 
-    	                    x + (l / 2), y, l / 2, l / 2, 
-    	                    nx + (1 / 2), ny, nl / 2)
-    	            + regionSearch(((PRQuadInternal) node).sw(), 
-    	                    x, y + (l / 2), l / 2, l / 2, nx, 
-    	                    ny + (1 / 2), nl / 2)
-    	            + regionSearch(((PRQuadInternal) node).se(), 
-    	                    x + (l / 2), y + (l / 2), l / 2, l / 2, 
-    	                    nx + (l / 2), ny + (1 / 2), nl / 2);
-        }
+        	if (node.getClass().equals(Flyweight.class))
+        	{
+        		return 0;
+        	}
+        	if (node.isLeaf())
+        	{
+        		((PRQuadLeaf)node).printVisited();
+        		return 0;
+        	}
+        	else //is internal
+        	{
+        		return 0 + regionSearch(((PRQuadInternal) node).nw(), 
+                        x, y, l /2, l / 2, nx, ny, nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).ne(), 
+        	                    x + (l / 2), y, l / 2, l / 2, 
+        	                    nx + (1 / 2), ny, nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).sw(), 
+        	                    x, y + (l / 2), l / 2, l / 2, nx, 
+        	                    ny + (1 / 2), nl / 2)
+        	            + regionSearch(((PRQuadInternal) node).se(), 
+        	                    x + (l / 2), y + (l / 2), l / 2, l / 2, 
+        	                    nx + (l / 2), ny + (1 / 2), nl / 2);
+        	}        }
     }
 
     /**
