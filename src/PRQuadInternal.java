@@ -100,6 +100,18 @@ public class PRQuadInternal implements PRQuadNode {
     {
         return u;
     }
+    
+    /**
+     * Checks duplicates in internal
+     */
+    @Override
+	public void duplicates()
+	{
+		nw.duplicates();
+		ne.duplicates();
+		se.duplicates();
+		sw.duplicates();		
+	}
 
     /**
      * Inserts in the regions based on where it is
