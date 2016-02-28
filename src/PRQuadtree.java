@@ -106,7 +106,7 @@ public class PRQuadtree {
         else //node leaf
         {
             System.out.println("Node at " + xcoord + ", " + ycoord + ", " 
-                    + len + ": ");
+                    + len + ":");
             ((PRQuadLeaf) node).printPoints(s);
             return 1;
         }
