@@ -305,7 +305,7 @@ public class SkipList<K extends Comparable<K>, E> {
     {
         if (size == 0)
         {
-            System.out.println("SkipList dump: ");
+            System.out.println("SkipList dump:");
             System.out.println("Node has depth 1, Value (null)");
             System.out.println("SkipList size is: 0");
         }

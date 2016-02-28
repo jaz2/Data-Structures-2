@@ -70,7 +70,7 @@ public class Point {
      */
     public String toString()
     {
-        String s = "( " + getName() + ", " + getX() + ", " + getY() + ")";
+        String s = "(" + getName() + ", " + getX() + ", " + getY() + ")";
         return s;
     }
 
