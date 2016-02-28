@@ -181,7 +181,6 @@ public class PRQuadtree {
         	}
         	if (node.isLeaf())
         	{
-        		((PRQuadLeaf)node).printVisited();
         		return 0;
         	}
         	else //is internal
