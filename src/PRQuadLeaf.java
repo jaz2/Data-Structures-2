@@ -96,6 +96,49 @@ public class PRQuadLeaf implements PRQuadNode {
             System.out.print("  ");
         }
     }
+    
+    /**
+     * Checks duplicate points in the leaf nodes
+     */
+    @Override
+	public void duplicates()
+	{
+		//leaf then look at points and see if duplicates
+		//(if size >3 dont have to check, if size <=3 then check)
+		if(l.length() > 3) //all dups
+		{
+			System.out.println("(" + ((Point)l.moveToPos(0)).getX()
+					+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
+		}
+		else if (l.length() == 3)
+		{
+			if(l.moveToPos(0).equals(l.moveToPos(1)))
+			{
+				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
+			}
+			else if(l.moveToPos(1).equals(l.moveToPos(2)))
+			{
+				System.out.println("(" + ((Point)l.moveToPos(1)).getX() 
+						+ ", " + ((Point)l.moveToPos(1)).getY() + ")");
+			}
+			else if(l.moveToPos(0).equals(l.moveToPos(2)))
+			{
+				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
+			}
+
+		}
+		else if (l.length() == 2)
+		{
+			if(l.moveToPos(0).equals(l.moveToPos(1)))
+			{
+				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
+			}
+		}
+		//else length is 1 so no duplicates
+	}
 
     /**
      * Inserts into a leaf and splits based on number of points
