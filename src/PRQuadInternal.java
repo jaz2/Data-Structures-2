@@ -8,54 +8,54 @@ public class PRQuadInternal implements PRQuadNode {
     PRQuadNode u;
 
     /**
-     * The NW quadrant
+     * The nw quadrant
      */
-    PRQuadNode NW;
+    PRQuadNode nw;
 
     /**
-     * The NE quadrant
+     * The ne quadrant
      */
-    PRQuadNode NE;
+    PRQuadNode ne;
 
     /**
-     * The SW quadrant
+     * The sw quadrant
      */
-    PRQuadNode SW;
+    PRQuadNode sw;
 
     /**
-     * The SE quadrant
+     * The se quadrant
      */
-    PRQuadNode SE;    
+    PRQuadNode se;    
 
     /**
      * Creates an internal node
      */
     public PRQuadInternal()
     { 
-        NW = Flyweight.fly;
-        NE = Flyweight.fly;
-        SW = Flyweight.fly;
-        SE = Flyweight.fly;
+        nw = Flyweight.fly;
+        ne = Flyweight.fly;
+        sw = Flyweight.fly;
+        se = Flyweight.fly;
     }
 
-    public PRQuadNode SW()
+    public PRQuadNode sw()
     {
-        return SW;
+        return sw;
     }
 
-    public PRQuadNode SE()
+    public PRQuadNode se()
     {
-        return SE;
+        return se;
     }
 
-    public PRQuadNode NW()
+    public PRQuadNode nw()
     {
-        return NW;
+        return nw;
     }
 
-    public PRQuadNode NE()
+    public PRQuadNode ne()
     {
-        return NE;
+        return ne;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class PRQuadInternal implements PRQuadNode {
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isempty() {
         return false;
     }
 
@@ -87,29 +87,29 @@ public class PRQuadInternal implements PRQuadNode {
     @Override
     public PRQuadNode insert(Point p, int x, int y, int length) {
         int nuLen = length / 2;
-        if (p.getX() <= x + nuLen && p.getY() <= y + nuLen) //NW
+        if (p.getX() <= x + nuLen && p.getY() <= y + nuLen) //nw
         {
-            NW = NW.insert(p, x, y, nuLen);
-            u = NW;
+            nw = nw.insert(p, x, y, nuLen);
+            u = nw;
             //return this;
         }
-        else if (p.getX() > x + nuLen && p.getY() <= y + nuLen) //NE
+        else if (p.getX() > x + nuLen && p.getY() <= y + nuLen) //ne
         { 
-            NE = NE.insert(p, x + nuLen, y, nuLen);
-            u = NE;
+            ne = ne.insert(p, x + nuLen, y, nuLen);
+            u = ne;
             //return this;
         }
-        else if (p.getX() <= x + nuLen && p.getY() > y + nuLen) //SW
+        else if (p.getX() <= x + nuLen && p.getY() > y + nuLen) //sw
         { 
-            SW = SW.insert(p, x, y + nuLen, nuLen);
-            u = SW;
+            sw = sw.insert(p, x, y + nuLen, nuLen);
+            u = sw;
             //return this;
         }
         else
-            //if (p.getX() > x + nuLen && p.getY() > y + nuLen) //SE
+            //if (p.getX() > x + nuLen && p.getY() > y + nuLen) //se
         { 
-            SE = SE.insert(p, x + nuLen, y + nuLen, nuLen);
-            u = SE;
+            se = se.insert(p, x + nuLen, y + nuLen, nuLen);
+            u = se;
             //return this;
         }
         return this;
