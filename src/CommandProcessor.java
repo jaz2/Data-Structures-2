@@ -125,7 +125,6 @@ public class CommandProcessor {
                 }
             }
             else if (str.contains("duplicates")) {
-                System.out.println("Duplicate points:");
                 db.duplicates();
             } 
             else if (str.contains("search")) {
