@@ -93,61 +93,63 @@ public class PRQuadLeaf implements PRQuadNode {
      * @param length the length
      * @return the nodes
      */
-    @Override
-    public PRQuadNode insert(Point p, int x, int y, int length) {
-        if (l.length() <= 2)
-        {
-            l.insert(p);
-            u = this;
-            return this;
-        }
-        else 
-        { //check duplicates if they are the same you don't split
-            int count = 0; //if they are not then count to 4 and split
-            for (int i = 0; i <= l.length() - 2; i++)
-            {
-                if (l.moveToPos(i).equals(l.moveToPos(i + 1)))    
-                {
-                    count++;
-                }
-            }
-            if (count == l.length() - 1)
-            {
-                if (l.moveToPos(l.length() - 1).equals(p)) //they are the same
-                {
-                    l.insert(p);
-                    u = this;
-                    return this;
-
-                }
-                else //split
-                {
-                    PRQuadInternal in = new PRQuadInternal();
-                    in.insert(p, x, y, length);
-                    for (int i = 0; i <= l.length() - 1; i++)
-                    {
-                    	Point m = (Point)l.moveToPos(i);
-                    	in.insert(m, x, y, length);
-                    }
-                    u = in;
-                    return in;
-                }
-            }                    
-            else //are not the same
-            { //split
-                PRQuadInternal in = new PRQuadInternal();
-                in.insert(p, x, y, length);
-                for (int i = 0; i <= l.length() - 1; i++)
-                {
-                	Point m = (Point)l.moveToPos(i);
-                	in.insert(m, x, y, length);
-                }
-                u = in;
-                return in;
-            }    
-        }
-
-    }
+	@Override
+	public PRQuadNode insert(Point p, int xco, int yco, int length) {
+		{
+			if (l.length() <= 2)
+			{
+				l.insert(p);
+				u = this;
+				return this;
+			}
+			//if my size is already > 3 they must all be duplicates so only check the first element
+			if (l.length() > 3)
+			{
+				if(p.equals(l.moveToPos(0))) //p same so add
+				{
+					l.insert(p);
+					u = this;
+					return this;
+				}
+				else  //p diff so split
+				{
+					PRQuadInternal in = new PRQuadInternal();
+					in.insert(p,xco, yco, length);
+					for (int i = 0; i < l.length(); i++)
+					{
+						Point p1 = (Point) l.moveToPos(i);
+						in.insert(p1,xco, yco, length);
+					}
+					u = in;
+					return in;
+				}
+			}			
+			else // we are 3
+			{
+				// check every elem with this one if different split
+				for (int i = 0; i < l.length(); i++)
+				{
+					if(!p.equals(l.moveToPos(i))) //p diff 
+					{
+						//split
+						PRQuadInternal in = new PRQuadInternal();
+					    in.insert(p, xco, yco, length);
+						for (int j = 0; j < l.length(); j++)
+						{
+							Point p1 = (Point) l.moveToPos(j);
+							in.insert(p1, xco, yco, length);
+						}
+						u = in;
+						return in;
+					}
+				}
+				// p same as all, so add
+				l.insert(p);
+				u = this;
+				return this;
+			}
+		}
+	}
 }
 
 
