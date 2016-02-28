@@ -158,7 +158,7 @@ class LList<Point> {
     public int currPos() {
         Link<Point> temp = head.next();
         int i;
-        for (i=0; curr != temp; i++)
+        for (i = 0; curr != temp; i++)
             temp = temp.next();
         return i;
     }
