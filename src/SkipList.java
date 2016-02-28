@@ -267,7 +267,7 @@ public class SkipList<K extends Comparable<K>, E> {
         }
         if (found == false)  //transfer tests
         {
-            System.out.println("Rectangle not found: " + key); 
+            System.out.println("Point not found: " + key); 
         }
     }
 
