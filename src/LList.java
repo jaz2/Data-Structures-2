@@ -90,9 +90,9 @@ class LList<Point> {
 
     /**
      * Removes and returns the current element
-     * @return
+     * @return the current element
      */
-    public Object remove () {
+    public Object remove() {
         if (curr == tail) return null;          // Nothing to remove
         Object it = curr.element();             // Remember value
         curr.setElement(curr.next().element()); // Pull forward the next element
