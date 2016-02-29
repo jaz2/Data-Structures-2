@@ -212,6 +212,7 @@ public class PRQuadLeafTest extends TestCase{
 	{}
 	
 	public void regionSearchXG()
+	{}
 	
 	/**
 	 * Tests when 2 are the same 
