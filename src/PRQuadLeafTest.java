@@ -180,7 +180,7 @@ public class PRQuadLeafTest extends TestCase{
 	 */
 	public void regionSearchRXL()
 	{
-		Point p = new Point("a", 1, 2);
+		Point p = new Point("a", 1, 1);
 		PRQuadLeaf lf = new PRQuadLeaf(p);		
 		
 		assertEquals(1, lf.regionSearch(1, 1, 5, 5, 0, 0, 1024));
