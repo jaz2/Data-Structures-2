@@ -81,6 +81,7 @@ public class Flyweight implements PRQuadNode {
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
+     * @return 1
      */
 	@Override
 	public int regionSearch(int x, int y, int w, int l, int nx, int ny, int nl) 
