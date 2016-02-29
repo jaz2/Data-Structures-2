@@ -106,6 +106,7 @@ public class PRQuadLeaf implements PRQuadNode {
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
+     * @return 1 when found 
      */
     @Override
 	public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
