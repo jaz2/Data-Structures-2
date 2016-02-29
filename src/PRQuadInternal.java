@@ -109,13 +109,13 @@ public class PRQuadInternal implements PRQuadNode {
      * Checks duplicates in internal
      */
     @Override
-	public void duplicates()
-	{
-		nw.duplicates();
-		ne.duplicates();
-		se.duplicates();
-		sw.duplicates();		
-	}
+    public void duplicates()
+    {
+        nw.duplicates();
+        ne.duplicates();
+        se.duplicates();
+        sw.duplicates();        
+    }
     
     /**
      * QuadInternal implementation
@@ -131,29 +131,29 @@ public class PRQuadInternal implements PRQuadNode {
      * @return c for the count
      */
     @Override
-	public int regionSearch( int rx, int ry, int rw, int rh, int nx, int ny, int nl) 
-	{
-		int mid = nl/2;
-		int c = 1;
+    public int regionSearch( int rx, int ry, int rw, int rh, int nx, int ny, int nl) 
+    {
+        int mid = nl/2;
+        int c = 1;
 
-		if ((nl / 2) + nx > rx && (nl / 2) + ny > ry) //NW
-		{
-			c = c + nw.regionSearch(rx, ry, rw, rh, nx, ny, mid);
-		}
-		if ((nl / 2) + nx <= rx && (nl / 2) + ny > ry)  //NE
-		{
-			c = c + ne.regionSearch(rx, ry, rw, rh, nx + mid, ny, mid);
-		}
-		if ((nl / 2) + nx > rx && (nl / 2) + ny <= ry)  //SW
-		{
-			c = c + sw.regionSearch(rx, ry, rw, rh, nx, ny + mid, mid);
-		}
-		if ((nl / 2) + nx <= rx && (nl / 2) + ny <= ry)  //SE
-		{
-			c = c + se.regionSearch(rx, ry, rw, rh, nx + mid, ny + mid, mid);
-		}
-		return c;
-	}
+        if ((nl / 2) + nx > rx && (nl / 2) + ny > ry) //NW
+        {
+            c = c + nw.regionSearch(rx, ry, rw, rh, nx, ny, mid);
+        }
+        if ((nl / 2) + nx <= rx && (nl / 2) + ny > ry)  //NE
+        {
+            c = c + ne.regionSearch(rx, ry, rw, rh, nx + mid, ny, mid);
+        }
+        if ((nl / 2) + nx > rx && (nl / 2) + ny <= ry)  //SW
+        {
+            c = c + sw.regionSearch(rx, ry, rw, rh, nx, ny + mid, mid);
+        }
+        if ((nl / 2) + nx <= rx && (nl / 2) + ny <= ry)  //SE
+        {
+            c = c + se.regionSearch(rx, ry, rw, rh, nx + mid, ny + mid, mid);
+        }
+        return c;
+    }
 
     /**
      * Inserts in the regions based on where it is
