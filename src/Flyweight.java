@@ -77,7 +77,7 @@ public class Flyweight implements PRQuadNode {
      * @param x the x coord
      * @param y the y coord
      * @param w the width
-     * @param h the length
+     * @param l the length
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
