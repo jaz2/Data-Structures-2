@@ -14,6 +14,9 @@ public class Database
      */
     public SkipList<String, Point> skip; 
     
+    /**
+     * The PRQuadtree instance
+     */
     public PRQuadtree pr;
 
     /**
@@ -31,8 +34,6 @@ public class Database
      * @param id the key
      * @param x the x coord
      * @param y the y coord
-     * @param w the width
-     * @param h the height
      * @return
      */
     public void insert(String id, int x, int y)
