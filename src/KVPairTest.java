@@ -22,15 +22,15 @@ public class KVPairTest extends TestCase {
      */
     @Test
     public void testKV() {
-    	Point p = new Point(null, 1, 2);
+        Point p = new Point(null, 1, 2);
         KVPair<String, Point> k = new KVPair<String, Point>(null, p);
-        
+
         assertEquals(null, k.key());
         assertEquals(p, k.value());
         assertEquals("(null, 1, 2)", p.toString());
     }
-    
-    
+
+
     /**
      * Tests when two pairs are the same
      */
@@ -39,14 +39,14 @@ public class KVPairTest extends TestCase {
     {
         Point rec = new Point("a", 1, 2);
         KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
-        
+
         Point other = new Point("a", 1, 2);
         KVPair<String, Point> b = new KVPair<
                 String, Point>(other.getName(), other);
-        
+
         assertEquals(0, p.compareTo(b));
     }
-    
+
     /**
      * Tests when two pairs are not the same
      */
@@ -55,14 +55,14 @@ public class KVPairTest extends TestCase {
     {
         Point rec = new Point("a", 1, 2);
         KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
-        
+
         Point nu = new Point("k", 1, 3);
         KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), rec);
-        
+
         assertEquals(-10, p.compareTo(n));
     }
-    
-    
+
+
     /**
      * Tests when two names match
      */
@@ -71,9 +71,9 @@ public class KVPairTest extends TestCase {
     {
         Point rec = new Point("a", 1, 2);
         KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
-        
+
         Point idk = new Point("a", 1, 1);
-        
+
         assertEquals(0, p.compareTo(idk.getName()));
     }
 
@@ -85,9 +85,9 @@ public class KVPairTest extends TestCase {
     {
         Point rec = new Point("a", 1, 2);
         KVPair<String, Point> p = new KVPair<String, Point>(rec.getName(), rec);
-        
+
         Point no = new Point("b", 1, 2);
-        
+
         assertEquals(-1, p.compareTo(no.getName()));
     }
 }
