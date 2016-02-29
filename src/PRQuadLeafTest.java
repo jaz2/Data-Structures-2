@@ -279,10 +279,10 @@ public class PRQuadLeafTest extends TestCase{
 	 */
 	public void regionSearchYE()
 	{
-		Point p = new Point("a", 10, 2);
+		Point p = new Point("a", 10, 40);
 		PRQuadLeaf lf = new PRQuadLeaf(p);		
 		
-		assertEquals(1, lf.regionSearch(5, 100, 5, 10, 0, 0, 1024));
+		assertEquals(1, lf.regionSearch(5, 20, 5, 20, 0, 0, 1024));
 	}
 	
 	/**
