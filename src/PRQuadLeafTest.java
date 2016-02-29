@@ -197,6 +197,9 @@ public class PRQuadLeafTest extends TestCase{
 		assertEquals(0, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
 	}
 	
+	public void regionSearchX()
+	{}
+	
 	/**
 	 * Tests when 2 are the same 
 	 * for duplicates
