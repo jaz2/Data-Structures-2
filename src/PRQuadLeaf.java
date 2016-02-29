@@ -14,7 +14,7 @@ public class PRQuadLeaf implements PRQuadNode {
     /**
      * the linked list
      */
-    LList<Point> l;
+    List l;
 
     /**
      * For testing purposes
@@ -28,7 +28,7 @@ public class PRQuadLeaf implements PRQuadNode {
      */
     public PRQuadLeaf(Point p)
     {
-        l = new LList<Point>(0); 
+        l = new List(); 
         l.insert(p);
     }
 
