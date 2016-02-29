@@ -15,7 +15,7 @@ public class PRQuadLeaf implements PRQuadNode {
      * the linked list
      */
     LList<Point> l;
-    
+
     /**
      * For testing purposes
      */
@@ -49,7 +49,7 @@ public class PRQuadLeaf implements PRQuadNode {
     public boolean isLeaf() {
         return true;
     }
-    
+
     /**
      * For testing purposes
      * @return the node
@@ -58,19 +58,19 @@ public class PRQuadLeaf implements PRQuadNode {
     {
         return u;
     }
-    
-//    /**
-//     * To print points in regionsearch
-//     */
-//    public void printVisited()
-//    {
-//        for (int i = 0; i <= l.length() - 1; i++)
-//        {
-//            System.out.print("Point found: ");
-//            System.out.println(l.moveToPos(i).toString());
-//        }
-//    }
-    
+
+    //    /**
+    //     * To print points in regionsearch
+    //     */
+    //    public void printVisited()
+    //    {
+    //        for (int i = 0; i <= l.length() - 1; i++)
+    //        {
+    //            System.out.print("Point found: ");
+    //            System.out.println(l.moveToPos(i).toString());
+    //        }
+    //    }
+
     /**
      * Prints out
      * @param s the spaces
@@ -96,7 +96,7 @@ public class PRQuadLeaf implements PRQuadNode {
             System.out.print("  ");
         }
     }
-    
+
     /**
      * regionSearch for the quad leaf
      * @param rx the x coord
@@ -109,20 +109,21 @@ public class PRQuadLeaf implements PRQuadNode {
      * @return 1 when found 
      */
     @Override
-    public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
+    public int regionSearch(int rx, int ry, int rw, 
+            int rh, int nx, int ny, int nl)
     {
-            for(int i = 0; i <= l.length() - 1; i++)
+        for (int i = 0; i <= l.length() - 1; i++)
+        {
+            Point p = (Point) l.moveToPos(i);
+            if ((rx <= p.getX()) && (p.getX() <= rw + p.getX()) && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
             {
-                Point p = (Point) l.moveToPos(i);
-                if((rx <= p.getX()) && (p.getX() <= rw + p.getX()) && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
-                {
-                    System.out.print("Point found: ");
-                    System.out.println(l.moveToPos(i).toString());
-                }
-            }    
+                System.out.print("Point found: ");
+                System.out.println(l.moveToPos(i).toString());
+            }
+        }    
         return 1;
     }
-    
+
     /**
      * Checks duplicate points in the leaf nodes
      */
@@ -131,7 +132,7 @@ public class PRQuadLeaf implements PRQuadNode {
     {
         //leaf then look at points and see if duplicates
         //(if size >3 dont have to check, if size <=3 then check)
-        if(l.length() > 3) //all dups
+        if (l.length() > 3) //all dups
         {
             System.out.println("(" + ((Point)l.moveToPos(0)).getX()
                     + ", " + ((Point)l.moveToPos(0)).getY() + ")");
