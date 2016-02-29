@@ -113,6 +113,18 @@ public class PRQuadInternal implements PRQuadNode {
 		sw.duplicates();		
 	}
     
+    /**
+     * QuadInternal implementation
+     * of quadtree
+     * 
+     * @param x the x coord
+     * @param y the y coord
+     * @param w the width
+     * @param l the length
+     * @param nx nodes x
+     * @param ny the nodes y
+     * @param nl the nodes length
+     */
     @Override
 	public int regionSearch( int rx, int ry, int rw, int rh, int nx, int ny, int nl) 
 	{
