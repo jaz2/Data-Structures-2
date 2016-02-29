@@ -196,26 +196,6 @@ public class SkipListTest extends TestCase
         String outt = systemOut().getHistory();
         assertFuzzyEquals("Point not removed: (1, 2)", outt);
     }
-    
-    /**
-     * Tests when you cannot find something but the width 
-     * is equal in remove
-     *
-     */
-    @Test
-    public void testRemoveCoordNahW()
-    {
-        Point re = new Point("a", 1, 2);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        s.insert(p);
-        
-        Point m = new Point(null, 1, 2);
-
-        s.removeByCoord(m);
-        String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 2)", outt);
-    }   
 
     /**
      * Tests when x.forward[i] is null
