@@ -96,6 +96,30 @@ public class PRQuadLeafTest extends TestCase{
 	}
 	
 	/**
+	 * When the first item in list
+	 * is not the same as point to be added, no
+	 */
+	public void testInsertFourthMehN()
+	{
+		Point p = new Point(null, 3, 4);
+		PRQuadLeaf le = new PRQuadLeaf(p);
+		
+		Point k = new Point(null, 3, 4);
+		le.insert(k, 0, 0, 1024);
+		
+		Point m = new Point(null, 3, 4);
+		le.insert(m, 0, 0, 1024);
+		
+		Point j = new Point(null, 3, 4);
+		le.insert(j, 0, 0, 1024);
+		
+		Point u = new Point(null, 1, 4);
+		le.insert(u, 0, 0, 1024);		
+		
+		assertEquals(PRQuadInternal.class, le.getInstance().getClass());
+	}
+	
+	/**
 	 * Leaf should already have three identical points,
 	 * calls leaf to have another point added that is same
 	 */
