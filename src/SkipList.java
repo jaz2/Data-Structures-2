@@ -261,6 +261,7 @@ public class SkipList<K extends Comparable<K>, E> {
                 x = x.forward[0];
                 while (x != null && key.equals(x.element.key()))
                 {
+                	System.out.print("Found ");
                     System.out.println(x.element.value().toString());
                     x = x.forward[0];
                 }
