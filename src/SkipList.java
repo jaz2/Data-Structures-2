@@ -319,8 +319,8 @@ public class SkipList<K extends Comparable<K>, E> {
             for (int i = 1; i <= size + 0; i++)
             {
                 System.out.println("Node has depth " + node.getLevel() +
-                        ", Value (" //+ node.forward[0].element.key() + ", "
-                        + node.forward[0].element.value().toString() + ")");
+                        ", Value " //+ node.forward[0].element.key() + ", "
+                        + node.forward[0].element.value().toString());
                 node = node.forward[0];
             } 
             System.out.println("SkipList size is: " + size);
