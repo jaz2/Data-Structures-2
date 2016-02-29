@@ -159,7 +159,7 @@ public class PRQuadInternal implements PRQuadNode {
     /**
      * Inserts in the regions based on where it is
      * @param p the point 
-     * @paran x the xcoord
+     * @param x the xcoord
      * @param y the ycoord
      * @param length the length
      * @return this 
