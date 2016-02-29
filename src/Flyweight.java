@@ -70,10 +70,11 @@ public class Flyweight implements PRQuadNode {
     }
 
     /**
-     * To help with the tree's regionSearch
+     * Returns node count for 
+     * tree's regionSearch method
      */
 	@Override
-	public int regionSearch() 
+	public int regionSearch(int x, int y, int w, int l, int nx, int ny, int nl) 
 	{
 		return 1;
 	}

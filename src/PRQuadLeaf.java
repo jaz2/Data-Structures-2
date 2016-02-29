@@ -66,7 +66,7 @@ public class PRQuadLeaf implements PRQuadNode {
     {
     	for (int i = 0; i <= l.length() - 1; i++)
         {
-    		System.out.println("Point found: ");
+    		System.out.print("Point found: ");
             System.out.println(l.moveToPos(i).toString());
         }
     }
@@ -96,6 +96,24 @@ public class PRQuadLeaf implements PRQuadNode {
             System.out.print("  ");
         }
     }
+    
+    /**
+     * ffsdsfs
+     */
+    @Override
+	public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
+	{
+			for(int i = 0; i <= l.length()-1; i++)
+			{
+				Point p = (Point) l.moveToPos(i);
+				if((rx <= p.getX()) && (p.getX() <= rw) && (ry <= p.getY()) && (p.getY() <= rh))
+				{
+					System.out.print("Point found: ");
+					System.out.println(l.moveToPos(i).toString());
+				}
+			}	
+		return 1;
+	}
     
     /**
      * Checks duplicate points in the leaf nodes
