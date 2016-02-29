@@ -27,7 +27,7 @@ public class KVPairTest extends TestCase {
         
         assertEquals(null, k.key());
         assertEquals(p, k.value());
-        assertEquals("a, 1, 2, 3, 4", p.toString());
+        assertEquals("(null, 1, 2)", p.toString());
     }
     
     
