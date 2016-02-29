@@ -115,7 +115,8 @@ public class PRQuadLeaf implements PRQuadNode {
         for (int i = 0; i <= l.length() - 1; i++)
         {
             Point p = (Point) l.moveToPos(i);
-            if ((rx <= p.getX()) && (p.getX() <= rw + p.getX()) && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
+            if ((rx <= p.getX()) && (p.getX() <= rw + p.getX()) 
+                    && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
             {
                 System.out.print("Point found: ");
                 System.out.println(l.moveToPos(i).toString());
@@ -139,17 +140,17 @@ public class PRQuadLeaf implements PRQuadNode {
         }
         else if (l.length() == 3)
         {
-            if(l.moveToPos(0).equals(l.moveToPos(1)))
+            if (l.moveToPos(0).equals(l.moveToPos(1)))
             {
                 System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
                         + ", " + ((Point)l.moveToPos(0)).getY() + ")");
             }
-            else if(l.moveToPos(1).equals(l.moveToPos(2)))
+            else if (l.moveToPos(1).equals(l.moveToPos(2)))
             {
                 System.out.println("(" + ((Point)l.moveToPos(1)).getX() 
                         + ", " + ((Point)l.moveToPos(1)).getY() + ")");
             }
-            else if(l.moveToPos(0).equals(l.moveToPos(2)))
+            else if (l.moveToPos(0).equals(l.moveToPos(2)))
             {
                 System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
                         + ", " + ((Point)l.moveToPos(0)).getY() + ")");
@@ -158,7 +159,7 @@ public class PRQuadLeaf implements PRQuadNode {
         }
         else if (l.length() == 2)
         {
-            if(l.moveToPos(0).equals(l.moveToPos(1)))
+            if (l.moveToPos(0).equals(l.moveToPos(1)))
             {
                 System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
                         + ", " + ((Point)l.moveToPos(0)).getY() + ")");
