@@ -74,10 +74,10 @@ public class Flyweight implements PRQuadNode {
     /**
      * Returns node count for 
      * tree's regionSearch method
-     * @param rx the x coord
-     * @param ry the y coord
-     * @param rw the width
-     * @param rh the length
+     * @param x the x coord
+     * @param y the y coord
+     * @param w the width
+     * @param h the length
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
