@@ -60,15 +60,16 @@ public class CommandProcessor {
                 }
                 else if (n1 >= 1024 || n2 >= 1024)
                 {
-                	System.out.println(
+                    System.out.println(
                             "Point rejected: (" + id + ", " + n1 + ", " 
                                     + n2 + ")");
                 }
                 else // if in bounds
                 {
-                   db.insert(id, n1, n2);
+                    db.insert(id, n1, n2);
                     System.out.println(
-                            "Point inserted: (" + id + ", " + n1 + ", " + n2 + ")");
+                            "Point inserted: (" + id + ", " + n1 
+                            + ", " + n2 + ")");
                 }
             } 
             else if (str.contains("remove")) // two cases for remove
@@ -86,24 +87,24 @@ public class CommandProcessor {
                     }
                     else if (n1 >= 1024 || n2 >= 1024)
                     {
-                    	System.out.println(
+                        System.out.println(
                                 "Point rejected: (" + n1 + ", " 
                                         + n2 + ")");
                     }
                     else 
                     {
                         //db.skipRemoveCoord(n1, n2, n3, n4);
-                    	//FOR NOW!!
-                    	System.out.println(
-                    			"Point not found: (" + n1 + ", " + n2 + ")");
+                        //FOR NOW!!
+                        System.out.println(
+                                "Point not found: (" + n1 + ", " + n2 + ")");
                     }
                 } 
                 else // case where it's remove name
                 {
                     String id = in.next().toString();
-                   // db.skip.removeByName(id);
+                    // db.skip.removeByName(id);
                     System.out.println(
-                    		"Point not removed: " + id);
+                            "Point not removed: " + id);
                 }
             } 
             else if (str.contains("regionsearch"))
