@@ -288,9 +288,9 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * Tests when x is greater than rx + rw
 	 */
-	public void regionSearchXG()
+	public void regionSearchYG()
 	{
-		Point p = new Point("a", 1000, 2);
+		Point p = new Point("a", 1000, 900);
 		PRQuadLeaf lf = new PRQuadLeaf(p);		
 		
 		assertEquals(0, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
