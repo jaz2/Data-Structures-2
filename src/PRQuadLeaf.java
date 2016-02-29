@@ -73,7 +73,7 @@ public class PRQuadLeaf implements PRQuadNode {
     
     /**
      * Prints out
-     * @param the points
+     * @param s the spaces
      */
     public void printPoints(int s)
     {
