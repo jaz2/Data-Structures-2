@@ -1,5 +1,9 @@
 
-
+/**
+ * The Internal node class
+ * @author Jazmine Zurita and Jessica McCready
+ * @version Feb 22 2016
+ */
 public class PRQuadInternal implements PRQuadNode {
 
     /**
