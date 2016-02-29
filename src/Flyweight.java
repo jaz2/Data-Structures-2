@@ -33,7 +33,7 @@ public class Flyweight implements PRQuadNode {
      */
     public void duplicates()
     {
-    	//do nothing
+        //do nothing
     }
 
     /**
@@ -83,10 +83,10 @@ public class Flyweight implements PRQuadNode {
      * @param nl the nodes length
      * @return 1
      */
-	@Override
-	public int regionSearch(int x, int y, int w, int l, int nx, int ny, int nl) 
-	{
-		return 1;
-	}
+    @Override
+    public int regionSearch(int x, int y, int w, int l, int nx, int ny, int nl) 
+    {
+        return 1;
+    }
 
 }
