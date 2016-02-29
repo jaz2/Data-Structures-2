@@ -124,6 +124,7 @@ public class PRQuadInternal implements PRQuadNode {
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
+     * @return c for the count
      */
     @Override
 	public int regionSearch( int rx, int ry, int rw, int rh, int nx, int ny, int nl) 
