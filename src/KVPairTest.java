@@ -25,7 +25,7 @@ public class KVPairTest extends TestCase {
         Point p = new Point("a", 1, 2);
         KVPair<String, Point> k = new KVPair<String, Point>("a", p);
 
-        assertEquals(null, k.key());
+        assertEquals("a", k.key());
         assertEquals(p, k.value());
         assertEquals("(a, 1, 2)", p.toString());
         assertEquals("a, (a, 1, 2))", k.toString());
