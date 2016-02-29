@@ -175,8 +175,8 @@ public class SkipList<K extends Comparable<K>, E> {
                 store[i].forward[i] = x.forward[i];
             }
             size--;
-            System.out.println("Rectangle removed: ("
-                    + x.element.toString() + ")");
+            System.out.println("Rectangle removed: "
+                    + x.element.value().toString());
         }
         if (found == false)
         {
