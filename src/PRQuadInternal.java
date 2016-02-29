@@ -135,15 +135,15 @@ public class PRQuadInternal implements PRQuadNode {
 		{
 			c = c + nw.regionSearch(rx, ry, rw, rh, nx, ny, mid);
 		}
-		if ((nl/2) + nx <= rx && (nl/2) + ny > ry)  //NE
+		if ((nl / 2) + nx <= rx && (nl / 2) + ny > ry)  //NE
 		{
 			c = c + ne.regionSearch(rx, ry, rw, rh, nx + mid, ny, mid);
 		}
-		if ((nl/2) + nx > rx && (nl/2) + ny <= ry)  //SW
+		if ((nl / 2) + nx > rx && (nl / 2) + ny <= ry)  //SW
 		{
 			c = c + sw.regionSearch(rx, ry, rw, rh, nx, ny + mid, mid);
 		}
-		if ((nl/2) + nx <= rx && (nl/2) + ny <= ry)  //SE
+		if ((nl / 2) + nx <= rx && (nl / 2) + ny <= ry)  //SE
 		{
 			c = c + se.regionSearch(rx, ry, rw, rh, nx + mid, ny + mid, mid);
 		}
