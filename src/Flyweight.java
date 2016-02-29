@@ -68,11 +68,14 @@ public class Flyweight implements PRQuadNode {
     {
         return true;
     }
-    
-    @Override
-    public int regionSearch()
-    {
-    	return 1;
-    }
+
+    /**
+     * To help with the tree's regionSearch
+     */
+	@Override
+	public int regionSearch() 
+	{
+		return 1;
+	}
 
 }
