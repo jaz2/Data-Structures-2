@@ -99,10 +99,10 @@ public class PRQuadLeaf implements PRQuadNode {
     
     /**
      * regionSearch for the quad leaf
-     * @param x the x coord
-     * @param y the y coord
-     * @param w the width
-     * @param l the length
+     * @param rx the x coord
+     * @param ry the y coord
+     * @param rw the width
+     * @param rh the length
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
