@@ -110,7 +110,7 @@ public class PRQuadLeaf implements PRQuadNode {
     @Override
 	public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
 	{
-			for(int i = 0; i <= l.length()-1; i++)
+			for(int i = 0; i <= l.length() - 1; i++)
 			{
 				Point p = (Point) l.moveToPos(i);
 				if((rx <= p.getX()) && (p.getX() <= rw) && (ry <= p.getY()) && (p.getY() <= rh))
