@@ -132,7 +132,7 @@ public class PRQuadInternal implements PRQuadNode {
      */
     @Override
     public int regionSearch( int rx, int ry, int rw, 
-    		int rh, int nx, int ny, int nl) 
+            int rh, int nx, int ny, int nl) 
     {
         int mid = nl / 2;
         int c = 1;
