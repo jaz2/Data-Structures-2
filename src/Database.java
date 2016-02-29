@@ -49,8 +49,8 @@ public class Database
      */
     public void dump()
     {
-    	skip.dump();
-    	pr.dump();
+        skip.dump();
+        pr.dump();
     }
     
     /**
@@ -62,7 +62,7 @@ public class Database
      */
     public void regionSearch(int xc, int yc, int w, int l)
     {
-    	pr.regionSearch(xc, yc, w, l);
+        pr.regionSearch(xc, yc, w, l);
     }
     
     /**
@@ -70,7 +70,7 @@ public class Database
      */
     public void duplicates()
     {
-    	pr.duplicates();
+        pr.duplicates();
     }
     
     /**
@@ -79,6 +79,6 @@ public class Database
      */
     public void search(String k)
     {
-    	skip.search(k);
+        skip.search(k);
     }
 }
