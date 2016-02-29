@@ -17,7 +17,7 @@ public class Flyweight implements PRQuadNode {
     /**
      * for testing purposes
      */
-    public PRQuadNode l;
+    public PRQuadNode u;
 
     /**
      * Checks if it is a leaf of not
@@ -48,7 +48,7 @@ public class Flyweight implements PRQuadNode {
     public PRQuadNode insert(Point p, int x, int y, int length)
     {
         PRQuadLeaf lef = new PRQuadLeaf(p);
-        l = lef;
+        u = lef;
         return lef;
     }
 
@@ -58,7 +58,7 @@ public class Flyweight implements PRQuadNode {
      */
     public PRQuadNode getInstance()
     {
-        return l;
+        return u;
     }
 
     /**
