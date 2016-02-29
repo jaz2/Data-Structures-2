@@ -22,13 +22,13 @@ public class KVPairTest extends TestCase {
      */
     @Test
     public void testKV() {
-        Point p = new Point(null, 1, 2);
-        KVPair<String, Point> k = new KVPair<String, Point>(null, p);
+        Point p = new Point("a", 1, 2);
+        KVPair<String, Point> k = new KVPair<String, Point>("a", p);
 
         assertEquals(null, k.key());
         assertEquals(p, k.value());
-        assertEquals("(null, 1, 2)", p.toString());
-        assertEquals("(null, 1, 2)", k.toString());
+        assertEquals("(a, 1, 2)", p.toString());
+        assertEquals("a, (a, 1, 2))", k.toString());
     }
 
 
