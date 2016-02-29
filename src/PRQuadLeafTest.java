@@ -231,6 +231,39 @@ public class PRQuadLeafTest extends TestCase{
 	}
 	
 	/**
+	 * When RY is less than y
+	 */
+	public void regionSearchRYE()
+	{
+		Point p = new Point("a", 1, 2);
+		PRQuadLeaf lf = new PRQuadLeaf(p);		
+		
+		assertEquals(1, lf.regionSearch(0, 0, 10, 10, 0, 0, 1024));
+	}
+	
+	/**
+	 * When RY is equal to y of node
+	 */
+	public void regionSearchRYL()
+	{
+		Point p = new Point("a", 1, 1);
+		PRQuadLeaf lf = new PRQuadLeaf(p);		
+		
+		assertEquals(1, lf.regionSearch(1, 1, 5, 5, 0, 0, 1024));
+	}
+	
+	/**
+	 * When RY is greater than y of node
+	 */
+	public void regionSearchRYG()
+	{
+		Point p = new Point("a", 1, 2);
+		PRQuadLeaf lf = new PRQuadLeaf(p);		
+		
+		assertEquals(0, lf.regionSearch(0, 100, 10, 10, 0, 0, 1024));
+	}
+	
+	/**
 	 * Tests when 2 are the same 
 	 * for duplicates
 	 */
