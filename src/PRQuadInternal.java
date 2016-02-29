@@ -117,10 +117,10 @@ public class PRQuadInternal implements PRQuadNode {
      * QuadInternal implementation
      * of quadtree
      * 
-     * @param x the x coord
-     * @param y the y coord
-     * @param w the width
-     * @param l the length
+     * @param rx the x coord
+     * @param ry the y coord
+     * @param rw the width
+     * @param rh the length
      * @param nx nodes x
      * @param ny the nodes y
      * @param nl the nodes length
@@ -131,7 +131,7 @@ public class PRQuadInternal implements PRQuadNode {
 		int mid = nl/2;
 		int c = 1;
 
-		if ((nl/2) + nx > rx && (nl/2) + ny > ry) //NW
+		if ((nl / 2) + nx > rx && (nl / 2) + ny > ry) //NW
 		{
 			c = c + nw.regionSearch(rx, ry, rw, rh, nx, ny, mid);
 		}
