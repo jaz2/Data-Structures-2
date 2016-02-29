@@ -64,9 +64,9 @@ public class PRQuadLeaf implements PRQuadNode {
 //     */
 //    public void printVisited()
 //    {
-//    	for (int i = 0; i <= l.length() - 1; i++)
+//        for (int i = 0; i <= l.length() - 1; i++)
 //        {
-//    		System.out.print("Point found: ");
+//            System.out.print("Point found: ");
 //            System.out.println(l.moveToPos(i).toString());
 //        }
 //    }
@@ -109,62 +109,62 @@ public class PRQuadLeaf implements PRQuadNode {
      * @return 1 when found 
      */
     @Override
-	public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
-	{
-			for(int i = 0; i <= l.length() - 1; i++)
-			{
-				Point p = (Point) l.moveToPos(i);
-				if((rx <= p.getX()) && (p.getX() <= rw + p.getX()) && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
-				{
-					System.out.print("Point found: ");
-					System.out.println(l.moveToPos(i).toString());
-				}
-			}	
-		return 1;
-	}
+    public int regionSearch(int rx, int ry, int rw, int rh, int nx, int ny, int nl)
+    {
+            for(int i = 0; i <= l.length() - 1; i++)
+            {
+                Point p = (Point) l.moveToPos(i);
+                if((rx <= p.getX()) && (p.getX() <= rw + p.getX()) && (ry <= p.getY()) && (p.getY() <= rh + p.getY()))
+                {
+                    System.out.print("Point found: ");
+                    System.out.println(l.moveToPos(i).toString());
+                }
+            }    
+        return 1;
+    }
     
     /**
      * Checks duplicate points in the leaf nodes
      */
     @Override
-	public void duplicates()
-	{
-		//leaf then look at points and see if duplicates
-		//(if size >3 dont have to check, if size <=3 then check)
-		if(l.length() > 3) //all dups
-		{
-			System.out.println("(" + ((Point)l.moveToPos(0)).getX()
-					+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
-		}
-		else if (l.length() == 3)
-		{
-			if(l.moveToPos(0).equals(l.moveToPos(1)))
-			{
-				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
-						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
-			}
-			else if(l.moveToPos(1).equals(l.moveToPos(2)))
-			{
-				System.out.println("(" + ((Point)l.moveToPos(1)).getX() 
-						+ ", " + ((Point)l.moveToPos(1)).getY() + ")");
-			}
-			else if(l.moveToPos(0).equals(l.moveToPos(2)))
-			{
-				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
-						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
-			}
+    public void duplicates()
+    {
+        //leaf then look at points and see if duplicates
+        //(if size >3 dont have to check, if size <=3 then check)
+        if(l.length() > 3) //all dups
+        {
+            System.out.println("(" + ((Point)l.moveToPos(0)).getX()
+                    + ", " + ((Point)l.moveToPos(0)).getY() + ")");
+        }
+        else if (l.length() == 3)
+        {
+            if(l.moveToPos(0).equals(l.moveToPos(1)))
+            {
+                System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+                        + ", " + ((Point)l.moveToPos(0)).getY() + ")");
+            }
+            else if(l.moveToPos(1).equals(l.moveToPos(2)))
+            {
+                System.out.println("(" + ((Point)l.moveToPos(1)).getX() 
+                        + ", " + ((Point)l.moveToPos(1)).getY() + ")");
+            }
+            else if(l.moveToPos(0).equals(l.moveToPos(2)))
+            {
+                System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+                        + ", " + ((Point)l.moveToPos(0)).getY() + ")");
+            }
 
-		}
-		else if (l.length() == 2)
-		{
-			if(l.moveToPos(0).equals(l.moveToPos(1)))
-			{
-				System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
-						+ ", " + ((Point)l.moveToPos(0)).getY() + ")");
-			}
-		}
-		//else length is 1 so no duplicates
-	}
+        }
+        else if (l.length() == 2)
+        {
+            if(l.moveToPos(0).equals(l.moveToPos(1)))
+            {
+                System.out.println("(" + ((Point)l.moveToPos(0)).getX() 
+                        + ", " + ((Point)l.moveToPos(0)).getY() + ")");
+            }
+        }
+        //else length is 1 so no duplicates
+    }
 
     /**
      * Inserts into a leaf and splits based on number of points
