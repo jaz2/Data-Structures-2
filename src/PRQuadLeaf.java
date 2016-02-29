@@ -185,7 +185,8 @@ public class PRQuadLeaf implements PRQuadNode {
                 u = this;
                 return this;
             }
-            //if my size is already > 3 they must all be duplicates so only check the first element
+            //if my size is already > 3 they must all be duplicates 
+            //so only check the first element
             if (l.length() > 3)
             {
                 if (p.equals(l.moveToPos(0))) //p same so add
