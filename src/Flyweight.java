@@ -32,7 +32,9 @@ public class Flyweight implements PRQuadNode {
      * Does nothing in this class
      */
     public void duplicates()
-    {}
+    {
+    	//do nothing
+    }
 
     /**
      * When the node is empty, convert to a leaf
