@@ -165,6 +165,29 @@ public class PRQuadLeafTest extends TestCase{
 	}	
 	
 	/**
+	 * When RX is less than x
+	 */
+	public void regionSearchRXL()
+	{
+		Point p = new Point("a", 1, 2);
+		PRQuadLeaf lf = new PRQuadLeaf(p);		
+		
+		assertEquals(1, lf.regionSearch(0, 0, 10, 10, 0, 0, 1024));
+	}
+	
+	/**
+	 * When RX is equal to x of node
+	 */
+	public void regionSearchRXE()
+	{}
+	
+	/**
+	 * When RX is greater than x of node
+	 */
+	public void regionSearchRXG()
+	{}
+	
+	/**
 	 * Tests when 2 are the same 
 	 * for duplicates
 	 */
