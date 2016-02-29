@@ -223,14 +223,14 @@ public class SkipList<K extends Comparable<K>, E> {
                 store[i].forward[i] = nodeToRemove.forward[i];
             }
             size--;
-            System.out.println("Rectangle removed: ("
-                    + nodeToRemove.element.toString() + ")");
+            System.out.println("Rectangle removed: "
+                    + nodeToRemove.element.value().toString());
         }
         if (found == false)
 
         {
-            System.out.println("Rectangle not removed: (" 
-                    + val.toString() + ")");
+            System.out.println("Rectangle not removed: " 
+                    + val.toString());
         }
     }
 
