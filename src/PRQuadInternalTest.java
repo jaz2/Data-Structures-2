@@ -68,4 +68,13 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadLeaf.class, i.se().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
+    
+    @Test
+    public void testRegSearc()
+    {
+    	Point p = new Point("hi", 800, 900);
+    	PRQuadInternal in = new PRQuadInternal();
+    	in.insert(p, 0, 0, 1024);
+    	in.regionSearch(800, 900, 4, 80, 0, 0, 1024);
+    }
 }
