@@ -175,12 +175,12 @@ public class SkipList<K extends Comparable<K>, E> {
                 store[i].forward[i] = x.forward[i];
             }
             size--;
-            System.out.println("Rectangle removed: "
+            System.out.println("Point removed: "
                     + x.element.value().toString());
         }
         if (found == false)
         {
-            System.out.println("Rectangle not found: " + key); 
+            System.out.println("Point not found: " + key); 
         }
     }
     
