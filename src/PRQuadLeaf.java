@@ -59,17 +59,17 @@ public class PRQuadLeaf implements PRQuadNode {
         return u;
     }
     
-    /**
-     * To print points in regionsearch
-     */
-    public void printVisited()
-    {
-    	for (int i = 0; i <= l.length() - 1; i++)
-        {
-    		System.out.print("Point found: ");
-            System.out.println(l.moveToPos(i).toString());
-        }
-    }
+//    /**
+//     * To print points in regionsearch
+//     */
+//    public void printVisited()
+//    {
+//    	for (int i = 0; i <= l.length() - 1; i++)
+//        {
+//    		System.out.print("Point found: ");
+//            System.out.println(l.moveToPos(i).toString());
+//        }
+//    }
     
     /**
      * Prints out
