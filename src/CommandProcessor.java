@@ -120,8 +120,6 @@ public class CommandProcessor {
                 else 
                 {
                     db.regionSearch(n1, n2, n3, n4); 
-//                	 System.out.println("Points intersecting region (-5, -5, 20, 20):\n"
-//                             + "1 quadtree nodes visited"); 
                 }
             }
             else if (str.contains("duplicates")) {
@@ -129,10 +127,7 @@ public class CommandProcessor {
             } 
             else if (str.contains("search")) {
                 String id = in.next().toString();
-                db.search(id);
-//                System.out.println(
-//                		"Point not found: " + id);
-                
+                db.search(id);           
             } 
             else if (str.contains("dump")) {
                 db.dump();
