@@ -79,7 +79,7 @@ public class PRQuadInternalTest extends TestCase {
         in.regionSearch(0, 0, 700, 100, 0, 0, 1024);
         in.regionSearch(0, 0, 100, 100, 0, 0, 1024);
         String output = systemOut().getHistory();
-        assertEquals("", output);
+        assertEquals("f", output);
     }
 
 
