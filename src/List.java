@@ -28,7 +28,7 @@ public class List {
 	 */
 	public void insert(Point p)
 	{
-		if (size != 0 && l[size + 1] == null)
+		if (size != 0 && l[size - 1] == null)
 		{
 			size = size * 2;
 			Point[] n = new Point[size];
