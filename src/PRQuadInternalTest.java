@@ -71,8 +71,27 @@ public class PRQuadInternalTest extends TestCase {
     }
     
     /**
+     * Tests SW insert when p x 
+     * is less than x + nuLen
+     */
+    public void testinsertSWXL()
+    {
+    	Point p = new Point(null, 1, 900);
+    	PRQuadInternal i = new PRQuadInternal();
+    	i.insert(p, 0, 0, 1024);
+    	assertEquals(PRQuadLeaf.class, i.sw().getClass());
+    }
+    
+    public void testinsertSWXE()
+    {}
+    
+    public void testinsertSWXG()
+    {}
+    
+    /**
      * Tests the region search 
      */
+    @Test
     public void testRSonRecCornerTR()
     {
         Point p = new Point("hi", 800, 600);
@@ -88,6 +107,7 @@ public class PRQuadInternalTest extends TestCase {
     /**
      * Tests the region search nw
      */
+    @Test
     public void testNWw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -105,6 +125,7 @@ public class PRQuadInternalTest extends TestCase {
     /**
      * Tests the NE regionsearch
      */
+    @Test
     public void testNEw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -122,6 +143,7 @@ public class PRQuadInternalTest extends TestCase {
     /**
      * Tests the SW regionSearch and insert
      */
+    @Test
     public void testSWw4points()
     {
     	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -139,6 +161,7 @@ public class PRQuadInternalTest extends TestCase {
     /**
      * Tests the SE regionSearch
      */
+    @Test
     public void testSEw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -156,6 +179,7 @@ public class PRQuadInternalTest extends TestCase {
     /** 
      * Tests the SE region search with 2 visited
      */
+    @Test
     public void testSEw4points2()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -173,6 +197,7 @@ public class PRQuadInternalTest extends TestCase {
     /**
      * Tests the SE with 3 visited
      */
+    @Test
     public void testSEw4points3()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
