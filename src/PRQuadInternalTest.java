@@ -129,7 +129,7 @@ public class PRQuadInternalTest extends TestCase {
         tree.insert(new Point("r2", 600, 20));
         tree.insert(new Point("r34", 1, 600));
         tree.insert(new Point("r9", 600, 600));
-        tree.regionSearch(500, 0, 500, 500); 
+        tree.regionSearch(0, 500, 500, 500); 
         String output = systemOut().getHistory();
         assertEquals("Points intersecting region (0, 500, 500, 500):\n"
                 + "Point found: (r34, 1, 600)\n"
