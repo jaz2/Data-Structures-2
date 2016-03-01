@@ -27,7 +27,7 @@ public class List {
 
     /**
      * Inserts into the list
-     * @param p
+     * @param p the point
      */
     public void insert(Point p)
     {
