@@ -41,7 +41,7 @@ public class List {
 //			{
 //				l[j] = n[j];
 //			}
-			l = n;
+			//l = n;
 		}
 		else 
 		{
