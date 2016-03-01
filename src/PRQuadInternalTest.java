@@ -81,14 +81,21 @@ public class PRQuadInternalTest extends TestCase {
     	i.insert(new Point("a", 1, 1), 0, 0, 1024);
     	i.insert(p, 0, 0, 1024);
     	assertEquals(PRQuadLeaf.class, i.sw().getClass());
-    	assertEquals(PRQuadLeaf.class, i.se().getClass());
+    	assertEquals(Flyweight.class, i.se().getClass());
     }
     
     /*
      * 
      */
     public void testinsertSWXE()
-    {}
+    {
+    	Point p = new Point(null, 1, 900);
+    	PRQuadInternal i = new PRQuadInternal();
+    	i.insert(new Point("a", 1, 1), 0, 0, 1024);
+    	i.insert(p, 0, 0, 1024);
+    	assertEquals(PRQuadLeaf.class, i.sw().getClass());
+    	assertEquals(Flyweight.class, i.se().getClass());
+    }
     
     public void testinsertSWXG()
     {}
