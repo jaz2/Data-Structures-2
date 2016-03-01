@@ -11,10 +11,13 @@
  */
 public class List {
 
-    public int len;
+    private int len;
     private int size;
     private Point[] l;
 
+    /**
+     * Constructor for the List
+     */
     public List()
     {
         l = new Point[3];
