@@ -33,7 +33,7 @@ public class List {
     {
         if (size != 0 && size == len)
         {
-            len = len * 2;//change 
+            len = len * 2; //change 
             Point[] n = new Point[len];
             for (int i = 0; i < len / 2; i++)
             {
