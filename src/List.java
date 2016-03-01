@@ -37,10 +37,10 @@ public class List {
 				n[i] = l[i];
 			}
 			n[(size / 2)] = p;
-			for (int j = (size / 2); j < size; j++)
-			{
-				l[j] = n[j];
-			}
+//			for (int j = (size / 2); j < size; j++)
+//			{
+//				l[j] = n[j];
+//			}
 			l = n;
 		}
 		else 
