@@ -139,7 +139,7 @@ public class PRQuadInternalTest extends TestCase {
 
     public void testSEw4points2()
     {
-        PRQuadTree tree = new PRQuadTree(0, 0, 1024);
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
         tree.insert(new Point("r1", 1, 20));
         tree.insert(new Point("r2", 600, 20));
         tree.insert(new Point("r34", 1, 600));
@@ -153,7 +153,7 @@ public class PRQuadInternalTest extends TestCase {
 
     public void testSEw4points3()
     {
-        PRQuadtree tree = new PRQuadTree(0, 0, 1024);
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
         tree.insert(new Point("r1", 1, 20));
         tree.insert(new Point("r2", 600, 20));
         tree.insert(new Point("r34", 1, 600));
