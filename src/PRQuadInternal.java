@@ -4,7 +4,8 @@
  * @author Jazmine Zurita and Jessica McCready
  * @version Feb 22 2016
  */
-public class PRQuadInternal implements PRQuadNode {
+public class PRQuadInternal implements PRQuadNode { 
+	//TODO Internal insert pink line and regionSearch in leaf
 
     /**
      * For testing purposes
