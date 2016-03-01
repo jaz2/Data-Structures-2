@@ -253,7 +253,7 @@ public class SkipList<K extends Comparable<K>, E> {
                 (key.compareTo(x.element().key()) == 0))    
         {
             found = true;
-            System.out.print("Found "); //TODO ask if this has to be printed every time
+            System.out.print("Found ");
             System.out.println(x.element.value().toString());
             //look ahead at level 0 printing as long as it is an equal key
             if (x.forward[0] != null)
@@ -261,7 +261,7 @@ public class SkipList<K extends Comparable<K>, E> {
                 x = x.forward[0];
                 while (x != null && key.equals(x.element.key()))
                 {
-                	System.out.print("Found ");
+                    System.out.print("Found ");
                     System.out.println(x.element.value().toString());
                     x = x.forward[0];
                 }

@@ -57,7 +57,7 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
-    
+
     /**
      * Tests that it returns a leaf in this region
      */
@@ -69,7 +69,7 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadLeaf.class, i.se().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
-    
+
     /**
      * Tests SW insert when p x 
      * is less than x + nuLen
@@ -77,35 +77,35 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testinsertSWXL()
     {
-    	Point p = new Point(null, 1, 900);
-    	PRQuadInternal i = new PRQuadInternal();
-    	i.insert(new Point("a", 1, 1), 0, 0, 1024);
-    	i.insert(p, 0, 0, 1024);
-    	assertEquals(PRQuadLeaf.class, i.sw().getClass());
-    	assertEquals(Flyweight.class, i.se().getClass());
+        Point p = new Point(null, 1, 900);
+        PRQuadInternal i = new PRQuadInternal();
+        i.insert(new Point("a", 1, 1), 0, 0, 1024);
+        i.insert(p, 0, 0, 1024);
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /*
      * 
      */
     @Test
     public void testinsertSWXE()
     {
-    	Point p = new Point(null, 1, 900);
-    	PRQuadInternal i = new PRQuadInternal();    	
-    	i.insert(p, 0, 0, 1024);
-    	i.insert(new Point("a", 1, 1), 0, 0, 1024);
-    	assertEquals(PRQuadLeaf.class, i.sw().getClass());
-    	assertEquals(Flyweight.class, i.se().getClass());
+        Point p = new Point(null, 1, 900);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        i.insert(new Point("a", 1, 1), 0, 0, 1024);
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /**
      * 
      */
     @Test
     public void testinsertSWXG()
     {}
-    
+
     /**
      * Tests the region search 
      */
@@ -157,14 +157,14 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r2, 600, 20)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
-    
+
     /**
      * Tests the SW regionSearch and insert
      */
     @Test
     public void testSWw4points()
     {
-    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
         tree.insert(new Point("r1", 1, 20));
         tree.insert(new Point("r2", 600, 20));
         tree.insert(new Point("r34", 1, 600));
@@ -175,7 +175,7 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r34, 1, 600)\n"
                 + "3 quadtree nodes visited\n", output); 
     }
-    
+
     /**
      * Tests the SE regionSearch
      */
