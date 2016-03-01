@@ -51,7 +51,7 @@ public class List {
     }
 
     /**
-     * 
+     * Moves to this position
      * @param i the position 
      * @return the point at the pos
      */
@@ -60,6 +60,11 @@ public class List {
         return l[i];
     }
 
+    /**
+     * Removes a point from the list
+     * @param p the point
+     * @return true or false
+     */
     public boolean remove(Point p)
     {
         //Point n = null;
@@ -89,7 +94,7 @@ public class List {
 
     /**
      * Returns the size
-     * @return
+     * @return the size
      */
     public int length()
     {
