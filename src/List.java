@@ -18,7 +18,7 @@ public class List {
 
 	public List()
 	{
-		l = new Point[3];
+		l = new Point[10];
 		size = 0;
 	}
 
