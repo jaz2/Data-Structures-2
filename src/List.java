@@ -11,87 +11,85 @@
  */
 public class List {
 
-	//private Point head;
-	//private Point curr;
-	public int len;
-	private int size;
-	private Point[] l;
+    public int len;
+    private int size;
+    private Point[] l;
 
-	public List()
-	{
-		l = new Point[3];
-		len = 3;
-		size = 0;
-	}
+    public List()
+    {
+        l = new Point[3];
+        len = 3;
+        size = 0;
+    }
 
-	/**
-	 * Inserts into the list
-	 * @param p
-	 */
-	public void insert(Point p)
-	{
-		if (size != 0 && size == len)
-		{
-			len = len * 2;//change 
-			Point[] n = new Point[len];
-			for (int i = 0; i < len / 2; i++)
-			{
-				n[i] = l[i];
-			}
-			n[size] = p;
-			l = n;
-			size++;
-		}
-		else 
-		{
-			l[size] = p;
-			size++;
-		}
-	}
+    /**
+     * Inserts into the list
+     * @param p
+     */
+    public void insert(Point p)
+    {
+        if (size != 0 && size == len)
+        {
+            len = len * 2;//change 
+            Point[] n = new Point[len];
+            for (int i = 0; i < len / 2; i++)
+            {
+                n[i] = l[i];
+            }
+            n[size] = p;
+            l = n;
+            size++;
+        }
+        else 
+        {
+            l[size] = p;
+            size++;
+        }
+    }
 
-	/**
-	 * 
-	 * @param i the position 
-	 * @return the point at the pos
-	 */
-	public Point moveToPos(int i)
-	{
-		return l[i];
-	}
+    /**
+     * 
+     * @param i the position 
+     * @return the point at the pos
+     */
+    public Point moveToPos(int i)
+    {
+        return l[i];
+    }
 
-	public boolean remove(Point p)
-	{
-		//Point n = null;
-		Boolean found = false;
-		for (int i = 0; i < size; i++)
-		{
-			if (l[i] == p)
-			{
-				//n = p;
-				if (i == size - 1)
-				{
-					size--;
-				}
-				else 
-				{
-					for (int j = i; j < size; j++)
-					{
-						l[j] = l[j + 1];
-					}
-					size--;
-				}
-				found = true;
-			}
-		}
-		return found;
-	}
+    public boolean remove(Point p)
+    {
+        //Point n = null;
+        Boolean found = false;
+        for (int i = 0; i < size; i++)
+        {
+            if (l[i] == p)
+            {
+                //n = p;
+                if (i == size - 1)
+                {
+                    size--;
+                }
+                else 
+                {
+                    for (int j = i; j < size; j++)
+                    {
+                        l[j] = l[j + 1];
+                    }
+                    size--;
+                }
+                found = true;
+            }
+        }
+        return found;
+    }
 
-	/**
-	 * Returns the size
-	 * @return
-	 */
-	public int length()
-	{
-		return size;
-	}
+    /**
+     * Returns the size
+     * @return
+     */
+    public int length()
+    {
+        return size;
+    }
 }
