@@ -30,7 +30,7 @@ public class List {
 	 */
 	public void insert(Point p)
 	{
-		if (size != 0 && size == length)
+		if (size != 0 && size == len)
 		{
 			len = len * 2;//change 
 			Point[] n = new Point[len];
@@ -39,10 +39,6 @@ public class List {
 				n[i] = l[i];
 			}
 			n[size] = p;
-//			for (int j = (size / 2); j < size; j++)
-//			{
-//				l[j] = n[j];
-//			}
 			l = n;
 			size++;
 		}
