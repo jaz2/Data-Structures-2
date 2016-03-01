@@ -76,8 +76,8 @@ public class PRQuadInternalTest extends TestCase {
         Point p = new Point("hi", 800, 900);
         in.insert(p, 0, 0, 1024);
         in.regionSearch(0, 0, 100, 700, 0, 0, 1024);
-        in.regionSearch(0, 0, 700, 100, 0, 0, 1024);
-        in.regionSearch(0, 0, 100, 100, 0, 0, 1024);
+//        in.regionSearch(0, 0, 700, 100, 0, 0, 1024);
+//        in.regionSearch(0, 0, 100, 100, 0, 0, 1024);
         String output = systemOut().getHistory();
         assertEquals("", output);
     }
