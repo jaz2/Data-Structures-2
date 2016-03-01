@@ -38,12 +38,13 @@ public class List {
 			{
 				n[i] = l[i];
 			}
-			n[len / 2] = p;
+			n[size] = p;
 //			for (int j = (size / 2); j < size; j++)
 //			{
 //				l[j] = n[j];
 //			}
 			l = n;
+			size++;
 		}
 		else 
 		{
