@@ -57,7 +57,7 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
-
+    
     /**
      * Tests that it returns a leaf in this region
      */
@@ -69,20 +69,10 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadLeaf.class, i.se().getClass());
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
-
-    public void testRsNw()
-    { 
-        PRQuadInternal in = new PRQuadInternal();
-        Point p = new Point("hi", 800, 900);
-        in.insert(p, 0, 0, 1024);
-        in.regionSearch(0, 0, 100, 700, 0, 0, 1024);
-        in.regionSearch(0, 0, 700, 100, 0, 0, 1024);
-        in.regionSearch(0, 0, 100, 100, 0, 0, 1024);
-        String output = systemOut().getHistory();
-        assertEquals("f", output);
-    }
-
-
+    
+    /**
+     * Tests the region search 
+     */
     public void testRSonRecCornerTR()
     {
         Point p = new Point("hi", 800, 600);
@@ -95,6 +85,9 @@ public class PRQuadInternalTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests the region search nw
+     */
     public void testNWw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -109,6 +102,9 @@ public class PRQuadInternalTest extends TestCase {
                 + "2 quadtree nodes visited\n", output);        
     }
 
+    /**
+     * Tests the NE regionsearch
+     */
     public void testNEw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -122,7 +118,27 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r2, 600, 20)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
-
+    
+    /**
+     * Tests the SW regionSearch and insert
+     */
+    public void testSWw4points()
+    {
+    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r1", 1, 20));
+        tree.insert(new Point("r2", 600, 20));
+        tree.insert(new Point("r34", 1, 600));
+        tree.insert(new Point("r9", 600, 600));
+        tree.regionSearch(500, 0, 500, 500); 
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (0, 500, 500, 500):\n"
+                + "Point found: (r34, 1, 600)\n"
+                + "4 quadtree nodes visited\n", output); 
+    }
+    
+    /**
+     * Tests the SE regionSearch
+     */
     public void testSEw4points()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -137,6 +153,9 @@ public class PRQuadInternalTest extends TestCase {
                 + "5 quadtree nodes visited\n", output);        
     }
 
+    /** 
+     * Tests the SE region search with 2 visited
+     */
     public void testSEw4points2()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -151,6 +170,9 @@ public class PRQuadInternalTest extends TestCase {
                 + "2 quadtree nodes visited\n", output);        
     }
 
+    /**
+     * Tests the SE with 3 visited
+     */
     public void testSEw4points3()
     {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
