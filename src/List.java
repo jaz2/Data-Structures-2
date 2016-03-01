@@ -12,13 +12,13 @@
 public class List {
 
 	//private Point head;
-	private Point curr;
+	//private Point curr;
 	private int size;
 	private Point[] l;
 
 	public List()
 	{
-		l = new Point[10];
+		l = new Point[3];
 		size = 0;
 	}
 
@@ -28,19 +28,19 @@ public class List {
 	 */
 	public void insert(Point p)
 	{
-		if (size != 0 && l[size] == null)
+		if (size != 0 && l[size] != null)
 		{
 			size = size * 2;
 			Point[] n = new Point[size];
-			for (int i = 0; i < size; i++)
+			for (int i = 0; i < size / 2; i++)
 			{
 				n[i] = l[i];
 			}
 			n[size / 2] = p;
-//			for (int j = (size / 2); j < size; j++)
-//			{
-//				l[j] = n[j];
-//			}
+			for (int j = (size / 2); j < size; j++)
+			{
+				l[j] = n[j];
+			}
 			l = n;
 		}
 		else 
