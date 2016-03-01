@@ -14,7 +14,15 @@ import student.TestCase;
  *
  */
 public class PRQuadtreeTest extends TestCase {
+	
+	/**
+	 * The quad tree
+	 */
     PRQuadtree tree;
+    
+    /**
+     * Point p 
+     */
     Point p;
 
     /**
@@ -25,7 +33,7 @@ public class PRQuadtreeTest extends TestCase {
     {
         tree = new PRQuadtree(0, 0, 1024);
         p = new Point ("ayy", 0 ,12);
-        
+
     }
 
     public void testDumpNoInserts()
@@ -105,14 +113,47 @@ public class PRQuadtreeTest extends TestCase {
                 + "Node at 128, 0, 128: Empty\n"
                 + "Node at 0, 128, 128: Empty\n"
                 + "Node at 128, 128, 128:\n"
-                    + "(far, 200, 200)\n"
-                    + "Node at 256, 0, 256: Empty\n"
-                    + "Node at 0, 256, 256: Empty\n"
-                    + "Node at 256, 256, 256: Empty\n"
-                    + "Node at 512, 0, 512: Empty\n"
-                    + "Node at 0, 512, 512: Empty\n"
-                    + "Node at 512, 512, 512: Empty\n"
-                    + "13 quadtree nodes printed", output);
+                + "(far, 200, 200)\n"
+                + "Node at 256, 0, 256: Empty\n"
+                + "Node at 0, 256, 256: Empty\n"
+                + "Node at 256, 256, 256: Empty\n"
+                + "Node at 512, 0, 512: Empty\n"
+                + "Node at 0, 512, 512: Empty\n"
+                + "Node at 512, 512, 512: Empty\n"
+                + "13 quadtree nodes printed", output);
     }
 
+    public void testRsNW() 
+    {
+        tree.insert(new Point("r_r", 1, 20));
+        tree.insert(new Point("rec", 10, 30));
+        tree.insert(new Point("r_42", 1, 20));
+        tree.insert(new Point("far", 200, 200)); 
+        tree.regionSearch(0, 0, 25, 25);
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (0, 0, 25, 25):\n"
+                + "Point found: (r_42, 1, 20)\n"
+                + "Point found: (r_r, 1, 20)\n"
+                + "4 quadtree nodes visited\n", output);
+    }
+
+    public void testRSempty() 
+    { 
+        tree.regionSearch(0, 0, 24, 99);
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (0, 0, 24, 99):\n"
+                + "1 quadtree nodes visited\n", output);        
+    }
+
+    public void testRsSE() 
+    {
+        tree.insert(new Point("r_r", 1, 20));
+        tree.insert(new Point("rec", 10, 30));
+        tree.insert(new Point("r_42", 1, 20));
+        tree.insert(new Point("far", 200, 200));
+        tree.regionSearch(600, 600, 700, 700);
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (600, 600, 700, 700):\n"
+                + "2 quadtree nodes visited\n", output);
+    }
 }
