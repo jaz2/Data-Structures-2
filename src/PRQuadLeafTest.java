@@ -296,6 +296,103 @@ public class PRQuadLeafTest extends TestCase{
 		assertEquals(0, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
 	}
 	
+	 public void testRSonReccornerTL()
+	    {
+	    	Point p = new Point("hi", 800, 900);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	  //  	in.insert(p, 0, 0, 1024);
+	    	tree.regionSearch(800, 900, 4, 80);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (800, 900, 4, 80):\n"
+					+ "Point found: (hi, 800, 900)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRec2cornerBR()
+	    {
+	    	Point p = new Point("hi", 800, 900);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(100, 100, 700, 800);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (100, 100, 700, 800):\n"
+					+ "Point found: (hi, 800, 900)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecLeftEdge()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(800, 100, 700, 800);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (800, 100, 700, 800):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecTopEdge()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(700, 100, 700, 500);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (700, 100, 700, 500):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecRightEdge()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(100, 100, 700, 700);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (100, 100, 700, 700):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecBotEdge()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(100, 100, 800, 500); 
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (100, 100, 800, 500):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecCornerBL()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(800, 100, 800, 500);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (800, 100, 800, 500):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	    
+	    public void testRSonRecCornerTR()
+	    {
+	    	Point p = new Point("hi", 800, 600);
+	    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+	    	tree.insert(p);
+	    	tree.regionSearch(100, 600, 700, 500);
+	    	String output = systemOut().getHistory();
+			assertEquals("Points intersecting region (100, 600, 700, 500):\n"
+					+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
+	    }
+	
 	/**
 	 * Tests when 2 are the same 
 	 * for duplicates
