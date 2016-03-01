@@ -74,6 +74,7 @@ public class PRQuadInternalTest extends TestCase {
      * Tests SW insert when p x 
      * is less than x + nuLen
      */
+    @Test
     public void testinsertSWXL()
     {
     	Point p = new Point(null, 1, 900);
@@ -87,6 +88,7 @@ public class PRQuadInternalTest extends TestCase {
     /*
      * 
      */
+    @Test
     public void testinsertSWXE()
     {
     	Point p = new Point(null, 1, 900);
@@ -97,6 +99,10 @@ public class PRQuadInternalTest extends TestCase {
     	assertEquals(Flyweight.class, i.se().getClass());
     }
     
+    /**
+     * 
+     */
+    @Test
     public void testinsertSWXG()
     {}
     
