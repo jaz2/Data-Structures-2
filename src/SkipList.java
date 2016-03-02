@@ -167,7 +167,7 @@ public class SkipList<K extends Comparable<K>, E> {
 					(key.compareTo(x.forward[i].
 							element().key()) > 0)) // go forward
 			{
-				x = x.forward[i];              // Go one last step 
+				x = x.forward[i];             // Go one last step 
 			}
 			store[i] = x;
 		}
