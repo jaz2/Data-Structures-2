@@ -273,7 +273,7 @@ public class PRQuadLeafTest extends TestCase{
 		Point p = new Point("a", 1, 2);
 		PRQuadLeaf lf = new PRQuadLeaf(p);		
 
-		assertEquals(0, lf.regionSearch(0, 100, 10, 10, 0, 0, 1024));
+		assertEquals(1, lf.regionSearch(0, 100, 10, 10, 0, 0, 1024));
 	}
 
 	/**
@@ -309,7 +309,7 @@ public class PRQuadLeafTest extends TestCase{
 		Point p = new Point("a", 1000, 900);
 		PRQuadLeaf lf = new PRQuadLeaf(p);		
 
-		assertEquals(0, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
+		assertEquals(1, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
 	}
 
 	@Test
