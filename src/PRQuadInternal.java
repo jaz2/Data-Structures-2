@@ -236,41 +236,71 @@ public class PRQuadInternal implements PRQuadNode {
 	public PRQuadNode merge()
 	{
 		int total = 0;
-		PRQuadLeaf sum;
+		PRQuadLeaf sum = null;
+		List list = new List();
 		if (nw.getClass().equals(this.getClass()) 
 				|| (ne.getClass().equals(this.getClass()))
 				|| (sw.getClass().equals(this.getClass()))
 				|| (se.getClass().equals(this.getClass())))
+		{
+			return this;
+		}
 		if (nw.isLeaf())
 		{
-			sum = nw;
+			for (int i = 0; i < ((PRQuadLeaf)nw).l.length(); i++)
+			{
+				list.insert(((PRQuadLeaf)nw).l.moveToPos(i));
+			}
+			sum = (PRQuadLeaf) nw;
 			total++;
 		}
-		if (count() < 4 && count() >= 1)
-		{} //make internal a leaf
-		else //if (count() > 3)//might just be else
+		if (ne.isLeaf())
 		{
-			if (this.isLeaf())//
+			for (int i = 0; i < ((PRQuadLeaf)ne).l.length(); i++)
+			{
+				list.insert(((PRQuadLeaf)ne).l.moveToPos(i));
+			}
+			sum = (PRQuadLeaf) ne;
+			total++;
+		}
+		if (sw.isLeaf())
+		{
+			for (int i = 0; i < ((PRQuadLeaf)sw).l.length(); i++)
+			{
+				list.insert(((PRQuadLeaf)sw).l.moveToPos(i));
+			}
+			sum = (PRQuadLeaf) sw;
+			total++;
+		}
+		if (se.isLeaf())
+		{
+			for (int i = 0; i < ((PRQuadLeaf)se).l.length(); i++)
+			{
+				list.insert(((PRQuadLeaf)se).l.moveToPos(i));
+			}
+			sum = (PRQuadLeaf) se;
+			total++;
+		}
+		if (total == 1)
+		{
+			return sum;
+		}
+		if (total > 1)
+		{
+			if (list.length() > 3)
 			{
 				return this;
 			}
 			else 
-			{ //it will be internal
-				if (ne.getClass().equals(Flyweight.class) 
-						&& sw.getClass().equals(Flyweight.class) 
-						&& se.getClass().equals(Flyweight.class))
-				{ //but then we also have to check if it's internal
-					return nw;
-				}
-				else if (nw.getClass().equals(Flyweight.class) 
-						&& sw.getClass().equals(Flyweight.class) 
-						&& se.getClass().equals(Flyweight.class))
+			{
+				PRQuadLeaf nu = new PRQuadLeaf(list.moveToPos(0));
+				for (int i = 1; i < list.length(); i++)
 				{
-					return ne;
+					nu.l.insert(list.moveToPos(i));
 				}
 			}
 		}
-		return this;
+		return this; //see if this is right
 	}
 	
 	/**
