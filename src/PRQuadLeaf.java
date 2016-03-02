@@ -25,7 +25,7 @@ public class PRQuadLeaf implements PRQuadNode {
 	 * For the db to use
 	 * on remove
 	 */
-	String nam;
+	static String nam;
 
 	/**
 	 * Handles the points
@@ -256,17 +256,21 @@ public class PRQuadLeaf implements PRQuadNode {
 		//make a point and use compareTo (equals)
 		Point p = new Point(null, x, y);
 		nam = l.getName(p);
-		l.remove(p);
-		//removes first inst of dup
-		//return this node 
-		//leaf has to become a fly (use merge)
-		if (l.isEmpty())
+		if (nam == null)
 		{
-			return Flyweight.fly;
+			return this;
 		}
 		else 
 		{
-			return this;
+			l.remove(p);
+			if (l.isEmpty())
+			{
+				return Flyweight.fly;
+			}
+			else 
+			{
+				return this;
+			}
 		}
 	}
 
