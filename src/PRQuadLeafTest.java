@@ -390,7 +390,7 @@ public class PRQuadLeafTest extends TestCase{
 				+ "Point found: (hi, 800, 600)\n"
 				+ "1 quadtree nodes visited\n", output);
 	}
-	
+
 	@Test
 	public void testRSonRecCornerBL()
 	{
@@ -501,5 +501,83 @@ public class PRQuadLeafTest extends TestCase{
 		String output = systemOut().getHistory();
 		assertEquals("Duplicate points:\n"
 				+ "(1, 20)\n" + "(200, 200)\n", output);
+	}
+
+	/**
+	 * Size 2 for dup
+	 */
+	@Test
+	public void testDupsize2()
+	{
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(new Point("hi", 7, 29));
+		tree.insert(new Point("hi", 7, 29));
+		tree.duplicates();
+		String output = systemOut().getHistory();
+		assertEquals("Duplicate points:\n"
+				+ "(7, 29)\n", output);     	
+	}
+
+	/**
+	 * Tests dup
+	 */
+	@Test
+	public void testDup23same()
+	{
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(new Point("hi", 12, 29));
+		tree.insert(new Point("hi", 7, 29));
+		tree.insert(new Point("hi", 7, 29));
+		tree.duplicates();
+		String output = systemOut().getHistory();
+		assertEquals("Duplicate points:\n"
+				+ "(7, 29)\n", output);     	
+	}
+
+	/**
+	 * Tests when same
+	 */
+	@Test
+	public void testDup13same()
+	{
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(new Point("hi", 7, 29));
+		tree.insert(new Point("hi", 12, 29));
+		tree.insert(new Point("hi", 7, 29));
+		tree.duplicates();
+		String output = systemOut().getHistory();
+		assertEquals("Duplicate points:\n"
+				+ "(7, 29)\n", output);     	
+	}
+
+	/**
+	 * Test size 3 not same
+	 */
+	@Test
+	public void testDupsize3notSame()
+	{
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(new Point("hi", 12, 29));
+		tree.insert(new Point("hi", 7, 29));
+		tree.insert(new Point("hi", 88, 29));
+		tree.duplicates();
+		String output = systemOut().getHistory();
+		assertEquals("Duplicate points:\n"
+				, output);     	
+	}
+
+	/**
+	 * Test size not same dup
+	 */
+	@Test
+	public void testDupsize2notSame()
+	{
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(new Point("hi", 12, 29));
+		tree.insert(new Point("hi", 88, 29));
+		tree.duplicates();
+		String output = systemOut().getHistory();
+		assertEquals("Duplicate points:\n"
+				, output);    
 	}
 }
