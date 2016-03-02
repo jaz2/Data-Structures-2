@@ -115,7 +115,7 @@ public class PRQuadLeaf implements PRQuadNode {
         for (int i = 0; i <= l.length() - 1; i++)
         {
             Point p = (Point) l.moveToPos(i);
-            if ((rx <= p.getX())) && (p.getX() <= rw + rx) 
+            if ((rx <= p.getX()) && (p.getX() <= rw + rx) 
                     && (ry <= p.getY()) && (p.getY() <= rh + ry))
             {
 //            	if (p.getX() <= rw + rx)
