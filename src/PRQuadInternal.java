@@ -195,7 +195,14 @@ public class PRQuadInternal implements PRQuadNode {
     @Override
     public PRQuadNode remove(Point p)
     {
-    	
+    	if (this == ne)
+    	{}
+    	else if (this == nw)
+    	{}
+    	else if (this == se)
+    	{}
+    	else 
+    	{}
     	return this;
     }
 }
