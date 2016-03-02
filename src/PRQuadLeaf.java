@@ -267,6 +267,9 @@ public class PRQuadLeaf implements PRQuadNode {
     	return this;
     }
     
+    /**
+     * For the internal
+     */
     public PRQuadNode merge()
     {
     	return this;
