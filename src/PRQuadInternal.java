@@ -235,15 +235,40 @@ public class PRQuadInternal implements PRQuadNode {
 	 */
 	public PRQuadNode merge()
 	{
-		if (count() == 0)
+		int total = 0;
+		PRQuadLeaf sum;
+		if (nw.getClass().equals(this.getClass()) 
+				|| (ne.getClass().equals(this.getClass()))
+				|| (sw.getClass().equals(this.getClass()))
+				|| (se.getClass().equals(this.getClass())))
+		if (nw.isLeaf())
 		{
-			return Flyweight.fly;
+			sum = nw;
+			total++;
 		}
-		else if (count() < 4 && count() >= 1)
+		if (count() < 4 && count() >= 1)
 		{} //make internal a leaf
 		else //if (count() > 3)//might just be else
 		{
-			return this;
+			if (this.isLeaf())//
+			{
+				return this;
+			}
+			else 
+			{ //it will be internal
+				if (ne.getClass().equals(Flyweight.class) 
+						&& sw.getClass().equals(Flyweight.class) 
+						&& se.getClass().equals(Flyweight.class))
+				{ //but then we also have to check if it's internal
+					return nw;
+				}
+				else if (nw.getClass().equals(Flyweight.class) 
+						&& sw.getClass().equals(Flyweight.class) 
+						&& se.getClass().equals(Flyweight.class))
+				{
+					return ne;
+				}
+			}
 		}
 		return this;
 	}
