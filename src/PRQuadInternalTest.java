@@ -79,7 +79,6 @@ public class PRQuadInternalTest extends TestCase {
     {
         Point p = new Point(null, 1, 900);
         PRQuadInternal i = new PRQuadInternal();
-        i.insert(new Point("a", 1, 1), 0, 0, 1024);
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
@@ -91,10 +90,9 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testinsertSWXE()
     {
-        Point p = new Point(null, 1, 900);
+        Point p = new Point(null, 512, 900);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
-        i.insert(new Point("a", 1, 1), 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
     }
@@ -104,8 +102,36 @@ public class PRQuadInternalTest extends TestCase {
      */
     @Test
     public void testinsertSWXG()
-    {}
+    {
+    	Point p = new Point(null, 1000, 900);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(Flyweight.class, i.sw().getClass());
+        assertEquals(PRQuadLeaf.class, i.se().getClass());
+    }
 
+    public void testinsertSWYL()
+    {
+    	Point p = new Point(null, 1, 500);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
+    
+    
+    public void testinsertSWYG()
+    {
+    	Point p = new Point(null, 1, 600);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
+    
+    public void testinsertSWYE()
+    {}
+    
     /**
      * Tests the region search 
      */
