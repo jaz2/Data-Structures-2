@@ -159,7 +159,7 @@ public class PRQuadInternalTest extends TestCase {
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
         tree.insert(new Point("r1", 1, 20));
         tree.insert(new Point("r2", 600, 20));
-        tree.insert(new Point("r34", 1, 600));
+        tree.insert(new Point("r34", 1, 512));
         tree.insert(new Point("r9", 600, 600));
         tree.regionSearch(0, 500, 500, 500); 
         String output = systemOut().getHistory();
