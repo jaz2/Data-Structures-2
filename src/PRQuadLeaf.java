@@ -256,14 +256,8 @@ public class PRQuadLeaf implements PRQuadNode {
     	//make a point and use compareTo (equals)
     	Point p = new Point(null, x, y);
     	l.remove(p);
-    	if (l.isEmpty())
-    	{
-    		// remove the fly?
-    	}
-    	else 
-    	{ //removes first inst of dup
-    		//return this node 
-    	}
+    	//removes first inst of dup
+        //return this node 
     	return this;
     }
     
