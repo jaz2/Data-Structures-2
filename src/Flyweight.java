@@ -51,6 +51,17 @@ public class Flyweight implements PRQuadNode {
         u = lef;
         return lef;
     }
+    
+    /**
+     * Tries to remove an empty node
+     * @param p the point
+     * @return node
+     */
+    @Override
+    public PRQuadNode remove(Point p)
+    {
+    	return this;
+    }
 
     /**
      * For testing purposes
