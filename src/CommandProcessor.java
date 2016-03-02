@@ -93,22 +93,21 @@ public class CommandProcessor {
                     }
                     else 
                     {
-                        //db.skipRemoveCoord(n1, n2, n3, n4);
-                        //FOR NOW!!
-                        System.out.println(
-                                "Point not found: (" + n1 + ", " + n2 + ")");
+                    	db.removeC(n1, n2);
+//                        System.out.println(
+//                                "Point not found: (" + n1 + ", " + n2 + ")");
                         //remove in quad tree and remove in skip by name
                         //should just have one remove method in quad that 
                         //removes by coordinates
                     }
                 } 
                 else // case where it's remove name
-                {
+                { //get the point and use that to remove the point in quad
                     String id = in.next().toString();
-                    // db.skip.removeByName(id);
-                    System.out.println(
-                            "Point not removed: " + id);
-                    //get the point and use that to remove the point in 
+                    db.removeN(id);
+//                    System.out.println(
+//                            "Point not removed: " + id);
+                    
                    
                 }
             } 
