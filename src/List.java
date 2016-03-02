@@ -100,4 +100,14 @@ public class List {
     {
         return size;
     }
+    
+    /**
+     * Returns true if size is 0,
+     * false otherwise
+     * @return t or f
+     */
+    public boolean isEmpty()
+    {
+    	return size == 0;
+    }
 }
