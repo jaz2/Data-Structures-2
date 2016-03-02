@@ -70,6 +70,7 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 
+    @Test
     public void testinsertSWYL()
     {
     	Point p = new Point(null, 1, 500);
@@ -79,7 +80,7 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
     }
     
-    
+    @Test
     public void testinsertSWYG()
     {
     	Point p = new Point(null, 1, 600);
@@ -89,6 +90,10 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
     }
     
+    /**
+     * Tests when y is equal
+     */
+    @Test
     public void testinsertSWYE()
     {
     	Point p = new Point(null, 1, 512);
