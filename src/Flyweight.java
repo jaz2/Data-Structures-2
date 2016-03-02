@@ -112,12 +112,4 @@ public class Flyweight implements PRQuadNode {
     {
         return 1;
     }
-
-    /**
-     * Returns 0 because it's empty
-     */
-    public int count()
-    {
-    	return 0;
-    }
 }
