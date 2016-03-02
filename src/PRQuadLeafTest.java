@@ -258,6 +258,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RY is greater than y of node
 	 */
+	@Test
 	public void regionSearchRYG()
 	{
 		Point p = new Point("a", 1, 2);
