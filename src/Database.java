@@ -83,8 +83,17 @@ public class Database
         skip.search(k);
     }
     
-    public void removeN()
-    {}
+    /**
+     * Searches through the SkipList first 
+     * and then retrieves the point to find 
+     * the coordinates
+     * @param name
+     */
+    public void removeN(String name)
+    {
+    	skip.removeByName(name);
+    	//use this to remove point through quadtree
+    }
     
     public void removeC()
     {}

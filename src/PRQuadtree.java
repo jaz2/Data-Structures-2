@@ -59,22 +59,15 @@ public class PRQuadtree {
 	}
 	
 	/**
-	 * Removes by name
-	 * @param name name of the node
-	 * @return node 
-	 */
-	public PRQuadNode removeName(String name)
-	{
-		return this;
-	}
-	
-	/**
 	 * Removes by looking through the coordinates
 	 * @param p 
 	 * @return the node
 	 */
-	public PRQuadNode removeCoord(int x, int y)
-	{}
+	public PRQuadNode remove(int x, int y)
+	{
+		root = root.remove(x, y);
+		return root;
+	}
 
 	/**
 	 * the dump method

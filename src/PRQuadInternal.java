@@ -191,9 +191,12 @@ public class PRQuadInternal implements PRQuadNode {
     
     /**
      * Removes an internal
+     * @param x the x coord
+     * @param y the y coord
+     * @return the removed node
      */
     @Override
-    public PRQuadNode remove(Point p)
+    public PRQuadNode remove(int x, int y)
     {
     	if (this == ne)
     	{}
