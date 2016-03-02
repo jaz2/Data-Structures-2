@@ -99,6 +99,7 @@ public class PRQuadLeafTest extends TestCase{
 	 * When the first item in list
 	 * is not the same as point to be added, no
 	 */
+	@Test
 	public void testInsertFourthMehN()
 	{
 		Point p = new Point(null, 3, 4);
@@ -167,6 +168,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RX is less than x
 	 */
+	@Test
 	public void regionSearchRXE()
 	{
 		Point p = new Point("a", 1, 2);
@@ -178,6 +180,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RX is equal to x of node
 	 */
+	@Test
 	public void regionSearchRXL()
 	{
 		Point p = new Point("a", 1, 1);
@@ -189,6 +192,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RX is greater than x of node
 	 */
+	@Test
 	public void regionSearchRXG()
 	{
 		Point p = new Point("a", 1, 2);
@@ -200,6 +204,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When x is less than rx + rw
 	 */
+	@Test
 	public void regionSearchXL()
 	{
 		Point p = new Point("a", 5, 2);
@@ -211,6 +216,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * Tests when x is equal to rx + rw
 	 */
+	@Test
 	public void regionSearchXE()
 	{
 		Point p = new Point("a", 10, 2);
@@ -222,6 +228,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * Tests when x is greater than rx + rw
 	 */
+	@Test
 	public void regionSearchXG()
 	{
 		Point p = new Point("a", 1000, 2);
