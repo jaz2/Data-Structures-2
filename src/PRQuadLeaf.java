@@ -242,7 +242,7 @@ public class PRQuadLeaf implements PRQuadNode {
      * @return node to be removed
      */
     @Override
-    public PRQuadNode remove(int x, int y)
+    public PRQuadNode remove(int x, int y, int tx, int ty, int len)
     { //make a var to get the point?
     	//check compareTo and make a point 
     	Point p = new Point(null, x, y);
