@@ -70,45 +70,45 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 
-    /**
-     * Tests SW insert when p x 
-     * is less than x + nuLen
-     */
-    @Test
-    public void testinsertSWXL()
-    {
-        Point p = new Point(null, 1, 900);
-        PRQuadInternal i = new PRQuadInternal();
-        i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.sw().getClass());
-        assertEquals(Flyweight.class, i.se().getClass());
-    }
-
-    /*
-     * 
-     */
-    @Test
-    public void testinsertSWXE()
-    {
-        Point p = new Point(null, 512, 900);
-        PRQuadInternal i = new PRQuadInternal();        
-        i.insert(p, 0, 0, 1024);
-        assertEquals(PRQuadLeaf.class, i.sw().getClass());
-        assertEquals(Flyweight.class, i.se().getClass());
-    }
-
-    /**
-     * 
-     */
-    @Test
-    public void testinsertSWXG()
-    {
-    	Point p = new Point(null, 1000, 900);
-        PRQuadInternal i = new PRQuadInternal();        
-        i.insert(p, 0, 0, 1024);
-        assertEquals(Flyweight.class, i.sw().getClass());
-        assertEquals(PRQuadLeaf.class, i.se().getClass());
-    }
+//    /**
+//     * Tests SW insert when p x 
+//     * is less than x + nuLen
+//     */
+//    @Test
+//    public void testinsertSWXL()
+//    {
+//        Point p = new Point(null, 1, 900);
+//        PRQuadInternal i = new PRQuadInternal();
+//        i.insert(p, 0, 0, 1024);
+//        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+//        assertEquals(Flyweight.class, i.se().getClass());
+//    }
+//
+//    /*
+//     * 
+//     */
+//    @Test
+//    public void testinsertSWXE()
+//    {
+//        Point p = new Point(null, 512, 900);
+//        PRQuadInternal i = new PRQuadInternal();        
+//        i.insert(p, 0, 0, 1024);
+//        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+//        assertEquals(Flyweight.class, i.se().getClass());
+//    }
+//
+//    /**
+//     * 
+//     */
+//    @Test
+//    public void testinsertSWXG()
+//    {
+//    	Point p = new Point(null, 1000, 900);
+//        PRQuadInternal i = new PRQuadInternal();        
+//        i.insert(p, 0, 0, 1024);
+//        assertEquals(Flyweight.class, i.sw().getClass());
+//        assertEquals(PRQuadLeaf.class, i.se().getClass());
+//    }
 
     public void testinsertSWYL()
     {
