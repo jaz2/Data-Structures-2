@@ -92,9 +92,20 @@ public class Database
     public void removeN(String name)
     {
     	skip.removeByName(name);
-    	//use this to remove point through quadtree
+    	pr.remove(skip.val.x, skip.val.y);
+    	//use this to get the point and remove it in quadtree
     }
     
-    public void removeC()
-    {}
+    /**
+     * Removes in the quad tree returns 
+     * node to get name to remove 
+     * by name in skip
+     * @param x
+     * @param y
+     */
+    public void removeC(int x, int y)
+    {
+    	pr.remove(x, y);
+    	skip.removeByName(key);
+    }
 }
