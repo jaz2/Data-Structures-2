@@ -57,6 +57,24 @@ public class PRQuadtree {
 		root = root.insert(p, 0, 0, 1024);
 		return root;
 	}
+	
+	/**
+	 * Removes by name
+	 * @param name name of the node
+	 * @return node 
+	 */
+	public PRQuadNode removeName(String name)
+	{
+		return this;
+	}
+	
+	/**
+	 * Removes by looking through the coordinates
+	 * @param p 
+	 * @return the node
+	 */
+	public PRQuadNode removeCoord(int x, int y)
+	{}
 
 	/**
 	 * the dump method
@@ -142,70 +160,6 @@ public class PRQuadtree {
 	//	int r = regionSearch(root, rx, ry, rw, rh, 0, 0, 1024);
 		System.out.println(r +" quadtree nodes visited");
 	}
-
-//	/**
-//	 * Searches within the region
-//	 * @param node the node in the tree
-//	 * @param x the x coord
-//	 * @param y the y coord
-//	 * @param w the width
-//	 * @param l the length
-//	 * @return number of nodes visited
-//	 */
-//	private int regionSearch(PRQuadNode node, int x, int y, int w, int l, int nx, int ny, int nl)
-//	{
-//		if (nx <= x && ny <= y && nl <= l)
-//		{
-//			if (node.getClass().equals(Flyweight.class))
-//			{
-//				return 0;
-//			}
-//			if (node.isLeaf())
-//			{
-//				((PRQuadLeaf)node).printVisited();
-//				return 1;
-//			}
-//			else //is internal
-//			{
-//				return 1 + regionSearch(((PRQuadInternal) node).nw(), 
-//						x, y, l /2, l / 2, nx, ny, nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).ne(), 
-//						x + (l / 2), y, l / 2, l / 2, 
-//						nx + (1 / 2), ny, nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).sw(), 
-//						x, y + (l / 2), l / 2, l / 2, nx, 
-//						ny + (1 / 2), nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).se(), 
-//						x + (l / 2), y + (l / 2), l / 2, l / 2, 
-//						nx + (l / 2), ny + (1 / 2), nl / 2);
-//			}
-//		}
-//		else 
-//		{
-//			if (node.getClass().equals(Flyweight.class))
-//			{
-//				return 1;
-//			}
-//			if (node.isLeaf())
-//			{
-//				return 0;
-//			}
-//			else //is internal
-//			{
-//				return 0 + regionSearch(((PRQuadInternal) node).nw(), 
-//						x, y, l /2, l / 2, nx, ny, nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).ne(), 
-//						x + (l / 2), y, l / 2, l / 2, 
-//						nx + (1 / 2), ny, nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).sw(), 
-//						x, y + (l / 2), l / 2, l / 2, nx, 
-//						ny + (1 / 2), nl / 2)
-//				+ regionSearch(((PRQuadInternal) node).se(), 
-//						x + (l / 2), y + (l / 2), l / 2, l / 2, 
-//						nx + (l / 2), ny + (1 / 2), nl / 2);
-//			}       
-//		}
-//	}
 
 	/**
 	 * The duplicates method
