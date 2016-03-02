@@ -190,24 +190,30 @@ public class PRQuadInternal implements PRQuadNode {
     }
     
     /**
-     * Removes an internal
-     * @param x the x coord
-     * @param y the y coord
-     * @return the removed node
+     * 
      */
-    @Override
-    public PRQuadNode remove(int x, int y)
+    public PRQuadNode remove(int px, int py, int tx, int ty, int len)
     {
-    	if (this == ne)
-    	{}
-    	else if (this == nw)
-    	{}
-    	else if (this == se)
-    	{}
-    	else 
-    	{}
-    	return this;
+    	int nuLen = len / 2;
+        if (px <= tx + nuLen && py <= ty + nuLen) //nw
+        {
+            nw = nw.remove(px, py, tx, ty, nuLen);
+        }
+        else if (px > tx + nuLen && p.getY() <= ty + nuLen) //ne
+        { 
+            ne = ne.remove(px, py, tx + nuLen, ty, nuLen);
+        }
+        else if (px <= tx + nuLen) //&& p.getY() > y + nuLen) //sw
+        { 
+            if (py > ty + nuLen)
+                sw = sw.insert(p, x, y + nuLen, nuLen);
+        }
+        else
+            //if (p.getX() > x + nuLen && p.getY() > y + nuLen) //se
+        { 
+            se = se.insert(p, x + nuLen, y + nuLen, nuLen);
+        }
+        u = this;
+        return this;
     }
-    
-    private PRQuadNode remove(int px, int py, )
 }
