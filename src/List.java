@@ -59,6 +59,24 @@ public class List {
 	{
 		return l[i];
 	}
+	
+	/**
+	 * Finds the name of the point
+	 * @param p the point
+	 * @return the string
+	 */
+	public String getName(Point p)
+	{
+		String s = "";
+		for (int i = 0; i < size; i++)
+		{
+			if (l[i].equals(p))
+			{
+				return s = l[i].name;
+			}
+		}
+		return s;
+	}
 
 	/**
 	 * Removes a point from the list
