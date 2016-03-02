@@ -156,7 +156,7 @@ public class SkipList<K extends Comparable<K>, E> {
 	 */
 	public void removeByName(Comparable<K> key)
 	{
-		found = false;   
+		found = false;  
 		SkipNode x = head;                     // Dummy header node   
 		@SuppressWarnings("unchecked")
 		SkipNode[] store = (SkipNode[]) Array.newInstance(
