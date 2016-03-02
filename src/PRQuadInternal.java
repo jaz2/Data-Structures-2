@@ -228,10 +228,31 @@ public class PRQuadInternal implements PRQuadNode {
 		return this;
 	}
 	
-	
+	/**
+	 * Checks the children of the internal
+	 * to determine whether it should be a 
+	 * leaf or fly weight or remain
+	 */
 	public PRQuadNode merge()
 	{
-		if ()
+		if (count() == 0)
+		{
+			return Flyweight.fly;
+		}
+		else if (count() < 4 && count() >= 1)
+		{} //make internal a leaf
+		else //if (count() > 3)//might just be else
+		{
+			return this;
+		}
 		return this;
+	}
+	
+	/**
+	 * Returns the size of all its children
+	 */
+	public int count()
+	{
+		return nw.count() + ne.count() + sw.count() + se.count();
 	}
 }
