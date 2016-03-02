@@ -244,6 +244,7 @@ public class PRQuadLeaf implements PRQuadNode {
     @Override
     public PRQuadNode remove(int x, int y)
     { //make a var to get the point?
+    	l.remove(p);
     	return this;
     }
 }
