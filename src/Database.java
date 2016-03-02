@@ -108,6 +108,13 @@ public class Database
      public void removeC(int x, int y)
      {
           pr.remove(x, y);
-          //skip.removeByName(string);
+          if (PRQuadLeaf.nam != null)
+          {
+              skip.removeByName(PRQuadLeaf.nam);
+          }
+          else
+          {
+        	  System.out.println("Point not found: (" + x + ", " + y + ")");
+          }
      }
 }
