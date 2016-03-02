@@ -216,15 +216,18 @@ public class PRQuadInternal implements PRQuadNode {
 			if (py <= ty + nuLen) //ne
 			{
 				ne = ne.remove(px, py, tx + nuLen, ty, nuLen);
+				ne = ne.merge();
 			}
 			else //if (p.getX() > x + nuLen && p.getY() > y + nuLen) //se
 			{
 				se = se.remove(px, py, tx + nuLen, ty + nuLen, nuLen);
+				se = se.merge();
 			}
 		}
 		u = this;
 		return this;
 	}
+	
 	
 	public PRQuadNode merge()
 	{

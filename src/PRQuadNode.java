@@ -21,4 +21,6 @@ public interface PRQuadNode {
 	public PRQuadNode remove(int x, int y, int tx, int ty, int len);
 	
 	public PRQuadNode merge();
+	
+	public int count();
 }
