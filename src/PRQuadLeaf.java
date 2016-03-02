@@ -234,6 +234,15 @@ public class PRQuadLeaf implements PRQuadNode {
             }
         }
     }
+    
+    /**
+     * Removes node if found
+     */
+    @Override
+    public PRQuadNode remove(Point p)
+    {
+    	return this;
+    }
 }
 
 
