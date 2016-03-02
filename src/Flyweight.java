@@ -76,6 +76,14 @@ public class Flyweight implements PRQuadNode {
     {
         return u;
     }
+    
+    /**
+     * For the internal
+     */
+    public PRQuadNode merge()
+    {
+    	return this;
+    }
 
     /**
      * Returns if empty or no
