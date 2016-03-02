@@ -20,6 +20,12 @@ public class PRQuadLeaf implements PRQuadNode {
      * For testing purposes
      */
     PRQuadNode u;
+    
+    /**
+     * For the db to use
+     * on remove
+     */
+    Point r;
 
     /**
      * Handles the points
@@ -247,7 +253,7 @@ public class PRQuadLeaf implements PRQuadNode {
     @Override
     public PRQuadNode remove(int x, int y, int tx, int ty, int len)
     { //make a var to get the point?
-    	//check compareTo and make a point 
+    	//make a point and use compareTo (equals)
     	Point p = new Point(null, x, y);
     	l.remove(p);
     	if (l.isEmpty())
