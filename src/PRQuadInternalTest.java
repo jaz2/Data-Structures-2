@@ -116,7 +116,7 @@ public class PRQuadInternalTest extends TestCase {
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
-        assertEquals(PRQuadLeaf.class, i.se().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
     }
     
     
