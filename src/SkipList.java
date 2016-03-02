@@ -88,6 +88,11 @@ public class SkipList<K extends Comparable<K>, E> {
 	 * For the quadtree
 	 */
 	public E val;
+	
+	/**
+	 * For the remove method
+	 */
+	public boolean found;
 
 	/**
 	 * Constructor for the SkipList
@@ -151,7 +156,7 @@ public class SkipList<K extends Comparable<K>, E> {
 	 */
 	public void removeByName(Comparable<K> key)
 	{
-		boolean found = false;   
+		found = false;   
 		SkipNode x = head;                     // Dummy header node   
 		@SuppressWarnings("unchecked")
 		SkipNode[] store = (SkipNode[]) Array.newInstance(
