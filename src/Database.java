@@ -108,6 +108,6 @@ public class Database
      public void removeC(int x, int y)
      {
           pr.remove(x, y);
-          skip.removeByName(key);
+          skip.removeByName(string);
      }
 }

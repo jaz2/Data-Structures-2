@@ -104,11 +104,7 @@ public class CommandProcessor {
                 else // case where it's remove name
                 { //get the point and use that to remove the point in quad
                     String id = in.next().toString();
-                    db.removeN(id);
-//                    System.out.println(
-//                            "Point not removed: " + id);
-                    
-                   
+                    db.removeN(id);                 
                 }
             } 
             else if (str.contains("regionsearch"))
