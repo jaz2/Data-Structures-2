@@ -87,7 +87,7 @@ public class SkipList<K extends Comparable<K>, E> {
 	/**
 	 * For the quadtree
 	 */
-	public E val;
+	public E val = null;
 	
 	/**
 	 * For the remove method
