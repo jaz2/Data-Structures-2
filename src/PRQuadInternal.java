@@ -208,6 +208,7 @@ public class PRQuadInternal implements PRQuadNode {
 			else //sw = py < ty + nuLen
 			{
 				sw = sw.remove(px, py, tx, ty + nuLen, nuLen);
+				sw = sw.merge();
 			}
 		}
 		else 
@@ -227,6 +228,7 @@ public class PRQuadInternal implements PRQuadNode {
 	
 	public PRQuadNode merge()
 	{
+		if ()
 		return this;
 	}
 }
