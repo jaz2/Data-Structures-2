@@ -165,8 +165,8 @@ public class PRQuadInternal implements PRQuadNode {
 	 * @return this 
 	 */
 	@Override
-	public PRQuadNode insert(Point p, int x, int y, int len) {
-		int nuLen = len / 2;
+	public PRQuadNode insert(Point p, int x, int y, int length) {
+		int nuLen = length / 2;
 		if (p.getX() <= x + nuLen && p.getY() <= y + nuLen) //nw
 		{
 			nw = nw.insert(p, x, y, nuLen);
