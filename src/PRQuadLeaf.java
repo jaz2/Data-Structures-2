@@ -244,7 +244,17 @@ public class PRQuadLeaf implements PRQuadNode {
     @Override
     public PRQuadNode remove(int x, int y)
     { //make a var to get the point?
-    	l.remove(p);
+    	//check compareTo and make a point 
+    	Point p = new Point(null, x, y);
+    	l.remove(p); //TODO
+    	if (l.isEmpty())
+    	{
+    		// remove the fly?
+    	}
+    	else 
+    	{ //removes first inst of dup
+    		//return this node 
+    	}
     	return this;
     }
 }
