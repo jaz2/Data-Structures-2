@@ -239,6 +239,9 @@ public class PRQuadLeaf implements PRQuadNode {
      * Removes node if found
      * @param x the x coord 
      * @param y the y coord
+     * @param tx the trees x
+     * @param ty the trees y
+     * @param len the trees length
      * @return node to be removed
      */
     @Override
@@ -246,7 +249,7 @@ public class PRQuadLeaf implements PRQuadNode {
     { //make a var to get the point?
     	//check compareTo and make a point 
     	Point p = new Point(null, x, y);
-    	l.remove(p); //TODO
+    	l.remove(p);
     	if (l.isEmpty())
     	{
     		// remove the fly?

@@ -56,6 +56,9 @@ public class Flyweight implements PRQuadNode {
      * Tries to remove an empty node
      * @param x the x coord 
      * @param y the y coord
+     * @param tx the trees x
+     * @param ty the trees y
+     * @param len the trees length
      * @return node to be removed
      */
     @Override
