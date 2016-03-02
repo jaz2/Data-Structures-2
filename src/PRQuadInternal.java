@@ -188,4 +188,14 @@ public class PRQuadInternal implements PRQuadNode {
         u = this;
         return this;
     }
+    
+    /**
+     * Removes an internal
+     */
+    @Override
+    public PRQuadNode remove(Point p)
+    {
+    	
+    	return this;
+    }
 }
