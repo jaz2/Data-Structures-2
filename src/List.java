@@ -67,13 +67,11 @@ public class List {
      */
     public boolean remove(Point p)
     {
-        //Point n = null;
         Boolean found = false;
         for (int i = 0; i < size; i++)
         {
             if (l[i].equals(p))
             {
-                //n = p;
                 if (i == size - 1)
                 {
                     size--;
