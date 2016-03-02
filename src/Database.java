@@ -82,4 +82,10 @@ public class Database
     {
         skip.search(k);
     }
+    
+    public void removeN()
+    {}
+    
+    public void removeC()
+    {}
 }
