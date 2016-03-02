@@ -5,7 +5,6 @@
  * @version Feb 22 2016
  */
 public class PRQuadInternal implements PRQuadNode { 
-	//TODO Internal insert pink line and regionSearch in leaf
 
     /**
      * For testing purposes
@@ -87,7 +86,7 @@ public class PRQuadInternal implements PRQuadNode {
     public boolean isLeaf() {
         return false;
     }
-    
+
     /**
      * Return if it is empty
      * @return false
@@ -105,7 +104,7 @@ public class PRQuadInternal implements PRQuadNode {
     {
         return u;
     }
-    
+
     /**
      * Checks duplicates in internal
      */
@@ -117,7 +116,7 @@ public class PRQuadInternal implements PRQuadNode {
         se.duplicates();
         sw.duplicates();        
     }
-    
+
     /**
      * QuadInternal implementation
      * of quadtree
@@ -176,8 +175,9 @@ public class PRQuadInternal implements PRQuadNode {
         { 
             ne = ne.insert(p, x + nuLen, y, nuLen);
         }
-        else if (p.getX() <= x + nuLen && p.getY() > y + nuLen) //sw
+        else if (p.getX() <= x + nuLen) // && p.getY() > y + nuLen) //sw
         { 
+        	if (p.getY() > y + nuLen)
             sw = sw.insert(p, x, y + nuLen, nuLen);
         }
         else
