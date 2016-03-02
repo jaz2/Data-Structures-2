@@ -302,12 +302,4 @@ public class PRQuadInternal implements PRQuadNode {
 		}
 		return this; //see if this is right
 	}
-	
-	/**
-	 * Returns the size of all its children
-	 */
-	public int count()
-	{
-		return nw.count() + ne.count() + sw.count() + se.count();
-	}
 }
