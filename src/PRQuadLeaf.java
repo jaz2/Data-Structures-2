@@ -274,6 +274,14 @@ public class PRQuadLeaf implements PRQuadNode {
     {
     	return this;
     }
+    
+    /**
+     * Returns size of the list 
+     */
+    public int count()
+    {
+    	return l.length();
+    }
 }
 
 
