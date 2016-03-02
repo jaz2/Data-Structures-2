@@ -236,6 +236,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RY is less than y
 	 */
+	@Test
 	public void regionSearchRYE()
 	{
 		Point p = new Point("a", 1, 2);
@@ -247,6 +248,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When RY is equal to y of node
 	 */
+	@Test
 	public void regionSearchRYL()
 	{
 		Point p = new Point("a", 1, 2);
@@ -270,6 +272,7 @@ public class PRQuadLeafTest extends TestCase{
 	/**
 	 * When y is less than ry + rh
 	 */
+	@Test
 	public void regionSearchYL()
 	{
 		Point p = new Point("a", 5, 2);
