@@ -17,4 +17,6 @@ public interface PRQuadNode {
 	public void duplicates();
 	
 	public PRQuadNode insert(Point p, int x, int y, int length);
+	
+	public PRQuadNode remove(Point p);
 }
