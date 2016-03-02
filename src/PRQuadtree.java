@@ -28,6 +28,11 @@ public class PRQuadtree {
 	 * The length
 	 */
 	int length;
+	
+//	/**
+//	 * The name of the point for remove
+//	 */
+//	static String name = null;
 
 	/**
 	 * The PRQuadtree constructor
@@ -163,5 +168,5 @@ public class PRQuadtree {
 	{
 		System.out.println("Duplicate points:");
 		root.duplicates();
-	}
+    }
 }
