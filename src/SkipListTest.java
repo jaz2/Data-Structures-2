@@ -53,162 +53,162 @@ public class SkipListTest extends TestCase
         assertEquals(null, s.head.element());
     }
 
-    /**
-     * Tests remove by coord when succesful
-     */
-    @Test
-    public void testRemoveCoordYes()
-    {
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        Point y = new Point("a", 0, 1);
-        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
-        s.insert(l);
-
-        Point re = new Point("b", 1, 2);
-        KVPair<String, Point> p = new KVPair<String, 
-                Point>(re.getName(), re);        
-        s.insert(p);
-
-        Point f = new Point("f", 5, 200);
-        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
-        s.insert(g);
-
-        s.removeByCoord(re);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point removed: (b, 1, 2)", output);
-    }
-
-    /**
-     * Tests when there is more than one instance
-     */
-    @Test
-    public void testRemoveCoordMult()
-    {
-        SkipList<String, Point> s = new SkipList<String, Point>();
-
-        Point i = new Point("q", 0, 0);
-        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
-        s.insert(w);
-
-        Point re = new Point("a", 1, 2);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-
-        s.insert(p);
-
-        Point nu = new Point("a", 2, 4);
-        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
-        s.insert(m);
-
-        Point eh = new Point("k", 6, 10);
-        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
-        s.insert(n);
-
-        s.removeByCoord(re);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point removed: (a, 1, 2)", output);
-    }
-
-    /**
-     * Tests when two Point have same dimensions 
-     * but different names
-     */
-    public void testRemoveCoordDouble()
-    {
-        SkipList<String, Point> s = new SkipList<String, Point>();
-
-        Point i = new Point("a", 1, 1);
-        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
-        s.insert(w);
-
-        Point re = new Point("b", 1, 1);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-
-        s.insert(p);
-
-        Point nu = new Point("c", 2, 4);
-        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
-        s.insert(m);
-
-        Point eh = new Point("k", 6, 10);
-        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
-        s.insert(n);
-
-        s.removeByCoord(i);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point removed: (a, 1, 1)", output);
-    }
-    
-    /**
-     * Tests when you cannot find something
-     * in remove
-     */
-    @Test
-    public void testRemoveCoordNah()
-    {
-        Point re = new Point("a", 1, 2);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        s.insert(p);
-        
-        Point m = new Point(null, 1, 2);
-
-        s.removeByCoord(m);
-        String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 2)", outt);
-    }
-    
-    /**
-     * Tests when you cannot find something but the x 
-     * is equal in remove
-     *
-     */
-    @Test
-    public void testRemoveCoordNahX()
-    {
-        Point re = new Point("a", 1, 5);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        s.insert(p);
-        
-        Point m = new Point(null, 1, 2);
-
-        s.removeByCoord(m);
-        String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 2)", outt);
-    }
-    
-    /**
-     * Tests when you cannot find something but the y 
-     * is equal in remove
-     *
-     */
-    @Test
-    public void testRemoveCoordNahY()
-    {
-        Point re = new Point("a", 1, 2);
-        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        s.insert(p);
-        
-        Point m = new Point(null, 1, 2);
-
-        s.removeByCoord(m);
-        String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 2)", outt);
-    }
-
-    /**
-     * Tests when x.forward[i] is null
-     */
-    @Test
-    public void testRemoveCoordNull()
-    {
-        SkipList<String, Point> s = new SkipList<String, Point>();
-        Point hm = new Point(null, 1, 2);
-        s.removeByCoord(hm);
-        String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not removed: (1, 2)", output);
-    }
+//    /**
+//     * Tests remove by coord when succesful
+//     */
+//    @Test
+//    public void testRemoveCoordYes()
+//    {
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//        Point y = new Point("a", 0, 1);
+//        KVPair<String, Point> l = new KVPair<String, Point>(y.getName(), y);
+//        s.insert(l);
+//
+//        Point re = new Point("b", 1, 2);
+//        KVPair<String, Point> p = new KVPair<String, 
+//                Point>(re.getName(), re);        
+//        s.insert(p);
+//
+//        Point f = new Point("f", 5, 200);
+//        KVPair<String, Point> g = new KVPair<String, Point>(f.getName(), f);
+//        s.insert(g);
+//
+//        s.removeByCoord(re);
+//        String output = systemOut().getHistory();
+//        assertFuzzyEquals("Point removed: (b, 1, 2)", output);
+//    }
+//
+//    /**
+//     * Tests when there is more than one instance
+//     */
+//    @Test
+//    public void testRemoveCoordMult()
+//    {
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//
+//        Point i = new Point("q", 0, 0);
+//        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
+//        s.insert(w);
+//
+//        Point re = new Point("a", 1, 2);
+//        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+//
+//        s.insert(p);
+//
+//        Point nu = new Point("a", 2, 4);
+//        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
+//        s.insert(m);
+//
+//        Point eh = new Point("k", 6, 10);
+//        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
+//        s.insert(n);
+//
+//        s.removeByCoord(re);
+//        String output = systemOut().getHistory();
+//        assertFuzzyEquals("Point removed: (a, 1, 2)", output);
+//    }
+//
+//    /**
+//     * Tests when two Point have same dimensions 
+//     * but different names
+//     */
+//    public void testRemoveCoordDouble()
+//    {
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//
+//        Point i = new Point("a", 1, 1);
+//        KVPair<String, Point> w = new KVPair<String, Point>(i.getName(), i);
+//        s.insert(w);
+//
+//        Point re = new Point("b", 1, 1);
+//        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+//
+//        s.insert(p);
+//
+//        Point nu = new Point("c", 2, 4);
+//        KVPair<String, Point> m = new KVPair<String, Point>(nu.getName(), nu);
+//        s.insert(m);
+//
+//        Point eh = new Point("k", 6, 10);
+//        KVPair<String, Point> n = new KVPair<String, Point>(eh.getName(), eh);
+//        s.insert(n);
+//
+//        s.removeByCoord(i);
+//        String output = systemOut().getHistory();
+//        assertFuzzyEquals("Point removed: (a, 1, 1)", output);
+//    }
+//    
+//    /**
+//     * Tests when you cannot find something
+//     * in remove
+//     */
+//    @Test
+//    public void testRemoveCoordNah()
+//    {
+//        Point re = new Point("a", 1, 2);
+//        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//        s.insert(p);
+//        
+//        Point m = new Point(null, 1, 2);
+//
+//        s.removeByCoord(m);
+//        String outt = systemOut().getHistory();
+//        assertFuzzyEquals("Point not removed: (1, 2)", outt);
+//    }
+//    
+//    /**
+//     * Tests when you cannot find something but the x 
+//     * is equal in remove
+//     *
+//     */
+//    @Test
+//    public void testRemoveCoordNahX()
+//    {
+//        Point re = new Point("a", 1, 5);
+//        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//        s.insert(p);
+//        
+//        Point m = new Point(null, 1, 2);
+//
+//        s.removeByCoord(m);
+//        String outt = systemOut().getHistory();
+//        assertFuzzyEquals("Point not removed: (1, 2)", outt);
+//    }
+//    
+//    /**
+//     * Tests when you cannot find something but the y 
+//     * is equal in remove
+//     *
+//     */
+//    @Test
+//    public void testRemoveCoordNahY()
+//    {
+//        Point re = new Point("a", 1, 2);
+//        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//        s.insert(p);
+//        
+//        Point m = new Point(null, 1, 2);
+//
+//        s.removeByCoord(m);
+//        String outt = systemOut().getHistory();
+//        assertFuzzyEquals("Point not removed: (1, 2)", outt);
+//    }
+//
+//    /**
+//     * Tests when x.forward[i] is null
+//     */
+//    @Test
+//    public void testRemoveCoordNull()
+//    {
+//        SkipList<String, Point> s = new SkipList<String, Point>();
+//        Point hm = new Point(null, 1, 2);
+//        s.removeByCoord(hm);
+//        String output = systemOut().getHistory();
+//        assertFuzzyEquals("Point not removed: (1, 2)", output);
+//    }
 
     /**
      * Tests remove by name when successful
