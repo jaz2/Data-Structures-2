@@ -83,6 +83,11 @@ public class SkipList<K extends Comparable<K>, E> {
 	 * For the random 
 	 */
 	private Random rnd;
+	
+	/**
+	 * For the quadtree
+	 */
+	public E val;
 
 	/**
 	 * Constructor for the SkipList
@@ -151,7 +156,7 @@ public class SkipList<K extends Comparable<K>, E> {
 		@SuppressWarnings("unchecked")
 		SkipNode[] store = (SkipNode[]) Array.newInstance(
 				SkipList.SkipNode.class, level + 1);
-		for (int i = level; i >= 0; i--)  
+		for (int i = level; i >= 0; i--) 
 		{ // For each level...     
 			while ((x.forward[i] != null) &&            
 					(key.compareTo(x.forward[i].
@@ -177,6 +182,7 @@ public class SkipList<K extends Comparable<K>, E> {
 			size--;
 			System.out.println("Point removed: "
 					+ x.element.value().toString());
+			val = x.element.value();
 		}
 		if (found == false)
 		{
@@ -184,55 +190,55 @@ public class SkipList<K extends Comparable<K>, E> {
 		}
 	}
 
-	/**
-	 * Removes the coordinates if found
-	 * @param val the value to search for
-	 */
-	public void removeByCoord(E val) //while we haven't found it
-	{ //and we haven't gotten to the end go at level 0, 
-		boolean found = false;   
-		SkipNode x = head;                     // Dummy header node   
-		@SuppressWarnings("unchecked")
-		SkipNode[] store = (SkipNode[]) Array.newInstance(
-				SkipList.SkipNode.class, level + 1);
-		for (int i = level; i >= 0; i--)
-		{
-			store[i] = x;
-		} //and not at the end
-		while (x.forward[0] != null && 
-				((Point) x.forward[0].element.value()).equals(val) == false)
-		{
-			for (int i = x.forward.length - 1; i >= 0; i--)
-			{ /*each level in the current node*/
-				store[i] = x.forward[i]; //currentNode
-			}
-			//advance currentNode
-			x = x.forward[0];
-		}
-		SkipNode nodeToRemove = x.forward[0];
-		if (x.forward[0] != null && 
-				((Point) x.forward[0].element.value()).equals(val) == true)
-		{
-			found = true;
-		}
-		if (found == true)    
-		{
-			//now remove key
-			for (int i = 0; i <= nodeToRemove.forward.length - 1; i++)
-			{
-				store[i].forward[i] = nodeToRemove.forward[i];
-			}
-			size--;
-			System.out.println("Point removed: "
-					+ nodeToRemove.element.value().toString());
-		}
-		if (found == false)
-
-		{
-			System.out.println("Point not removed: " 
-					+ val.toString());
-		}
-	}
+//	/**
+//	 * Removes the coordinates if found
+//	 * @param val the value to search for
+//	 */
+//	public void removeByCoord(E val) //while we haven't found it
+//	{ //and we haven't gotten to the end go at level 0, 
+//		boolean found = false;   
+//		SkipNode x = head;                     // Dummy header node   
+//		@SuppressWarnings("unchecked")
+//		SkipNode[] store = (SkipNode[]) Array.newInstance(
+//				SkipList.SkipNode.class, level + 1);
+//		for (int i = level; i >= 0; i--)
+//		{
+//			store[i] = x;
+//		} //and not at the end
+//		while (x.forward[0] != null && 
+//				((Point) x.forward[0].element.value()).equals(val) == false)
+//		{
+//			for (int i = x.forward.length - 1; i >= 0; i--)
+//			{ /*each level in the current node*/
+//				store[i] = x.forward[i]; //currentNode
+//			}
+//			//advance currentNode
+//			x = x.forward[0];
+//		}
+//		SkipNode nodeToRemove = x.forward[0];
+//		if (x.forward[0] != null && 
+//				((Point) x.forward[0].element.value()).equals(val) == true)
+//		{
+//			found = true;
+//		}
+//		if (found == true)    
+//		{
+//			//now remove key
+//			for (int i = 0; i <= nodeToRemove.forward.length - 1; i++)
+//			{
+//				store[i].forward[i] = nodeToRemove.forward[i];
+//			}
+//			size--;
+//			System.out.println("Point removed: "
+//					+ nodeToRemove.element.value().toString());
+//		}
+//		if (found == false)
+//
+//		{
+//			System.out.println("Point not removed: " 
+//					+ val.toString());
+//		}
+//	}
 
 	/**
 	 * Return the (first) matching matching element 
