@@ -67,7 +67,7 @@ public class List {
 	 */
 	public String getName(Point p)
 	{
-		String s = "";
+		String s = null;
 		for (int i = 0; i < size; i++)
 		{
 			if (l[i].equals(p))
