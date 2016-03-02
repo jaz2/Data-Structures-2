@@ -97,6 +97,9 @@ public class CommandProcessor {
                         //FOR NOW!!
                         System.out.println(
                                 "Point not found: (" + n1 + ", " + n2 + ")");
+                        //remove in quad tree and remove in skip by name
+                        //should just have one remove method in quad that 
+                        //removes by coordinates
                     }
                 } 
                 else // case where it's remove name
@@ -105,6 +108,8 @@ public class CommandProcessor {
                     // db.skip.removeByName(id);
                     System.out.println(
                             "Point not removed: " + id);
+                    //get the point and use that to remove the point in 
+                   
                 }
             } 
             else if (str.contains("regionsearch"))
