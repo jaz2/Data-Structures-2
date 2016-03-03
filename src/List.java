@@ -72,6 +72,7 @@ public class List {
 		{
 			if (l[i].equals(p))
 			{
+				remove(l[i]);
 				return s = l[i].name;
 			}
 		}
