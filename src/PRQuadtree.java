@@ -68,9 +68,9 @@ public class PRQuadtree {
 	 * @param p 
 	 * @return the node
 	 */
-	public PRQuadNode remove(int x, int y)
+	public PRQuadNode remove(String n, int x, int y)
 	{
-		root = root.remove(x, y, 0, 0, 1024);
+		root = root.remove(n, x, y, 0, 0, 1024);
 		return root;
 	}
 
