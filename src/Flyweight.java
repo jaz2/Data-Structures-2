@@ -62,7 +62,7 @@ public class Flyweight implements PRQuadNode {
      * @return node to be removed
      */
     @Override
-    public PRQuadNode remove(int x, int y, int tx, int ty, int len)
+    public PRQuadNode remove(String n, int x, int y, int tx, int ty, int len)
     {
     	u = this;
     	return this;
