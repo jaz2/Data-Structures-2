@@ -96,7 +96,7 @@ public class List {
 				}
 				else 
 				{
-					for (int j = i; j < size; j++)
+					for (int j = i; j < size - 1; j++)
 					{
 						l[j] = l[j + 1];
 					}
