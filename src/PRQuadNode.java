@@ -18,7 +18,7 @@ public interface PRQuadNode {
 	
 	public PRQuadNode insert(Point p, int x, int y, int length);
 	
-	public PRQuadNode remove(int x, int y, int tx, int ty, int len);
+	public PRQuadNode remove(String n, int x, int y, int tx, int ty, int len);
 	
 	public PRQuadNode merge();
 }
