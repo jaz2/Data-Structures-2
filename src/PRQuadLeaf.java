@@ -255,7 +255,7 @@ public class PRQuadLeaf implements PRQuadNode {
 	{ //make a var to get the point -> var is called "r"
 		//make a point and use compareTo (equals)
 		Point p = new Point(null, x, y);
-		nam = l.getName(p);
+		nam = l.getName(n, p);
 		if (nam == null)
 		{
 			return this;
