@@ -239,4 +239,50 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r9, 600, 600)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
+    
+    @Test
+    public void testinsertSWYL()
+    {
+    	Point p = new Point(null, 1, 500);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(Flyweight.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
+    
+    @Test
+    public void testinsertSWYG()
+    {
+    	Point p = new Point(null, 1, 600);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(PRQuadLeaf.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
+    
+    /**
+     * Tests when y is equal
+     */
+    @Test
+    public void testinsertSWYE()
+    {
+    	Point p = new Point(null, 1, 512);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(Flyweight.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
+    
+    /**
+     * Tests when first case is true but last case is false
+     */
+    @Test
+    public void testinsertSWYF()
+    {
+    	Point p = new Point(null, 1, 500);
+        PRQuadInternal i = new PRQuadInternal();        
+        i.insert(p, 0, 0, 1024);
+        assertEquals(Flyweight.class, i.sw().getClass());
+        assertEquals(Flyweight.class, i.se().getClass());
+    }
 }
