@@ -65,18 +65,34 @@ public class List {
 	 * @param p the point
 	 * @return the string
 	 */
-	public String getName(Point p)
+	public String getName(String name, Point p)
 	{
 		String s = null;
+		if (name == null)
+		{
 		for (int i = 0; i < size; i++)
 		{
 			if (l[i].equals(p))
 			{
+				s = l[i].name;
 				remove(l[i]);
-				return s = l[i].name;
+				return s;
 			}
 		}
-		return s;
+		return null;
+		}
+		else 
+		{
+			for (int i = 0; i < size; i++)
+			{
+				if (l[i].equals(p) && l[i].getName().equals(name))
+				{
+					remove(l[i]);
+					return s;
+				}
+			}
+		}
+		return null;
 	}
 
 	/**
