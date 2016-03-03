@@ -240,6 +240,9 @@ public class PRQuadInternalTest extends TestCase {
                 + "3 quadtree nodes visited\n", output);        
     }
     
+    /**
+     * Removes sw when y is less
+     */
     @Test
     public void testremoveSWYL()
     {
@@ -251,8 +254,11 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
     }
     
+    /**
+     * Removes sw when y is greatr
+     */
     @Test
-    public void testinsertSWYG()
+    public void testremoveSWYG()
     {
     	Point p = new Point(null, 1, 600);
         PRQuadInternal i = new PRQuadInternal();        
