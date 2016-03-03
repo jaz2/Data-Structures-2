@@ -251,7 +251,7 @@ public class PRQuadLeaf implements PRQuadNode {
 	 * @return node to be removed
 	 */
 	@Override
-	public PRQuadNode remove(int x, int y, int tx, int ty, int len)
+	public PRQuadNode remove(String n, int x, int y, int tx, int ty, int len)
 	{ //make a var to get the point -> var is called "r"
 		//make a point and use compareTo (equals)
 		Point p = new Point(null, x, y);
