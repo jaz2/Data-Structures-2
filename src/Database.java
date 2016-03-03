@@ -94,7 +94,7 @@ public class Database
 		skip.removeByName(name);
 		if (skip.found == true)
 		{
-			pr.remove(skip.val.x, skip.val.y);
+			pr.remove(name, skip.val.x, skip.val.y);
 		}          
 	}
 
@@ -107,7 +107,7 @@ public class Database
 	 */
 	public void removeC(int x, int y)
 	{
-		pr.remove(x, y);
+		pr.remove(null, x, y);
 		if (PRQuadLeaf.nam != null)
 		{
 			skip.removeByName(PRQuadLeaf.nam);
