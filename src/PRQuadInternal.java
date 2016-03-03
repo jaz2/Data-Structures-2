@@ -190,9 +190,14 @@ public class PRQuadInternal implements PRQuadNode {
 	}
 
 	/**
-	 * 
+	 * @param px the points x
+	 * @param py the points y
+	 * @param tx the trees x
+	 * @param ty the trees y
+	 * @param len the length
 	 */
-	public PRQuadNode remove(int px, int py, int tx, int ty, int len)
+	@Override
+	public PRQuadNode remove(String n, int px, int py, int tx, int ty, int len)
 	{ //check if children have the necessary conditions to become a flyweight
 		//just like how leafs decompose to internals, internals will decompose to flyweight
 		//also check if size is less than four or greater than or equal to one and make internal a leaf
@@ -202,12 +207,12 @@ public class PRQuadInternal implements PRQuadNode {
 		{
 			if (py <= ty + nuLen) //nw 
 			{
-				nw = nw.remove(px, py, tx, ty, nuLen);
+				nw = nw.remove(n, px, py, tx, ty, nuLen);
 				nw = nw.merge();
 			}
 			else //sw = py < ty + nuLen
 			{
-				sw = sw.remove(px, py, tx, ty + nuLen, nuLen);
+				sw = sw.remove(n, px, py, tx, ty + nuLen, nuLen);
 				sw = sw.merge();
 			}
 		}
@@ -215,12 +220,12 @@ public class PRQuadInternal implements PRQuadNode {
 		{
 			if (py <= ty + nuLen) //ne
 			{
-				ne = ne.remove(px, py, tx + nuLen, ty, nuLen);
+				ne = ne.remove( n, px, py, tx + nuLen, ty, nuLen);
 				ne = ne.merge();
 			}
 			else //if (p.getX() > x + nuLen && p.getY() > y + nuLen) //se
 			{
-				se = se.remove(px, py, tx + nuLen, ty + nuLen, nuLen);
+				se = se.remove( n, px, py, tx + nuLen, ty + nuLen, nuLen);
 				se = se.merge();
 			}
 		}
