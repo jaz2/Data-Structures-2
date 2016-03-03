@@ -262,7 +262,7 @@ public class PRQuadLeaf implements PRQuadNode {
 		}
 		else 
 		{
-			l.remove(p);
+			//l.remove(p);
 			if (l.isEmpty())
 			{
 				return Flyweight.fly;
