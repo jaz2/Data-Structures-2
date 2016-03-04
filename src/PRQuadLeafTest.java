@@ -297,6 +297,7 @@ public class PRQuadLeafTest extends TestCase {
         PRQuadLeaf lf = new PRQuadLeaf(p);        
 
         assertEquals(1, lf.regionSearch(5, 20, 5, 20, 0, 0, 1024));
+        assertFalse(lf.isEmpty());
     }
 
     /**
