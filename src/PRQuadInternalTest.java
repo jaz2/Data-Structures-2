@@ -256,7 +256,7 @@ public class PRQuadInternalTest extends TestCase {
     }
     
     /**
-     * Removes sw when y is greatr
+     * Removes sw when y is greater
      */
     @Test
     public void testremoveSWYG()
