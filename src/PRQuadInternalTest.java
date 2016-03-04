@@ -249,9 +249,10 @@ public class PRQuadInternalTest extends TestCase {
     	Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal(); 
         i.insert(p, 0, 0, 1024);
-        i.remove(1, 500, 0, 0, 1024);
+        i.remove(null, 1, 500, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
+        assertEquals(0, i.regionSearch(0, 0, 600, 600, 0, 0, 1024));
     }
     
     /**
@@ -261,35 +262,41 @@ public class PRQuadInternalTest extends TestCase {
     public void testremoveSWYG()
     {
     	Point p = new Point(null, 1, 600);
-        PRQuadInternal i = new PRQuadInternal();        
+        PRQuadInternal i = new PRQuadInternal();  
         i.insert(p, 0, 0, 1024);
+        i.remove(null, 1, 600, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
+        assertEquals(0, i.regionSearch(0, 0, 610, 610, 0, 0, 1024));
     }
     
     /**
      * Tests when y is equal
      */
     @Test
-    public void testinsertSWYE()
+    public void testremoveSWYE()
     {
     	Point p = new Point(null, 1, 512);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
+        i.remove(null, 1, 512, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
+        assertEquals(0, i.regionSearch(0, 0, 600, 600, 0, 0, 1024));
     }
     
     /**
      * Tests when first case is true but last case is false
      */
     @Test
-    public void testinsertSWYF()
+    public void testremoveSWYF()
     {
     	Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
+        i.remove(null, 1, 500, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
+        assertEquals(0, i.regionSearch(0, 0, 600, 600, 0, 0, 1024));
     }
 }

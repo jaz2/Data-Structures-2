@@ -71,7 +71,7 @@ public class PRQuadtree {
 	public PRQuadNode remove(String n, int x, int y)
 	{
 		root = root.remove(n, x, y, 0, 0, 1024);
-		return root;
+	 return root;
 	}
 
 	/**
