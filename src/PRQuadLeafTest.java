@@ -299,10 +299,10 @@ public class PRQuadLeafTest extends TestCase {
         assertEquals(1, lf.regionSearch(5, 20, 5, 20, 0, 0, 1024));
     }
 
-    @Test
     /**
      * Tests when x is greater than rx + rw
      */
+    @Test
     public void regionSearchYG()
     {
         Point p = new Point("a", 1000, 900);
