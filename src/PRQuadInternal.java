@@ -190,11 +190,14 @@ public class PRQuadInternal implements PRQuadNode {
     }
 
     /**
+     * The remove for internal
+     * @param n the name of the point
      * @param px the points x
      * @param py the points y
      * @param tx the trees x
      * @param ty the trees y
      * @param len the length
+     * @return the node
      */
     @Override
     public PRQuadNode remove(String n, int px, int py, int tx, int ty, int len)
