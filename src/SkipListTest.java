@@ -403,7 +403,8 @@ public class SkipListTest extends TestCase
         s.insert(me);
         
         Point or1 = new Point("b", 2, 8);
-        KVPair<String, Point> me1 = new KVPair<String, Point>(or1.getName(), or1);
+        KVPair<String, Point> me1 = new KVPair<String, 
+                Point>(or1.getName(), or1);
         s.insert(me1);
         
         s.search("a");
