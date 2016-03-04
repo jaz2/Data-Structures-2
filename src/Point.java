@@ -27,9 +27,9 @@ public class Point {
     /**
      * The constructor of the Point class
      * 
-     * @param id
-     * @param xcoord
-     * @param ycoord
+     * @param id name of the string
+     * @param xcoord points x
+     * @param ycoord points y
      */
     public Point(String id, int xcoord, int ycoord)
     {
