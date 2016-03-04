@@ -84,13 +84,16 @@ public class List {
         }
         else 
         {
-            for (int i = 0; i < size; i++)
+            boolean removed = false;
+            int i = 0;
+            while (i < size && !removed)
             {
                 if (l[i].equals(p) && l[i].getName().equals(name))
                 {
                     remove(l[i]);
                     return name;
                 }
+                i++;
             }
         }
         return null;
