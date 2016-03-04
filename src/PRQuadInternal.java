@@ -310,6 +310,7 @@ public class PRQuadInternal implements PRQuadNode {
                 {
                     nu.l.insert(list.moveToPos(i));
                 }
+                return nu;
             }
         }
         return this; //see if this is right
