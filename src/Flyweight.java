@@ -13,7 +13,7 @@ public class Flyweight implements PRQuadNode {
      * Global static rep of itself
      */
     public static Flyweight fly = new Flyweight();
-    
+
     /**
      * for testing purposes
      */
@@ -27,7 +27,7 @@ public class Flyweight implements PRQuadNode {
     public boolean isLeaf() {
         return false;
     }
-    
+
     /**
      * Does nothing in this class
      */
@@ -51,7 +51,7 @@ public class Flyweight implements PRQuadNode {
         u = lef;
         return lef;
     }
-    
+
     /**
      * Tries to remove an empty node
      * @param x the x coord 
@@ -64,8 +64,8 @@ public class Flyweight implements PRQuadNode {
     @Override
     public PRQuadNode remove(String n, int x, int y, int tx, int ty, int len)
     {
-    	u = this;
-    	return this;
+        u = this;
+        return this;
     }
 
     /**
@@ -76,13 +76,13 @@ public class Flyweight implements PRQuadNode {
     {
         return u;
     }
-    
+
     /**
      * For the internal
      */
     public PRQuadNode merge()
     {
-    	return this;
+        return this;
     }
 
     /**
