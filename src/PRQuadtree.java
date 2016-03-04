@@ -63,11 +63,11 @@ public class PRQuadtree {
     /**
      * Removes the point
      * @param n name of point
-     * @param x the points x
-     * @param y the points y
+     * @param px the points x
+     * @param py the points y
      * @return the node containing point
      */
-    public PRQuadNode remove(String n, int x, int y)
+    public PRQuadNode remove(String n, int px, int py)
     {
         root = root.remove(n, x, y, 0, 0, 1024);
         return root;
@@ -111,11 +111,11 @@ public class PRQuadtree {
                     + len + ": Internal");
             return 1 + dump(((PRQuadInternal) node).nw(), 
                     s + 1, xcoord, ycoord, len / 2)
-            + dump(( (PRQuadInternal) node).ne(), s + 1, 
+                    + dump(( (PRQuadInternal) node).ne(), s + 1, 
                     xcoord + (len / 2), ycoord, len / 2)
-            + dump(((PRQuadInternal) node).sw(), s + 1, 
+                    + dump(((PRQuadInternal) node).sw(), s + 1, 
                     xcoord, ycoord + (len / 2), len / 2)
-            + dump(((PRQuadInternal) node).se(), s + 1, 
+                    + dump(((PRQuadInternal) node).se(), s + 1, 
                     xcoord + (len / 2), ycoord + (len / 2), len / 2);
         }
         else //node leaf
