@@ -282,7 +282,10 @@ public class PRQuadInternalTest extends TestCase {
         i.remove(null, 1, 512, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
-        assertEquals(0, i.regionSearch(0, 510, 10, 10, 0, 0, 1024));
+        i.regionSearch(0, 500, 100, 100, 0, 0, 1024); 
+		String output = systemOut().getHistory();
+		assertEquals("Points intersecting region (100, 100, 800, 500):\n"
+				+ "1 quadtree nodes visited\n", output);
     }
     
     /**
