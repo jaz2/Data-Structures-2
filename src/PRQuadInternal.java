@@ -207,7 +207,7 @@ public class PRQuadInternal implements PRQuadNode {
         //also check if size is less than four or greater than 
         //or equal to one and make internal a leaf
         //check if all empty except one, which has 100 
-    	//things but all the same, just return that leaf
+        //things but all the same, just return that leaf
         int nuLen = len / 2;
         if (px <= tx + nuLen) //&& py <= ty + nuLen) //nw
         {
