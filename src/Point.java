@@ -9,36 +9,36 @@
  *
  */
 public class Point {
-	/**
-	 * Name of the point
-	 */
-	String name;
+    /**
+     * Name of the point
+     */
+    String name;
 
-	/**
-	 * The x coord
-	 */
-	int x;
-	
-	/**
-	 * The y coord
-	 */
-	int y;
-	
-	/**
-	 * The constructor of the Point class
-	 * 
-	 * @param id
-	 * @param xcoord
-	 * @param ycoord
-	 */
-	public Point(String id, int xcoord, int ycoord)
-	{
-		name = id;
-		x = xcoord;
-		y = ycoord;
-	}
-	
-	/**
+    /**
+     * The x coord
+     */
+    int x;
+
+    /**
+     * The y coord
+     */
+    int y;
+
+    /**
+     * The constructor of the Point class
+     * 
+     * @param id
+     * @param xcoord
+     * @param ycoord
+     */
+    public Point(String id, int xcoord, int ycoord)
+    {
+        name = id;
+        x = xcoord;
+        y = ycoord;
+    }
+
+    /**
      * Returns the name of the Point
      * @return the name
      */
