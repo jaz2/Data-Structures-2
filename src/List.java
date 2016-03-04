@@ -107,7 +107,7 @@ public class List {
     public boolean remove(Point p)
     {
         Boolean found = false;
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size && !found; i++)
         {
             if (l[i].equals(p) && l[i].getName().equals(p.getName()))
             {
