@@ -93,7 +93,7 @@ public class CommandProcessor {
                     }
                     else 
                     {
-                    	db.removeC(n1, n2);
+                        db.removeC(n1, n2);
 //                        System.out.println(
 //                                "Point not found: (" + n1 + ", " + n2 + ")");
                         //remove in quad tree and remove in skip by name
