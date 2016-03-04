@@ -87,7 +87,7 @@ public class Database
      * Searches through the SkipList first 
      * and then retrieves the point to find 
      * the coordinates
-     * @param name
+     * @param name name of the point
      */
     public void removeN(String name)
     { //use this to get the point and remove it in quadtree
@@ -102,8 +102,8 @@ public class Database
      * Removes in the quad tree returns 
      * node to get name to remove 
      * by name in skip
-     * @param x
-     * @param y
+     * @param x the x coord of point
+     * @param y the y coord of point 
      */
     public void removeC(int x, int y)
     {
