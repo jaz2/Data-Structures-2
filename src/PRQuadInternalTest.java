@@ -70,6 +70,9 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(PRQuadInternal.class, i.getInstance().getClass());
     }
 
+    /**
+     * Tests the sw y is less
+     */
     @Test
     public void testinsertSWYL()
     {
@@ -80,6 +83,9 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
     }
     
+    /**
+     * Tests the sw when y is greater
+     */
     @Test
     public void testinsertSWYG()
     {

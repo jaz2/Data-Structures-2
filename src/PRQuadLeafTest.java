@@ -9,7 +9,9 @@ import student.TestCase;
  */
 
 /**
- * @author Jazz
+ * Tests the quad leaf
+ * @author Jazmine Zurita and Jessica McCready
+ * @version March 2 2016
  *
  */
 public class PRQuadLeafTest extends TestCase{
