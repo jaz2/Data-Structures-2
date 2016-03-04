@@ -624,6 +624,25 @@ public class PRQuadLeafTest extends TestCase {
     }
     
     /**
+     * Tests remove when a name exists
+     * but is not removed
+     */
+    @Test
+    public void testRemoveName2()
+    {
+        Point p = new Point(null, 800, 600);
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(p);
+        tree.insert(new Point("hi", 800, 600));
+        tree.remove(null, 800, 600);
+        tree.regionSearch(100, 100, 800, 500); 
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (100, 100, 800, 500):\n"
+                + "Point found: (null, 800, 600)\n"
+                + "1 quadtree nodes visited\n", output);
+    }
+    
+    /**
      * Test when name is null
      * and there no things in 
      * list after 
