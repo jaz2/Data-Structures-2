@@ -17,12 +17,12 @@ public class PRQuadtree {
     /**
      * The x coord
      */
-    int x;
+    int tx;
 
     /**
      * The y coord
      */
-    int y;
+    int ty;
 
     /**
      * The length
@@ -44,8 +44,8 @@ public class PRQuadtree {
     public PRQuadtree(int xcoord, int ycoord, int len)
     {
         root = Flyweight.fly; 
-        x = xcoord;
-        y = ycoord;
+        tx = xcoord;
+        ty = ycoord;
         length = len;
     }
 
@@ -63,8 +63,8 @@ public class PRQuadtree {
     /**
      * Removes the point
      * @param n name of point
-     * @param px the points x
-     * @param py the points y
+     * @param x the points x
+     * @param y the points y
      * @return the node containing point
      */
     public PRQuadNode remove(String n, int x, int y)
