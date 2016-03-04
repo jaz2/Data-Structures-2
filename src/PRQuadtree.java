@@ -67,7 +67,7 @@ public class PRQuadtree {
      * @param py the points y
      * @return the node containing point
      */
-    public PRQuadNode remove(String n, int px, int py)
+    public PRQuadNode remove(String n, int x, int y)
     {
         root = root.remove(n, x, y, 0, 0, 1024);
         return root;
