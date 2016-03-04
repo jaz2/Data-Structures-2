@@ -609,63 +609,6 @@ public class SkipListTest extends TestCase
         s.controlledInsert(k, 2);
         assertEquals(null, s.head.element());
     }
-
-//    /**
-//     * Tests all region search possibilites
-//     */
-//    @Test
-//    public void testRegionSearch()
-//    {
-//        SkipList<String, Point> skip = new SkipList<String, Point>();
-//        Point r1 = new Point("a", 1, 2);
-//        KVPair<String, Point> p1 = new KVPair<String, Point>(r1.getName(), r1);
-//        Point r2 = new Point("b", 1, 5);
-//        KVPair<String, Point> p2 = new KVPair<String, Point>(r2.getName(), r2);
-//        Point r3 = new Point("c", 4, 4);
-//        KVPair<String, Point> p3 = new KVPair<String, Point>(r3.getName(), r3);
-//        Point r4 = new Point("d", 6, 6);
-//        KVPair<String, Point> p4 = new KVPair<String, Point>(r4.getName(), r4);
-//        Point r5 = new Point("a", 11, 5);
-//        KVPair<String, Point> p5 = new KVPair<String, Point>(r5.getName(), r5);
-//        skip.insert(p1);
-//        skip.insert(p5);
-//        skip.insert(p3);
-//        skip.insert(p4);
-//        skip.insert(p2);
-//        skip.regionsearch(1, 2, 3, 4);
-//        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Point intersecting region (1, 2):\n"
-//                + "(a, 1, 2)\n" + "(b, 1, 5)\n", output);
-//        skip.regionsearch(6, 6, 2, 2);
-//    }
-//
-//    /**
-//     * Tests intersections
-//     */
-//    @Test
-//    public void testIntersections()
-//    {
-//        SkipList<String, Point> skip = new SkipList<String, Point>();
-//        Point r1 = new Point("a", 1, 2);
-//        KVPair<String, Point> p1 = new KVPair<String, Point>(r1.getName(), r1);
-//        Point r2 = new Point("b", 1, 5);
-//        KVPair<String, Point> p2 = new KVPair<String, Point>(r2.getName(), r2);
-//        Point r3 = new Point("c", 4, 4);
-//        KVPair<String, Point> p3 = new KVPair<String, Point>(r3.getName(), r3);
-//        Point r4 = new Point("d", 6, 6);
-//        KVPair<String, Point> p4 = new KVPair<String, Point>(r4.getName(), r4);
-//        Point r5 = new Point("a", 11, 5);
-//        KVPair<String, Point> p5 = new KVPair<String, Point>(r5.getName(), r5);
-//        skip.insert(p1);
-//        skip.insert(p5);
-//        skip.insert(p3);
-//        skip.insert(p4);
-//        skip.insert(p2);
-//        skip.duplicates();
-//        String output = systemOut().getHistory();
-//        assertFuzzyEquals("(a, 1, 2 | b, 1, 5)\n"
-//                + "(b, 1, 5 | a, 1, 2)\n", output);
-//    }
     
     /**
      * Tests the controlled insert method
@@ -674,9 +617,11 @@ public class SkipListTest extends TestCase
         Point re = new Point("b", 1, 2);
         KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
         Point re1 = new Point("c", 2, 2);
-        KVPair<String, Point> p1 = new KVPair<String, Point>(re1.getName(), re1);
+        KVPair<String, Point> p1 = new KVPair<String, 
+                Point>(re1.getName(), re1);
         Point re2 = new Point("a", 2, 7);
-        KVPair<String, Point> p2 = new KVPair<String, Point>(re2.getName(), re2);
+        KVPair<String, Point> p2 = new KVPair<String, 
+                Point>(re2.getName(), re2);
         SkipList<String, Point> s = new SkipList<String, Point>();
         s.controlledInsert(p, 4);
         s.controlledInsert(p1, 12);
