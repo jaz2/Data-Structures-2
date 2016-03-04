@@ -267,7 +267,7 @@ public class PRQuadInternalTest extends TestCase {
         i.remove(null, 1, 600, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
-        assertEquals(0, i.regionSearch(0, 0, 610, 610, 0, 0, 1024));
+        assertEquals(0, i.regionSearch(0, 0, 601, 601, 0, 0, 1024));
     }
     
     /**
@@ -282,7 +282,7 @@ public class PRQuadInternalTest extends TestCase {
         i.remove(null, 1, 512, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
-        assertEquals(0, i.regionSearch(0, 0, 600, 600, 0, 0, 1024));
+        assertEquals(0, i.regionSearch(0, 0, 513, 513, 0, 0, 1024));
     }
     
     /**
@@ -297,6 +297,6 @@ public class PRQuadInternalTest extends TestCase {
         i.remove(null, 1, 500, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
-        assertEquals(0, i.regionSearch(0, 0, 600, 600, 0, 0, 1024));
+        assertEquals(0, i.regionSearch(0, 0, 501, 501, 0, 0, 1024));
     }
 }
