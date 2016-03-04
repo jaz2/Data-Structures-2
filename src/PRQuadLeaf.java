@@ -257,8 +257,8 @@ public class PRQuadLeaf implements PRQuadNode {
         Point p = new Point(null, x, y);
         nam = l.getName(n, p);
         if (nam == null)
-        {
-            return this;
+        { //jessica: internal remove, merge, and list getName
+            return this; //u do the rest!
         }
         else 
         {
