@@ -625,7 +625,7 @@ public class PRQuadLeafTest extends TestCase{
 	 * list after 
 	 */
 	@Test
-	public void testRemoveCoord()
+	public void testRemoveNameEmpty()
 	{
 		Point p = new Point("hi", 800, 600);
 		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
@@ -634,7 +634,6 @@ public class PRQuadLeafTest extends TestCase{
 		tree.regionSearch(100, 100, 800, 500); 
 		String output = systemOut().getHistory();
 		assertEquals("Points intersecting region (100, 100, 800, 500):\n"
-				+ "Point found: (null, 800, 600)\n"
 				+ "1 quadtree nodes visited\n", output);
 	}
 }
