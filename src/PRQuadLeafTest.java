@@ -580,4 +580,17 @@ public class PRQuadLeafTest extends TestCase{
 		assertEquals("Duplicate points:\n"
 				, output);    
 	}
+	
+	/**
+	 * Tests remove when a name exists
+	 */
+	@Test
+	public void testRemoveName()
+	{
+		Point p = new Point ("a", 0 ,400);
+		PRQuadLeaf l = new PRQuadLeaf(p);
+		l.insert(new Point("b", 100, 300), 0, 0, 1024);
+		l.remove("b", 100, 300, 0, 0, 1024);
+		assertEquals(0, l.regionSearch(100, 300, 1, 1, 0, 0, 1024));
+	}
 }
