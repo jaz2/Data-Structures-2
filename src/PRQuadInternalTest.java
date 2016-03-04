@@ -282,7 +282,7 @@ public class PRQuadInternalTest extends TestCase {
         i.remove(null, 1, 512, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
-        assertEquals(0, i.regionSearch(0, 0, 513, 513, 0, 0, 1024));
+        assertEquals(0, i.regionSearch(0, 513, 10, 10, 0, 0, 1024));
     }
     
     /**
