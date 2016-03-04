@@ -593,4 +593,19 @@ public class PRQuadLeafTest extends TestCase{
 		l.remove("b", 100, 300, 0, 0, 1024);
 		assertEquals(0, l.regionSearch(99, 295, 11, 11, 0, 0, 1024));
 	}
+	
+	/**
+	 * Test when name is null
+	 * and there are still things in 
+	 * list after 
+	 */
+	@Test
+	public void testRemoveCoord()
+	{
+		Point p = new Point (null, 0 ,400);
+		PRQuadLeaf l = new PRQuadLeaf(p);
+		l.insert(new Point(null, 100, 300), 0, 0, 1024);
+		l.remove(null, 100, 300, 0, 0, 1024);
+		assertEquals(0, l.regionSearch(99, 295, 11, 11, 0, 0, 1024));
+	}
 }
