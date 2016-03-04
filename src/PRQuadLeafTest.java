@@ -239,9 +239,6 @@ public class PRQuadLeafTest extends TestCase {
         assertEquals(1, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
     }
 
-    public void regionSearch()
-    {}
-
     /**
      * When RY is less than y
      */
@@ -314,6 +311,9 @@ public class PRQuadLeafTest extends TestCase {
         assertEquals(1, lf.regionSearch(100, 100, 10, 10, 0, 0, 1024));
     }
 
+    /**
+     * Tests rectangle regionsearch t l
+     */
     @Test
     public void testRSonReccornerTL()
     {
@@ -328,6 +328,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests rec on 2nd corner
+     */
     @Test
     public void testRSonRec2cornerBR()
     {
@@ -341,6 +344,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests region on left edge
+     */
     @Test
     public void testRSonRecLeftEdge()
     {
@@ -354,6 +360,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests the top edge
+     */
     @Test
     public void testRSonRecTopEdge()
     {
@@ -367,6 +376,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests the right edge
+     */
     @Test
     public void testRSonRecRightEdge()
     {
@@ -380,6 +392,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests the bottom edge
+     */
     @Test
     public void testRSonRecBotEdge()
     {
@@ -393,6 +408,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests the corner 
+     */
     @Test
     public void testRSonRecCornerBL()
     {
@@ -406,6 +424,9 @@ public class PRQuadLeafTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests another corner
+     */
     @Test
     public void testRSonRecCornerTR()
     {
