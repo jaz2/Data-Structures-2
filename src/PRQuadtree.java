@@ -112,11 +112,11 @@ public class PRQuadtree {
             return 1 + dump(((PRQuadInternal) node).nw(), 
                     s + 1, xcoord, ycoord, len / 2)
                     + dump(( (PRQuadInternal) node).ne(), s + 1, 
-                    xcoord + (len / 2), ycoord, len / 2)
+                        xcoord + (len / 2), ycoord, len / 2)
                     + dump(((PRQuadInternal) node).sw(), s + 1, 
-                    xcoord, ycoord + (len / 2), len / 2)
+                        xcoord, ycoord + (len / 2), len / 2)
                     + dump(((PRQuadInternal) node).se(), s + 1, 
-                    xcoord + (len / 2), ycoord + (len / 2), len / 2);
+                        xcoord + (len / 2), ycoord + (len / 2), len / 2);
         }
         else //node leaf
         {
