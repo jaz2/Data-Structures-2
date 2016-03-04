@@ -14,10 +14,10 @@ import student.TestCase;
  *
  */
 public class PRQuadtreeTest extends TestCase {
-	
-	/**
-	 * The quad tree
-	 */
+    
+    /**
+     * The quad tree
+     */
     PRQuadtree tree;
     
     /**
@@ -32,7 +32,7 @@ public class PRQuadtreeTest extends TestCase {
     public void setUp() 
     {
         tree = new PRQuadtree(0, 0, 1024);
-        p = new Point ("ayy", 0 ,12);
+        p = new Point("ayy", 0, 12);
 
     }
 
