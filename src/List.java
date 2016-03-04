@@ -91,6 +91,7 @@ public class List {
                 if (l[i].equals(p) && l[i].getName().equals(name))
                 {
                     remove(l[i]);
+                    removed = false;
                     return name;
                 }
                 i++;
