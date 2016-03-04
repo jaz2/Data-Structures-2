@@ -80,6 +80,7 @@ public class Flyweight implements PRQuadNode {
 
     /**
      * For the internal
+     * @return the merged fly
      */
     public PRQuadNode merge()
     {
