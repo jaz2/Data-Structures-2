@@ -252,7 +252,7 @@ public class SkipList<K extends Comparable<K>, E> {
      * @param key the key
      */
     public void search(Comparable<K> key) {   
-        boolean found = false;   
+        boolean isFound = false;   
         SkipNode x = head;                     // Dummy header node   
         for (int i = level; i >= 0; i--)           // For each level...     
             while ((x.forward[i] != null) &&            
@@ -263,7 +263,7 @@ public class SkipList<K extends Comparable<K>, E> {
         if ((x != null) && 
                 (key.compareTo(x.element().key()) == 0))    
         {
-            found = true;
+            isFound = true;
             System.out.print("Found ");
             System.out.println(x.element.value().toString());
             //look ahead at level 0 printing as long as it is an equal key
@@ -278,7 +278,7 @@ public class SkipList<K extends Comparable<K>, E> {
                 }
             }
         }
-        if (found == false)  //transfer tests
+        if (isFound == false)  //transfer tests
         {
             System.out.println("Point not found: " + key); 
         }
