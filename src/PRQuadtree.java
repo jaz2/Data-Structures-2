@@ -151,11 +151,11 @@ public class PRQuadtree {
      */
     public void regionSearch(int rx, int ry, int rw, int rh)
     {
-        System.out.println("Points intersecting region" +" (" + rx + ", " + ry
+        System.out.println("Points intersecting region" + " (" + rx + ", " + ry
                 + ", " + rw    + ", " + rh + "):");
         int r = root.regionSearch(rx, ry, rw, rh, 0, 0, 1024);
         //    int r = regionSearch(root, rx, ry, rw, rh, 0, 0, 1024);
-        System.out.println(r +" quadtree nodes visited");
+        System.out.println(r + " quadtree nodes visited");
     }
 
     /**
