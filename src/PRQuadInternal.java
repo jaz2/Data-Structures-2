@@ -202,8 +202,10 @@ public class PRQuadInternal implements PRQuadNode {
     @Override
     public PRQuadNode remove(String n, int px, int py, int tx, int ty, int len)
     { //check if children have the necessary conditions to become a flyweight
-        //just like how leafs decompose to internals, internals will decompose to flyweight
-        //also check if size is less than four or greater than or equal to one and make internal a leaf
+        //just like how leafs decompose to internals, 
+        //internals will decompose to flyweight
+        //also check if size is less than four or greater than 
+        //or equal to one and make internal a leaf
         //check if all empty except one, which has 100 things but all the same, just return that leaf
         int nuLen = len / 2;
         if (px <= tx + nuLen) //&& py <= ty + nuLen) //nw
@@ -240,6 +242,7 @@ public class PRQuadInternal implements PRQuadNode {
      * Checks the children of the internal
      * to determine whether it should be a 
      * leaf or fly weight or remain
+     * @return the node
      */
     public PRQuadNode merge()
     {
