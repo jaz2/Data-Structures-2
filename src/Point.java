@@ -77,7 +77,7 @@ public class Point {
 
     /**
      * Returns true if rectangles are equal
-     * @param re the rectangle to compare to
+     * @param p the point to compare to
      * @return true or false
      */
     @Override
