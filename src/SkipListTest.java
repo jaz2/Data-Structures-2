@@ -569,7 +569,8 @@ public class SkipListTest extends TestCase
         SkipList<String, Point> s = new SkipList<String, Point>();
         s.controlledInsert(p, 2);
         Point re1 = new Point("hey", 1, 2);
-        KVPair<String, Point> p1 = new KVPair<String, Point>(re1.getName(), re1);
+        KVPair<String, Point> p1 = new KVPair<String, 
+                Point>(re1.getName(), re1);
         s.insert(p1);
         s.dump();
         String output = systemOut().getHistory();
