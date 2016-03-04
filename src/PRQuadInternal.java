@@ -230,7 +230,7 @@ public class PRQuadInternal implements PRQuadNode {
 			}
 		}
 		u = this;
-		return this;
+		return merge();
 	}
 	
 	/**
