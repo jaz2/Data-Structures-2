@@ -28,11 +28,11 @@ public class PRQuadtree {
      * The length
      */
     int length;
-    
-//    /**
-//     * The name of the point for remove
-//     */
-//    static String name = null;
+
+    //    /**
+    //     * The name of the point for remove
+    //     */
+    //    static String name = null;
 
     /**
      * The PRQuadtree constructor
@@ -59,7 +59,7 @@ public class PRQuadtree {
         root = root.insert(p, 0, 0, 1024);
         return root;
     }
-    
+
     /**
      * Removes the point
      * @param n name of point
@@ -70,7 +70,7 @@ public class PRQuadtree {
     public PRQuadNode remove(String n, int x, int y)
     {
         root = root.remove(n, x, y, 0, 0, 1024);
-     return root;
+        return root;
     }
 
     /**
@@ -154,7 +154,7 @@ public class PRQuadtree {
         System.out.println("Points intersecting region" +" (" + rx + ", " + ry
                 + ", " + rw    + ", " + rh + "):");
         int r = root.regionSearch(rx, ry, rw, rh, 0, 0, 1024);
-    //    int r = regionSearch(root, rx, ry, rw, rh, 0, 0, 1024);
+        //    int r = regionSearch(root, rx, ry, rw, rh, 0, 0, 1024);
         System.out.println(r +" quadtree nodes visited");
     }
 
