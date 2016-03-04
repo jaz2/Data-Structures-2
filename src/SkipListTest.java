@@ -331,7 +331,7 @@ public class SkipListTest extends TestCase
 
         s.removeByName("b");
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not found: b", outt);
+        assertFuzzyEquals("Point not removed: b", outt);
     }
     
     /**
@@ -347,7 +347,7 @@ public class SkipListTest extends TestCase
         s.insert(p);
         s.removeByName("a");
         String outt = systemOut().getHistory();
-        assertFuzzyEquals("Point not found: a", outt);
+        assertFuzzyEquals("Point not removed: a", outt);
     }
 
     /**
@@ -359,7 +359,7 @@ public class SkipListTest extends TestCase
         SkipList<String, Point> s = new SkipList<String, Point>();
         s.removeByName("roar");
         String output = systemOut().getHistory();
-        assertFuzzyEquals("Point not found: roar", output);
+        assertFuzzyEquals("Point not removed: roar", output);
     }
     
     /**
