@@ -602,10 +602,15 @@ public class PRQuadLeafTest extends TestCase{
 	@Test
 	public void testRemoveCoord()
 	{
-		Point p = new Point (null, 0 ,400);
-		PRQuadLeaf l = new PRQuadLeaf(p);
-		l.insert(new Point(null, 100, 300), 0, 0, 1024);
-		l.remove(null, 100, 300, 0, 0, 1024);
-		assertEquals(0, l.regionSearch(99, 295, 11, 11, 0, 0, 1024));
+		Point p = new Point("hi", 800, 600);
+		PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+		tree.insert(p);
+		tree.insert(new Point(null, 800, 600));
+		tree.remove(null, 800, 600);
+		tree.regionSearch(100, 100, 800, 500); 
+		String output = systemOut().getHistory();
+		assertEquals("Points intersecting region (100, 100, 800, 500):\n"
+				+ "Point found: (hi, 800, 600)\n"
+				+ "1 quadtree nodes visited\n", output);
 	}
 }
