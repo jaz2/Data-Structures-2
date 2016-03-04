@@ -331,7 +331,7 @@ public class CommandProcessorTest extends TestCase
         new CommandProcessor(f);
         String output = systemOut().getHistory();
         assertFuzzyEquals("Point inserted: (a, 100, 0)\n"
-                + "Point not found: (100, 0)", output);
+                + "Point removed: (a, 100, 0)", output);
     }
 
     /**

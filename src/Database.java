@@ -111,6 +111,7 @@ public class Database
         if (PRQuadLeaf.nam != null)
         {
             skip.removeByName(PRQuadLeaf.nam);
+            PRQuadLeaf.nam = null;
         }
         else
         {
