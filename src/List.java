@@ -148,42 +148,4 @@ public class List {
     {
         return size == 0;
     }
-
-    //    /**
-    //     * Checks if the points are unique or 
-    //     * the same
-    //     * @return true or false
-    //     */
-    //    public boolean isUnique()
-    //    {
-    //        //leaf then look at points and see if duplicates
-    //        //(if size >3 dont have to check, if size <=3 then check)
-    //        if (size > 3) //all dups
-    //        {
-    //            return false;
-    //        }
-    //        else if (size == 3)
-    //        {
-    //            if (l[0].equals(l[1]))
-    //            {
-    //                return false;
-    //            }
-    //            else if (l[1].equals(l[2]))
-    //            {
-    //                return false;
-    //            }
-    //            else if (l[0].equals(l[2]))
-    //            {
-    //                return false;
-    //            }
-    //        }
-    //        else if (size == 2)
-    //        {
-    //            if (l[0].equals(l[1]))
-    //            {
-    //                return false;
-    //            }
-    //        }
-    //        return true;
-    //    }
 }
