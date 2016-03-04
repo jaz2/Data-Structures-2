@@ -14,12 +14,12 @@ import student.TestCase;
  *
  */
 public class PRQuadtreeTest extends TestCase {
-    
+
     /**
      * The quad tree
      */
     PRQuadtree tree;
-    
+
     /**
      * Point p 
      */
@@ -90,7 +90,7 @@ public class PRQuadtreeTest extends TestCase {
                 + "5 quadtree nodes printed", output);
         assertTrue(tree.root.getClass().equals(PRQuadInternal.class));
     }
-    
+
     /**
      * Tests the same in insert
      */
