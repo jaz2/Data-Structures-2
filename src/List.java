@@ -62,6 +62,7 @@ public class List {
 
     /**
      * Finds the name of the point
+     * @param name the name 
      * @param p the point
      * @return the string
      */
