@@ -5,6 +5,7 @@
 /**
  * In charge of handling identity of points
  * @author Jazmine Zurita and Jessica McCready
+ * @version March 2 2016
  *
  */
 public class Point {

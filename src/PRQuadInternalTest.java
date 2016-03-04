@@ -76,52 +76,52 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testinsertSWYL()
     {
-    	Point p = new Point(null, 1, 500);
+        Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /**
      * Tests the sw when y is greater
      */
     @Test
     public void testinsertSWYG()
     {
-    	Point p = new Point(null, 1, 600);
+        Point p = new Point(null, 1, 600);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /**
      * Tests when y is equal
      */
     @Test
     public void testinsertSWYE()
     {
-    	Point p = new Point(null, 1, 512);
+        Point p = new Point(null, 1, 512);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /**
      * Tests when first case is true but last case is false
      */
     @Test
     public void testinsertSWYF()
     {
-    	Point p = new Point(null, 1, 500);
+        Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
     }
-    
+
     /**
      * Tests the region search 
      */
@@ -245,14 +245,14 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r9, 600, 600)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
-    
+
     /**
      * Removes sw when y is less
      */
     @Test
     public void testremoveSWYL()
     {
-    	Point p = new Point(null, 1, 500);
+        Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal(); 
         i.insert(p, 0, 0, 1024);
         i.remove(null, 1, 500, 0, 0, 1024);
@@ -260,14 +260,14 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
         assertEquals(0, i.regionSearch(0, 0, 501, 501, 0, 0, 1024));
     }
-    
+
     /**
      * Removes sw when y is greater
      */
     @Test
     public void testremoveSWYG()
     {
-    	Point p = new Point(null, 1, 600);
+        Point p = new Point(null, 1, 600);
         PRQuadInternal i = new PRQuadInternal();  
         i.insert(p, 0, 0, 1024);
         i.remove(null, 1, 600, 0, 0, 1024);
@@ -275,33 +275,33 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals(Flyweight.class, i.se().getClass());
         assertEquals(0, i.regionSearch(0, 0, 601, 601, 0, 0, 1024));
     }
-    
+
     /**
      * Tests when y is equal
      */
     @Test
     public void testremoveSWYE()
     {
-    	PRQuadtree t = new PRQuadtree(0, 0, 1024);
-    	Point p = new Point(null, 1, 512);
+        PRQuadtree t = new PRQuadtree(0, 0, 1024);
+        Point p = new Point(null, 1, 512);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         i.remove(null, 1, 512, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
         assertEquals(Flyweight.class, i.se().getClass());
         i.regionSearch(0, 500, 100, 100, 0, 0, 1024); 
-		String output = systemOut().getHistory();
-		assertEquals("Points intersecting region (0, 500, 100, 100):\n"
-				+ "1 quadtree nodes visited\n", output);
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (0, 500, 100, 100):\n"
+                + "1 quadtree nodes visited\n", output);
     }
-    
+
     /**
      * Tests when first case is true but last case is false
      */
     @Test
     public void testremoveSWYF()
     {
-    	Point p = new Point(null, 1, 500);
+        Point p = new Point(null, 1, 500);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         i.remove(null, 1, 500, 0, 0, 1024);
