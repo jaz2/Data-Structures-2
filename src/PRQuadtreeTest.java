@@ -36,6 +36,10 @@ public class PRQuadtreeTest extends TestCase {
 
     }
 
+    /**
+     * Tests dump with no inserts
+     */
+    @Test
     public void testDumpNoInserts()
     {
         tree.dump();
@@ -45,6 +49,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "1 quadtree nodes printed", output);
     }
 
+    /**
+     * Tests dump with one insert
+     */
+    @Test
     public void testDump1Insert()
     {
         tree.insert(p);
@@ -56,6 +64,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "1 quadtree nodes printed", output);
     }
 
+    /**
+     * Tests insert with same then dif
+     */
+    @Test
     public void testInsertSameThenDiff()
     {
         tree.insert(p);
@@ -78,7 +90,11 @@ public class PRQuadtreeTest extends TestCase {
                 + "5 quadtree nodes printed", output);
         assertTrue(tree.root.getClass().equals(PRQuadInternal.class));
     }
-
+    
+    /**
+     * Tests the same in insert
+     */
+    @Test
     public void testInsertSame()
     {
         tree.insert(p);
@@ -94,6 +110,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "1 quadtree nodes printed", output);
     }
 
+    /**
+     * Tests dump from the test
+     */
+    @Test
     public void testDumpFromTest()
     {
         tree.insert(new Point("r_r", 1, 20));
@@ -123,6 +143,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "13 quadtree nodes printed", output);
     }
 
+    /**
+     * Tests regionsearch nw
+     */
+    @Test
     public void testRsNW() 
     {
         tree.insert(new Point("r_r", 1, 20));
@@ -137,6 +161,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "4 quadtree nodes visited\n", output);
     }
 
+    /**
+     * Tests when rs is empty
+     */
+    @Test
     public void testRSempty() 
     { 
         tree.regionSearch(0, 0, 24, 99);
@@ -145,6 +173,10 @@ public class PRQuadtreeTest extends TestCase {
                 + "1 quadtree nodes visited\n", output);        
     }
 
+    /**
+     * Tests se of rs
+     */
+    @Test
     public void testRsSE() 
     {
         tree.insert(new Point("r_r", 1, 20));
