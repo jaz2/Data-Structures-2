@@ -52,9 +52,6 @@ public class PRQuadtree {
     /**
      * The insert method
      * @param p the point to be inserted
-     * @param xcoord the xcoord
-     * @param ycoord the ycoord
-     * @param len the length
      * @return the root
      */
     public PRQuadNode insert(Point p)
@@ -64,9 +61,11 @@ public class PRQuadtree {
     }
     
     /**
-     * Removes by looking through the coordinates
-     * @param p 
-     * @return the node
+     * Removes the point
+     * @param n name of point
+     * @param x the points x
+     * @param y the points y
+     * @return the node containing point
      */
     public PRQuadNode remove(String n, int x, int y)
     {
