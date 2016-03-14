@@ -8,7 +8,8 @@ import org.junit.Test;
  */
 
 /**
- * @author Jazz
+ * @author Jazmine Zurita and Jessica McCready
+ * @version March 14 2016
  *
  */
 public class ListTest {
