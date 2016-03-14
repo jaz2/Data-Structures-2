@@ -635,7 +635,7 @@ public class PRQuadLeafTest extends TestCase {
         tree.insert(p);
         tree.insert(new Point(null, 800, 601));
         tree.remove(null, 800, 601);
-        tree.regionSearch(100, 100, 800, 500); 
+        tree.regionSearch(100, 100, 800, 502); 
         String output = systemOut().getHistory();
         assertEquals("Points intersecting region (100, 100, 800, 502):\n"
                 + "Point found: (null, 800, 600)\n"
