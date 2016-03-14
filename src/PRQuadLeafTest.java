@@ -630,7 +630,7 @@ public class PRQuadLeafTest extends TestCase {
     @Test
     public void testRemoveName2()
     {
-    	Point p = new Point(null, 800, 600);
+        Point p = new Point(null, 800, 600);
         PRQuadtree tree = new PRQuadtree(0, 0, 1024);
         tree.insert(p);
         tree.insert(new Point("hi", 800, 600));
