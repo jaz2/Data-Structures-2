@@ -247,4 +247,143 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r9, 600, 600)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
+
+    /**
+     * Tests first merge
+     */
+    @Test
+    public void testMerge1()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 5));
+        tree.insert(new Point("rec", 5, 600));
+        tree.insert(new Point("r_42", 600, 5));
+        tree.insert(new Point("far", 600, 600));
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("b", 5, 600));
+        tree.insert(new Point("c", 600, 5));
+        tree.insert(new Point("d", 600, 600));
+        tree.insert(new Point("aa", 5, 5));
+        tree.insert(new Point("bb", 5, 600));
+        tree.insert(new Point("cc", 600, 5));
+        tree.insert(new Point("dd", 600, 600));
+        tree.insert(new Point("a2", 4, 5));
+        tree.insert(new Point("b2", 3, 600));
+        tree.insert(new Point("c2", 601, 5));
+        tree.insert(new Point("d2", 601, 600));
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadInternal.class);
+    }
+
+    /**
+     * Tests second merge
+     */
+    @Test
+    public void testMerge2()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 5));
+        tree.insert(new Point("rec", 5, 600));
+        tree.insert(new Point("r_42", 600, 5));
+        tree.insert(new Point("far", 600, 600));
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("b", 5, 600));
+        tree.insert(new Point("c", 600, 5));
+        tree.insert(new Point("d", 600, 600));
+        tree.insert(new Point("aa", 5, 5));
+        tree.insert(new Point("bb", 5, 600));
+        tree.insert(new Point("cc", 600, 5));
+        tree.insert(new Point("dd", 600, 600));
+        //    tree.insert(new Point("a2", 4, 5));
+        tree.insert(new Point("b2", 3, 600));
+        tree.insert(new Point("c2", 601, 5));
+        tree.insert(new Point("d2", 601, 600));
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadInternal.class);
+    }
+
+    /**
+     * Tests merge again
+     */
+    @Test
+    public void testMerge3()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 5));
+        tree.insert(new Point("rec", 5, 600));
+        tree.insert(new Point("r_42", 600, 5));
+        tree.insert(new Point("far", 600, 600));
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("b", 5, 600));
+        tree.insert(new Point("c", 600, 5));
+        tree.insert(new Point("d", 600, 600));
+        tree.insert(new Point("aa", 5, 5));
+        tree.insert(new Point("bb", 5, 600));
+        tree.insert(new Point("cc", 600, 5));
+        tree.insert(new Point("dd", 600, 600));
+        //    tree.insert(new Point("a2", 4, 5));
+        //    tree.insert(new Point("b2", 3, 600));
+        //    tree.insert(new Point("c2", 601, 5));
+        tree.insert(new Point("d2", 601, 600));
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadInternal.class);
+    }
+
+    /**
+     * Tests the Merge method
+     */
+    @Test
+    public void testMerge4()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 5));
+        tree.insert(new Point("rec", 5, 600));
+        tree.insert(new Point("r_42", 600, 5));
+        tree.insert(new Point("far", 600, 600));
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("b", 5, 600));
+        tree.insert(new Point("c", 600, 5));
+        tree.insert(new Point("d", 600, 600));
+        tree.insert(new Point("aa", 5, 5));
+        tree.insert(new Point("bb", 5, 600));
+        tree.insert(new Point("cc", 600, 5));
+        tree.insert(new Point("dd", 600, 600));
+        tree.insert(new Point("b2", 3, 600));
+        tree.insert(new Point("d2", 601, 600));
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadInternal.class);
+    }
+
+    /**
+     * Tests merge leaf
+     */
+    @Test
+    public void testMerge1leaf()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 5));
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("aa", 5, 5));
+        tree.insert(new Point("a2", 4, 5));
+        tree.remove("a2", 4, 5);
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadLeaf.class);
+    }
+
+    /**
+     * Tests merge for a new leaf
+     */
+    @Test
+    public void testMergeNewLeaf()
+    {
+        PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r_r", 5, 600)); 
+        tree.insert(new Point("r_r", 5, 600)); 
+        tree.insert(new Point("a", 5, 5));
+        tree.insert(new Point("aa", 600, 5));
+        tree.insert(new Point("a2", 4, 5));
+        tree.remove("a2", 4, 5);
+        tree.root.merge();
+        assertEquals(tree.root.getClass(), PRQuadInternal.class);
+    }
 }
