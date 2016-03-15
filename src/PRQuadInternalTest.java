@@ -272,7 +272,16 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testRemoveNEYes()
     {
-        //
+    	PRQuadtree tree = new PRQuadtree(0, 0, 1024);
+        tree.insert(new Point("r1", 1, 20));
+        tree.insert(new Point("r2", 600, 20));
+        tree.insert(new Point("r34", 1, 600));
+        tree.insert(new Point("r9", 600, 600));
+        tree.remove("r2", 600, 20);
+        tree.regionSearch(500, 0, 500, 500); 
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (500, 0, 500, 500):\n"
+                + "1 quadtree nodes visited\n", output);      
     }
 
     /**
