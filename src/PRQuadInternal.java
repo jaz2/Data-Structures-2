@@ -297,22 +297,19 @@ public class PRQuadInternal implements PRQuadNode {
         {
             return sum;
         }
-        if (total > 1)
+        if (list.length() <= 3)
         {
-            if (list.length() > 3)
+            PRQuadLeaf nu = new PRQuadLeaf(list.moveToPos(0));
+            for (int i = 1; i < list.length(); i++)
             {
-                return this;
+                nu.l.insert(list.moveToPos(i));
             }
-            else 
+            return nu;
+        }
+        else 
             {
-                PRQuadLeaf nu = new PRQuadLeaf(list.moveToPos(0));
-                for (int i = 1; i < list.length(); i++)
-                {
-                    nu.l.insert(list.moveToPos(i));
-                }
-                return nu;
+            return this;
             }
         }
-        return this; //see if this is right
+         //see if this is right
     }
-}

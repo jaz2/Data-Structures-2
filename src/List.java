@@ -110,7 +110,8 @@ public class List {
         Boolean found = false;
         for (int i = 0; i < size && !found; i++)
         {
-            if (l[i].equals(p) && l[i].getName().equals(p.getName()))
+            if (l[i].equals(p) && (l[i].getName() == p.getName() 
+                    || l[i].getName().equals(p.getName())))
             {
                 if (i == size - 1)
                 {
