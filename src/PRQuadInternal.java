@@ -307,9 +307,9 @@ public class PRQuadInternal implements PRQuadNode {
             return nu;
         }
         else 
-            {
+        {
             return this;
-            }
         }
-         //see if this is right
     }
+    //see if this is right
+}
