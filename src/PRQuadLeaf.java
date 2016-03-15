@@ -64,18 +64,6 @@ public class PRQuadLeaf implements PRQuadNode {
         return u;
     }
 
-    //    /**
-    //     * To print points in regionsearch
-    //     */
-    //    public void printVisited()
-    //    {
-    //        for (int i = 0; i <= l.length() - 1; i++)
-    //        {
-    //            System.out.print("Point found: ");
-    //            System.out.println(l.moveToPos(i).toString());
-    //        }
-    //    }
-
     /**
      * Prints out
      * @param s the spaces
@@ -256,12 +244,12 @@ public class PRQuadLeaf implements PRQuadNode {
         //make a point and use compareTo (equals)
         Point p = new Point(null, x, y);
         nam = l.getName(n, p);
-        if (nam == null)
-        { //jessica: internal remove, merge, and list getName
-            return this; //u do the rest!
-        }
-        else 
-        {
+//        if (nam == null)
+//        { //jessica: internal remove, merge, and list getName
+//            return this; //u do the rest!
+//        }
+//        else 
+//        {
             //l.remove(p);
             if (l.isEmpty())
             {
@@ -271,7 +259,7 @@ public class PRQuadLeaf implements PRQuadNode {
             {
                 return this;
             }
-        }
+//        }
     }
 
     /**

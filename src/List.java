@@ -68,31 +68,66 @@ public class List {
      */
     public String getName(String name, Point p)
     {
-        String s = null;
-        if (name == null)
+        //        String s = null;
+        //        if (name == null)
+        //        {
+        //            for (int i = 0; i < size; i++)
+        //            {
+        //                if (l[i].equals(p))
+        //                {
+        //                    s = l[i].name;
+        //                    remove(l[i]);
+        //                    return s;
+        //                }
+        //            }
+        //            return null;
+        //        }
+        //        else 
+        //        {
+        //            boolean removed = false;
+        //            int i = 0;
+        //            while (i < size && !removed)
+        //            {
+        //                if (l[i].equals(p) && l[i].getName().equals(name))
+        //                {
+        //                    remove(l[i]);
+        //                    removed = true;
+        //                    return name;
+        //                }
+        //                i++;
+        //            }
+        //        }
+        //        return null;
+        if (name == null) //remove by coord
         {
+            String s = null;
             for (int i = 0; i < size; i++)
             {
                 if (l[i].equals(p))
                 {
                     s = l[i].name;
                     remove(l[i]);
+                    //System.out.println("removed");
                     return s;
                 }
             }
             return null;
-        }
-        else 
+        }    
+        else //remove by name
         {
             boolean removed = false;
             int i = 0;
-            while (i < size && !removed)
-            {
+            while (i < size && !removed) 
+                //ft i=size and not removed -> not there 
+                //ff i =size and removed -> last item removed
+                //tt not at end and not removed -> not there
+                //tf not at end and removed -> removed in middle!!!
+            {        
                 if (l[i].equals(p) && l[i].getName().equals(name))
                 {
-                    remove(l[i]);
+                    remove(l[i]); 
+                    //System.out.println("removed");
                     removed = true;
-                    return name;
                 }
                 i++;
             }
@@ -111,7 +146,7 @@ public class List {
         for (int i = 0; i < size && !found; i++)
         {
             if (l[i].equals(p) && (l[i].getName() == p.getName() 
-                    || l[i].getName().equals(p.getName())))
+                    /*|| l[i].getName().equals(p.getName())*/))
             {
                 if (i == size - 1)
                 {
