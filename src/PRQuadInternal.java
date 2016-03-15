@@ -311,5 +311,4 @@ public class PRQuadInternal implements PRQuadNode {
             return this;
         }
     }
-    //see if this is right
 }
