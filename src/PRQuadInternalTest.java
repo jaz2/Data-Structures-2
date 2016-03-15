@@ -247,6 +247,25 @@ public class PRQuadInternalTest extends TestCase {
                 + "Point found: (r9, 600, 600)\n"
                 + "3 quadtree nodes visited\n", output);        
     }
+    
+    /**
+     * Tests the remove method 
+     */
+    @Test
+    public void testRemove1()
+    {
+    	PRQuadtree t = new PRQuadtree(0, 0, 1024);
+    	t.insert(new Point("r1", 1, 20));
+        t.insert(new Point("r2", 600, 20));
+        t.insert(new Point("r34", 1, 600));
+        t.insert(new Point("r9", 600, 600));
+        t.remove("r9", 600, 600);
+        t.regionSearch(500, 580, 500, 500);
+        String output = systemOut().getHistory();
+        assertEquals("Points intersecting region (500, 580, 500, 500):\n"
+                + "Point found: (r9, 600, 600)\n"
+                + "3 quadtree nodes visited\n", output);   
+    }
 
     /**
      * Tests first merge
