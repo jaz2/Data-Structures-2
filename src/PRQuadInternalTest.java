@@ -91,7 +91,7 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testinsertSWYG()
     {
-        Point p = new Point(null, 1, 600);
+        Point p = new Point(null, 1, 700);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(PRQuadLeaf.class, i.sw().getClass());
