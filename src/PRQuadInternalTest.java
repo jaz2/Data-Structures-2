@@ -78,7 +78,7 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testinsertSWYL()
     {
-        Point p = new Point(null, 1, 200);
+        Point p = new Point(null, 1, 1);
         PRQuadInternal i = new PRQuadInternal();        
         i.insert(p, 0, 0, 1024);
         assertEquals(Flyweight.class, i.sw().getClass());
