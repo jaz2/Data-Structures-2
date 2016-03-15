@@ -254,8 +254,8 @@ public class PRQuadInternalTest extends TestCase {
     @Test
     public void testRemove1()
     {
-    	PRQuadtree t = new PRQuadtree(0, 0, 1024);
-    	t.insert(new Point("r1", 1, 20));
+        PRQuadtree t = new PRQuadtree(0, 0, 1024);
+        t.insert(new Point("r1", 1, 20));
         t.insert(new Point("r2", 600, 20));
         t.insert(new Point("r34", 1, 600));
         t.insert(new Point("r9", 600, 600));
