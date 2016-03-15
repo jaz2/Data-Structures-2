@@ -263,8 +263,7 @@ public class PRQuadInternalTest extends TestCase {
         t.regionSearch(500, 580, 500, 500);
         String output = systemOut().getHistory();
         assertEquals("Points intersecting region (500, 580, 500, 500):\n"
-                + "Point found: (r9, 600, 600)\n"
-                + "3 quadtree nodes visited\n", output);   
+                + "1 quadtree nodes visited\n", output);   
     }
 
     /**
