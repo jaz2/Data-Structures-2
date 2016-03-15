@@ -265,6 +265,15 @@ public class PRQuadInternalTest extends TestCase {
         assertEquals("Points intersecting region (500, 580, 500, 500):\n"
                 + "1 quadtree nodes visited\n", output);   
     }
+    
+    /**
+     * Tests when remove is in the ne section
+     */
+    @Test
+    public void testRemoveNEYes()
+    {
+        //
+    }
 
     /**
      * Tests first merge
