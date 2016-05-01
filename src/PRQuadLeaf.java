@@ -125,7 +125,7 @@ public class PRQuadLeaf implements PRQuadNode {
     public void duplicates()
     {
         //leaf then look at points and see if duplicates
-        //(if size >3 dont have to check, if size <=3 then check)
+        //(if size > 3 don't have to check, if size <=3 then check)
         if (l.length() > 3) //all dups
         {
             System.out.println("(" + ((Point)l.moveToPos(0)).getX()
@@ -241,25 +241,17 @@ public class PRQuadLeaf implements PRQuadNode {
     @Override
     public PRQuadNode remove(String n, int x, int y, int tx, int ty, int len)
     { //make a var to get the point -> var is called "r"
-        //make a point and use compareTo (equals)
         Point p = new Point(null, x, y);
         nam = l.getName(n, p);
-//        if (nam == null)
-//        { //jessica: internal remove, merge, and list getName
-//            return this; //u do the rest!
-//        }
-//        else 
-//        {
-            //l.remove(p);
-            if (l.isEmpty())
-            {
-                return Flyweight.fly;
-            }
-            else 
-            {
-                return this;
-            }
-//        }
+        //l.remove(p);
+        if (l.isEmpty())
+        {
+            return Flyweight.fly;
+        }
+        else 
+        {
+            return this;
+        }
     }
 
     /**

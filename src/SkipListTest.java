@@ -415,6 +415,36 @@ public class SkipListTest extends TestCase
     }
     
     /**
+     * Tests when multiple searches then other stuff
+     */
+    public void testSearchMore()
+    {
+        Point re = new Point("a", 1, 2);
+        KVPair<String, Point> p = new KVPair<String, Point>(re.getName(), re);
+        SkipList<String, Point> s = new SkipList<String, Point>();
+        s.insert(p);
+
+        Point nu = new Point("b", 2, 2);
+        KVPair<String, Point> n = new KVPair<String, Point>(nu.getName(), nu);
+        s.insert(n);
+        
+        Point or = new Point("c", 2, 8);
+        KVPair<String, Point> me = new KVPair<String, Point>(or.getName(), or);
+        s.insert(me);
+        
+        Point or1 = new Point("d", 2, 8);
+        KVPair<String, Point> me1 = new KVPair<String, 
+                Point>(or1.getName(), or1);
+        s.insert(me1);
+        
+        s.search("a");
+        String output = systemOut().getHistory();
+        assertFuzzyEquals("Found (a, 2, 8)\n"
+                + "Found (b, 2, 2)\n"
+                + "Found (c, 1, 2)", output);
+    }
+    
+    /**
      * Tests search when not found
      */
     @Test

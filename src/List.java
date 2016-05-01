@@ -68,36 +68,6 @@ public class List {
      */
     public String getName(String name, Point p)
     {
-        //        String s = null;
-        //        if (name == null)
-        //        {
-        //            for (int i = 0; i < size; i++)
-        //            {
-        //                if (l[i].equals(p))
-        //                {
-        //                    s = l[i].name;
-        //                    remove(l[i]);
-        //                    return s;
-        //                }
-        //            }
-        //            return null;
-        //        }
-        //        else 
-        //        {
-        //            boolean removed = false;
-        //            int i = 0;
-        //            while (i < size && !removed)
-        //            {
-        //                if (l[i].equals(p) && l[i].getName().equals(name))
-        //                {
-        //                    remove(l[i]);
-        //                    removed = true;
-        //                    return name;
-        //                }
-        //                i++;
-        //            }
-        //        }
-        //        return null;
         if (name == null) //remove by coord
         {
             String s = null;
