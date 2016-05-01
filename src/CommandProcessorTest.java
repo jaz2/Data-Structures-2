@@ -442,23 +442,23 @@ public class CommandProcessorTest extends TestCase
         assertFuzzyEquals("Point rejected: (1, -1)", output);
     }
 
-//    /**
-//     * Tests when the points are on 0 and 1024
-//     * @throws IOException 
-//     */
-//    @Test
-//    public void testStillRemBounds() throws IOException
-//    {
-//        String s = "remove 0 0 1024 1024";
-//        File f = new File("test.txt");
-//        FileWriter fi = new FileWriter(f);
-//        BufferedWriter w = new BufferedWriter(fi);
-//        w.write(s);
-//        w.close();
-//        new CommandProcessor(f);
-//        String output = systemOut().getHistory();
-//        assertFuzzyEquals("Point removed: (a, 0, 0, 1024, 1024)", output);
-//    }
+    /**
+     * Tests when the points are on 0 and 1024
+     * @throws IOException 
+     */
+    @Test
+    public void testStillRemBounds() throws IOException
+    {
+        String s = "remove 0 0 1024 1024";
+        File f = new File("test.txt");
+        FileWriter fi = new FileWriter(f);
+        BufferedWriter w = new BufferedWriter(fi);
+        w.write(s);
+        w.close();
+        new CommandProcessor(f);
+        String output = systemOut().getHistory();
+        assertFuzzyEquals("Point removed: (a, 0, 0, 1024, 1024)", output);
+    }
     
     /**
      * Tests the case where the name is called to be removed
