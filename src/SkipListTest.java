@@ -438,6 +438,8 @@ public class SkipListTest extends TestCase
         s.insert(me1);
         
         s.search("a");
+        s.search("b");
+        s.search("c");
         String output = systemOut().getHistory();
         assertFuzzyEquals("Found (a, 2, 8)\n"
                 + "Found (b, 2, 2)\n"
